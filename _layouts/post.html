@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<article class="post">
+  <h1>{{ page.title }}</h1>
+  <div class="meta">{{ page.date | date_to_string }} · {{ page.tags | array_to_sentence_string }}</div>
+  <div class="content">{{ content }}</div>
+  <p style="margin-top:24px;color:#92a0b3">Some links may be affiliate links. We only recommend gear we believe delivers solid value.</p>
+</article>
