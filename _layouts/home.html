@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<section class="hero">
+  <div>
+    <div class="kicker">Publisher you can trust</div>
+    <h1 class="title">Expert EarFun coverage & practical audio guides</h1>
+    <p class="subtitle">Honest reviews, data-backed tips, and updated deals—so readers buy once and enjoy for years.</p>
+    <div class="badges">
+      <span class="badge">Original editorial</span>
+      <span class="badge">Affiliate disclosure</span>
+      <span class="badge">No spam or clickbait</span>
+    </div>
+    <p style="margin:14px 0 0"><a class="cta-btn" href="{{ "/how-to-choose-earbuds" | relative_url }}">Start with the buying guide</a></p>
+  </div>
+  <div>
+    <img src="{{ "/hero.png" | relative_url }}" alt="Close-up of wireless headphones" loading="lazy">
+  </div>
+</section>
+
+<div class="grid">
+  {% assign posts_sorted = site.posts | sort: "date" | reverse %}
+  {% for post in posts_sorted limit: 9 %}
+    <a class="card" href="{{ post.url | relative_url }}">
+      <div class="kicker">{{ post.tags | array_to_sentence_string }}</div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    </a>
+  {% endfor %}
+</div>
+
+<section class="section">
+  <h3 style="margin:0 0 8px">Why partner with us</h3>
+  <div class="list">
+    <div>• Audience fit: consumers shopping for earbuds, headphones, and portable speakers</div>
+    <div>• Promotion methods: reviews, comparisons, deals posts, and how‑to guides</div>
+    <div>• Compliance: clear disclosures; no PPC brand bidding or coupon scraping</div>
+  </div>
+</section>
