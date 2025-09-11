@@ -1,14 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333; }
-header { background-color: #2c3e50; color: #fff; padding: 1.5rem; text-align: center; }
-header img { max-width: 100%; height: auto; }
-nav { background-color: #34495e; padding: 0.5rem; text-align: center; }
-nav a { color: #ecf0f1; margin: 0 0.8rem; text-decoration: none; font-weight: bold; }
-nav a:hover { text-decoration: underline; }
-main { max-width: 900px; margin: auto; background-color: #fff; padding: 1rem 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-article { margin-bottom: 2rem; }
-h1 { font-size: 2rem; margin-top: 0; }
-h2 { font-size: 1.6rem; margin-top: 1rem; }
-p { line-height: 1.6; margin-bottom: 1rem; }
-footer { background-color: #ecf0f1; color: #666; text-align: center; padding: 1rem; font-size: 0.9rem; }
-.citations { font-size: 0.85rem; color: #555; border-top: 1px solid #ddd; padding-top: 0.5rem; }
+/*
+ * EarFun Audio Blog – Modern Dark Theme
+ *
+ * This stylesheet defines a sleek, contemporary look for the EarFun Audio Blog.
+ * It uses a dark colour palette, bold accent colour, and responsive grid layout
+ * to showcase articles in card form. The design emphasises readability and
+ * professionalism while remaining inviting to visitors.
+ */
+
+/* CSS Variables for easy theming */
+:root {
+    --bg-color: #0b0e14;            /* Dark background */
+    --primary-color: #ffe600;       /* Vibrant accent colour */
+    --text-color: #c9d1d9;          /* Main text colour */
+    --text-light: #a5adc1;          /* Secondary text colour */
+    --card-bg: #1a1d29;             /* Background for cards */
+    --card-hover-bg: #21263a;       /* Hover state for cards */
+    --border-color: #30384d;        /* Subtle border colour */
+}
+
+/* Global reset & typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+header p.tagline {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.2s ease;
+}
+nav a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Main content area */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+/* Responsive grid for article cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Article card styles */
+article {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+article:hover {
+    background-color: var(--card-hover-bg);
+    transform: translateY(-4px);
+}
+article h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+}
+article p {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+article a {
+    align-self: flex-start;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+article a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries for small screens */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header p.tagline {
+        font-size: 1rem;
+    }
+    nav {
+        gap: 0.5rem;
+    }
+    nav a {
+        padding: 0.5rem 0.5rem;
+    }
+}
