@@ -1,0 +1,24 @@
+title: Audio Gear & EarFun Reviews
+description: Honest audio gear reviews, buying guides, and EarFun-focused coverage.
+markdown: kramdown
+timezone: America/New_York
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+url: https://artificialsight.github.io/earfun-audio-blog
+navigation:
+  - name: Home
+    url: /
+  - name: Reviews
+    url: /
+  - name: Buying Guides
+    url: /
+  - name: Deals
+    url: /earfun-deals-and-coupons
+  - name: About
+    url: /about/
+  - name: For Brands
+    url: /for-brands/
+  - name: Contact
+    url: /contact/
