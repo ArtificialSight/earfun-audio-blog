@@ -1,0 +1,22 @@
+{%- assign site_url = site.url | default: "" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title | escape }}",
+  "url": "{{ site_url | escape }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site_url }}/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.title | escape }}",
+  "url": "{{ site_url | escape }}"
+}
+</script>
