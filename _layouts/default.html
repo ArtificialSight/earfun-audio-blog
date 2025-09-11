@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+ <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {%- seo -%}
@@ -9,6 +9,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/styles.css" | relative_url }}">
+    <style>
+      /* Position CTA and hide duplicate Deals nav item */
+      .nav .links {
+        display: flex;
+        align-items: center;
+      }
+      .nav .links a[href$="earfun-deals-and-coupons"]:not(.cta-btn) {
+        display: none;
+      }
+      .nav .links .cta-btn {
+        margin-left: auto;
+      }
+    </style>
     {%- include schema.html -%}
   </head>
   <body>
