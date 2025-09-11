@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200">
+  <rect width="640" height="200" rx="24" fill="#111624"/>
+  <g font-family="Inter, Arial, Helvetica, sans-serif" fill="#ffe600">
+    <text x="40" y="118" font-size="64" font-weight="800">Audio Gear</text>
+  </g>
+</svg>
