@@ -6,10 +6,11 @@ permalink: /reviews/
 
 # Product Reviews
 
-Welcome to our reviews section! Here you'll find in‑depth assessments of the latest EarFun headphones, earbuds and speakers. We base our verdicts on expert lab tests and real-world experiences to help you decide what to buy.
+Welcome to our reviews section! We focus on EarFun headphones, earbuds, and speakers—summarizing credible lab tests and real-world use to help you buy confidently.
 
-- [EarFun Air Pro 4 Review](/reviews/earfun-air-pro-4/)
-- [EarFun Free Pro 3 Review](/reviews/earfun-free-pro-3/)
-- [EarFun Wave Pro Review](/reviews/earfun-wave-pro/)
-- [EarFun Tune Pro Review](/reviews/earfun-tune-pro/)
-- [EarFun UBOOM L Review](/reviews/earfun-uboom-l/)
+{% assign pages = site.pages | where_exp:"p","p.permalink contains '/reviews/'" %}
+{% for p in pages %}
+  {% if p.title and p.permalink != '/reviews/' %}
+    {% include review-card.html url=p.permalink title=p.title tagline=p.subtitle updated=p.last_modified_at %}
+  {% endif %}
+{% endfor %}
