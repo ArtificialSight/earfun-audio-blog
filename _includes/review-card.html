@@ -1,8 +1,40 @@
 <article class="review-card">
-  <a href="{{ include.url  | relative_url}}">{{ include.title }}</a></h3>
-  <p class="sub">{{ include.tagline }}</p>
-  <div class="meta">
-    <span>{{ include.category | default: "Review" }}</span>
-    {% if include.updated %}<span>Updated {{ include.updated }}</span>{% endif %}
+  {% if include.image %}
+  <div class="review-card-image">
+    <img src="{{ include.image | relative_url }}" alt="{{ include.title }}" loading="lazy">
+  </div>
+  {% endif %}
+  <div class="review-card-content">
+    <h3><a href="{{ include.url | relative_url }}">{{ include.title }}</a></h3>
+    <p class="review-card-tagline">{{ include.tagline }}</p>
+    {% if include.rating %}
+    <div class="review-card-rating">
+      <span class="stars">{{ include.rating }}</span>
+      {% if include.score %}<span class="score">({{ include.score }}/5)</span>{% endif %}
+    </div>
+    {% endif %}
+    {% if include.price %}
+    <div class="review-card-price">
+      <span class="price">${{ include.price }}</span>
+      {% if include.badge %}<span class="badge">{{ include.badge }}</span>{% endif %}
+    </div>
+    {% endif %}
+    <div class="review-card-meta">
+      <span class="category">{{ include.category | default: "Review" }}</span>
+      {% if include.updated %}<span class="updated">Updated {{ include.updated }}</span>{% endif %}
+    </div>
+    {% if include.features %}
+    <ul class="review-card-features">
+      {% for feature in include.features %}
+      <li>{{ feature }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="review-card-actions">
+      <a href="{{ include.url | relative_url }}" class="btn-read-review">Read Full Review</a>
+      {% if include.buy_link %}
+      <a href="{{ include.buy_link }}" class="btn-buy-now" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+      {% endif %}
+    </div>
   </div>
 </article>
