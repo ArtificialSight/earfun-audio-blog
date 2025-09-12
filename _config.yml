@@ -10,7 +10,7 @@ url: https://artificialsight.github.io
 baseurl: "/earfun-audio-blog"
 navigation:
   - name: Home
-     url: /
+    url: /
   - name: Reviews
     url: /reviews/
   - name: Buying Guides
