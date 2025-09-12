@@ -1,0 +1,8 @@
+<article class="review-card">
+  <h3><a href="{{ include.url }}">{{ include.title }}</a></h3>
+  <p class="sub">{{ include.tagline }}</p>
+  <div class="meta">
+    <span>{{ include.category | default: "Review" }}</span>
+    {% if include.updated %}<span>Updated {{ include.updated }}</span>{% endif %}
+  </div>
+</article>
