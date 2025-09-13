@@ -12,14 +12,14 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}">
   <meta name="keywords" content="{{ page.keywords }}">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <div class="container">
     <!-- Navigation -->
     <nav class="nav">
       <div class="logo">
-        <img src="assets/logo.svg" alt="EarFun Audio Logo">
+        <img src="assets/logo.svg" alt="EarFun Audio Logo" width="40" height="40" style="width: 40px; height: 40px;">
         <div class="word">EarFun Audio</div>
       </div>
       <div class="links">
@@ -32,214 +32,123 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
     
     <!-- Hero Section -->
     <section class="hero">
-      <div>
+      <div class="hero-content">
         <div class="kicker">Premium Audio Reviews</div>
-        <h1 class="title">Discover Your Perfect EarFun Audio Experience</h1>
-        <p class="subtitle">Expert reviews, detailed comparisons, and honest recommendations for EarFun's complete lineup of earbuds, headphones, and speakers. Make the right choice with our comprehensive buying guides.</p>
-        <div class="badges">
-          <div class="badge">
-            🏆
-            Expert Reviews
-          </div>
-          <div class="badge">
-            ⚡
-            Latest Models
-          </div>
-          <div class="badge">
-            🎯
-            Honest Ratings
-          </div>
+        <h1>Discover the Best EarFun Audio Products</h1>
+        <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
+        <img src="assets/hero-earfun-products.jpg" alt="Collection of premium EarFun audio products including earbuds and speakers" class="hero-image" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; margin: 20px 0; display: block;">
+        <div class="cta-buttons">
+          <button class="cta-btn primary" onclick="window.location.href='reviews.html'">View Reviews</button>
+          <button class="cta-btn secondary" onclick="window.location.href='best/'">Best Products</button>
         </div>
-        <button class="cta-btn" onclick="document.getElementById('featured-reviews').scrollIntoView()">Explore Reviews</button>
-      </div>
-      <div>
-        <img src="assets/hero-products.jpg" alt="EarFun Audio Products Collection - Premium earbuds, headphones, and speakers displayed together">
       </div>
     </section>
-    
-    <!-- Featured Products Section -->
-    <section class="section" id="featured-reviews">
-      <div class="kicker">Top Picks</div>
-      <h2 style="margin: 8px 0 16px; font-size: 28px;">Featured EarFun Products</h2>
-      <div class="review-cards-grid">
+
+    <!-- Featured Products -->
+    <section class="products" id="products">
+      <h2>Featured EarFun Products</h2>
+      <div class="product-grid">
+        
         <!-- EarFun Air Pro 3 -->
-        <article class="review-card">
-          <div class="review-card-image">
-            <img src="assets/earfun-air-pro-3.jpg" alt="EarFun Air Pro 3 True Wireless Earbuds with charging case" loading="lazy">
+        <div class="product-card">
+          <img src="assets/289vccpbqag.png" alt="EarFun Air Pro 3 wireless earbuds with premium design and active noise cancellation" class="product-image" style="width: 100%; max-width: 250px; height: 200px; object-fit: cover; border-radius: 8px; display: block; margin: 0 auto;">
+          <h3>EarFun Air Pro 3</h3>
+          <p class="price">$79.99</p>
+          <p class="description">Premium wireless earbuds with advanced ANC technology and exceptional sound quality.</p>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.8/5</span>
           </div>
-          <div class="review-card-content">
-            <h3><a href="earfun-air-pro-3.html">EarFun Air Pro 3</a></h3>
-            <p class="review-card-tagline">Premium ANC earbuds with exceptional sound quality and all-day comfort</p>
-            <div class="review-card-rating">
-              <div class="stars" aria-label="4.8 out of 5 stars">★★★★★</div>
-              <div class="score">4.8/5</div>
-            </div>
-            <div class="review-card-price">
-              <div class="price">$79.99</div>
-              <div class="badge">Best Value</div>
-            </div>
-            <div class="review-card-meta">
-              <div class="category">True Wireless</div>
-              <div class="updated">Updated Dec 2024</div>
-            </div>
-            <ul class="review-card-features">
-              <li>Advanced Active Noise Cancellation</li>
-              <li>Up to 45 hours total playtime</li>
-              <li>Multipoint Bluetooth connection</li>
-              <li>Premium sound with custom drivers</li>
-            </ul>
-            <div class="review-card-actions">
-              <a class="btn-read-review" href="earfun-air-pro-3.html">Read Review</a>
-              <a class="btn-buy-now" href="#" rel="nofollow">Buy Now</a>
-            </div>
-          </div>
-        </article>
-        
+          <button class="cta-btn" onclick="window.location.href='earfun-air-pro-3.html'">Read Review</button>
+        </div>
+
         <!-- EarFun Wave Pro -->
-        <article class="review-card">
-          <div class="review-card-image">
-            <img src="assets/earfun-wave-pro.jpg" alt="EarFun Wave Pro Over-Ear Headphones in black" loading="lazy">
+        <div class="product-card">
+          <img src="assets/earfun-wave-pro.jpg" alt="EarFun Wave Pro over-ear headphones with comfortable design and superior audio quality" class="product-image" style="width: 100%; max-width: 250px; height: 200px; object-fit: cover; border-radius: 8px; display: block; margin: 0 auto;">
+          <h3>EarFun Wave Pro</h3>
+          <p class="price">$49.99</p>
+          <p class="description">Comfortable over-ear headphones with Hi-Res audio certification and long battery life.</p>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-text">4.6/5</span>
           </div>
-          <div class="review-card-content">
-            <h3><a href="earfun-wave-pro.html">EarFun Wave Pro</a></h3>
-            <p class="review-card-tagline">Over-ear headphones with Hi-Res Audio and premium comfort</p>
-            <div class="review-card-rating">
-              <div class="stars" aria-label="4.6 out of 5 stars">★★★★☆</div>
-              <div class="score">4.6/5</div>
-            </div>
-            <div class="review-card-price">
-              <div class="price">$99.99</div>
-              <div class="badge">Hi-Res Audio</div>
-            </div>
-            <div class="review-card-meta">
-              <div class="category">Over-Ear</div>
-              <div class="updated">Updated Nov 2024</div>
-            </div>
-            <ul class="review-card-features">
-              <li>Hi-Res Audio certification</li>
-              <li>80 hours playtime with ANC off</li>
-              <li>Quick charge: 10 min = 20 hours</li>
-              <li>Memory foam ear cushions</li>
-            </ul>
-            <div class="review-card-actions">
-              <a class="btn-read-review" href="earfun-wave-pro.html">Read Review</a>
-              <a class="btn-buy-now" href="#" rel="nofollow">Buy Now</a>
-            </div>
-          </div>
-        </article>
-        
-        <!-- EarFun UBoom X -->
-        <article class="review-card">
-          <div class="review-card-image">
-            <img src="assets/earfun-uboom-x.jpg" alt="EarFun UBoom X Portable Bluetooth Speaker with rugged design" loading="lazy">
-          </div>
-          <div class="review-card-content">
-            <h3><a href="earfun-uboom-x.html">EarFun UBoom X</a></h3>
-            <p class="review-card-tagline">Portable Bluetooth speaker with 360° surround sound and rugged design</p>
-            <div class="review-card-rating">
-              <div class="stars" aria-label="4.5 out of 5 stars">★★★★☆</div>
-              <div class="score">4.5/5</div>
-            </div>
-            <div class="review-card-price">
-              <div class="price">$69.99</div>
-              <div class="badge">Waterproof</div>
-            </div>
-            <div class="review-card-meta">
-              <div class="category">Speaker</div>
-              <div class="updated">Updated Oct 2024</div>
-            </div>
-            <ul class="review-card-features">
-              <li>360° surround sound technology</li>
-              <li>IPX7 waterproof rating</li>
-              <li>16 hours continuous playback</li>
-              <li>Bass radiator for deep sound</li>
-            </ul>
-            <div class="review-card-actions">
-              <a class="btn-read-review" href="earfun-uboom-x.html">Read Review</a>
-              <a class="btn-buy-now" href="#" rel="nofollow">Buy Now</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-    
-    <!-- Recent Reviews Section -->
-    <section class="section">
-      <div class="kicker">Latest Reviews</div>
-      <h2 style="margin: 8px 0 16px; font-size: 28px;">Recently Updated</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="kicker">New Review</div>
-          <h3><a href="earfun-tune-pro.html">EarFun Tune Pro Review</a></h3>
-          <p>Complete analysis of the latest budget-friendly earbuds with impressive features.</p>
-        </article>
-        <article class="card">
-          <div class="kicker">Updated</div>
-          <h3><a href="earfun-openjump.html">EarFun OpenJump Review</a></h3>
-          <p>Open-ear design meets premium sound quality in this innovative sports earbud.</p>
-        </article>
-        <article class="card">
-          <div class="kicker">Comparison</div>
-          <h3><a href="choosing-earbuds.html">EarFun Buying Guide 2024</a></h3>
-          <p>Find the perfect EarFun earbuds for your needs with our comprehensive comparison.</p>
-        </article>
-      </div>
-    </section>
-    
-    <!-- Educational Content Section -->
-    <section class="section">
-      <div class="kicker">Learn More</div>
-      <h2 style="margin: 8px 0 16px; font-size: 28px;">Audio Knowledge Base</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="kicker">Guide</div>
-          <h3><a href="how-anc-works.html">How Active Noise Cancellation Works</a></h3>
-          <p>Understanding the technology behind ANC and why it matters for your listening experience.</p>
-        </article>
-        <article class="card">
-          <div class="kicker">Technical</div>
-          <h3><a href="bluetooth-codecs.html">Bluetooth Codecs Explained</a></h3>
-          <p>Learn about different audio codecs and their impact on wireless sound quality.</p>
-        </article>
-        <article class="card">
-          <div class="kicker">Care Tips</div>
-          <h3><a href="earbud-maintenance.html">Earbud Maintenance Guide</a></h3>
-          <p>Keep your EarFun earbuds in perfect condition with proper care and maintenance.</p>
-        </article>
-        <article class="card">
-          <div class="kicker">Standards</div>
-          <h3><a href="ip-ratings.html">IP Ratings Explained</a></h3>
-          <p>Understanding water and dust resistance ratings for audio devices.</p>
-        </article>
-      </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="section" style="text-align: center;">
-      <div class="kicker">Stay Updated</div>
-      <h2 style="margin: 8px 0 16px; font-size: 28px;">Never Miss a Review</h2>
-      <p style="color: var(--muted); margin-bottom: 24px; font-size: 18px;">Get notified when we publish new reviews and buying guides for the latest EarFun products.</p>
-      <button class="cta-btn" onclick="window.location.href='reviews.html'" style="margin-right: 12px;">Browse All Reviews</button>
-      <button class="cta-btn" onclick="window.location.href='contact.html'" style="background: var(--panel); color: var(--text); border: 1px solid #1a2550;">Contact Us</button>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-        <div>
-          <p style="margin: 0;">© 2024 EarFun Audio Review Blog. All rights reserved.</p>
-          <p style="margin: 4px 0 0; font-size: 12px;">Independent reviews and recommendations for EarFun audio products.</p>
+          <button class="cta-btn" onclick="window.location.href='earfun-wave-pro.html'">Read Review</button>
         </div>
-        <div style="display: flex; gap: 20px;">
-          <a href="reviews.html">Reviews</a>
-          <a href="best/">Best Of</a>
-          <a href="contact.html">Contact</a>
-          <a href="for-brands.html">For Brands</a>
+
+        <!-- EarFun UBoom X (using new uploaded image) -->
+        <div class="product-card">
+          <img src="assets/861jmbhfuewcwetfhkg.jpg" alt="EarFun UBoom X portable Bluetooth speaker with powerful sound and rugged design" class="product-image" style="width: 100%; max-width: 250px; height: 200px; object-fit: cover; border-radius: 8px; display: block; margin: 0 auto;">
+          <h3>EarFun UBoom X</h3>
+          <p class="price">$89.99</p>
+          <p class="description">Powerful portable speaker with 360° sound, waterproof design, and impressive battery life.</p>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.9/5</span>
+          </div>
+          <button class="cta-btn" onclick="window.location.href='earfun-uboom-x.html'">Read Review</button>
+        </div>
+
+        <!-- EarFun Air Pro 3 Special -->
+        <div class="product-card">
+          <img src="assets/earfun-air-pro-3.jpg" alt="EarFun Air Pro 3 wireless earbuds showcasing premium build quality and ergonomic design" class="product-image" style="width: 100%; max-width: 250px; height: 200px; object-fit: cover; border-radius: 8px; display: block; margin: 0 auto;">
+          <h3>EarFun Air Pro 3 Special</h3>
+          <p class="price">$69.99</p>
+          <p class="description">Special edition with enhanced features and premium packaging for audiophiles.</p>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">4.7/5</span>
+          </div>
+          <button class="cta-btn" onclick="window.location.href='earfun-air-pro-3.html'">Read Review</button>
         </div>
       </div>
-    </footer>
+    </section>
+
+    <!-- Reviews Summary -->
+    <section class="reviews-summary">
+      <h2>Why Trust Our Reviews?</h2>
+      <div class="review-features">
+        <div class="feature">
+          <h3>🎧 Expert Testing</h3>
+          <p>Every product is thoroughly tested by audio professionals with years of experience in the industry.</p>
+        </div>
+        <div class="feature">
+          <h3>🔍 Detailed Analysis</h3>
+          <p>We provide comprehensive reviews covering sound quality, build, comfort, and value for money.</p>
+        </div>
+        <div class="feature">
+          <h3>💯 Unbiased Opinions</h3>
+          <p>Our reviews are completely independent and honest, helping you make informed purchasing decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <h2>Ready to Find Your Perfect Audio Companion?</h2>
+      <p>Browse our comprehensive reviews and buying guides to discover the best EarFun products for your needs.</p>
+      <div class="cta-buttons">
+        <button class="cta-btn primary" onclick="window.location.href='reviews.html'">Browse All Reviews</button>
+        <button class="cta-btn secondary" onclick="window.location.href='contact.html'" style="background: var(--panel); color: var(--text); border: 1px solid #1a2550;">Contact Us</button>
+      </div>
+    </section>
   </div>
-  
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <p style="margin: 0;">© 2024 EarFun Audio Review Blog. All rights reserved.</p>
+        <p style="margin: 4px 0 0; font-size: 12px;">Independent reviews and recommendations for EarFun audio products.</p>
+      </div>
+      <div style="display: flex; gap: 20px;">
+        <a href="reviews.html">Reviews</a>
+        <a href="best/">Best Of</a>
+        <a href="contact.html">Contact</a>
+        <a href="for-brands.html">For Brands</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
