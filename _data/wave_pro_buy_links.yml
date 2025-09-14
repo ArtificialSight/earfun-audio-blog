@@ -1,0 +1,8 @@
+- name: Amazon
+  link: "https://www.amazon.com/dp/REPLACE_WAVE?tag=your-aff-id"
+  price: "49.99"
+  status: "In Stock"
+- name: EarFun Official
+  link: "https://www.earfun.com/products/wave-pro?aff_id=YOUR_ID"
+  price: "49.99"
+  status: "In Stock"
