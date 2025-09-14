@@ -1,0 +1,396 @@
+<!-- Enhanced FAQ Section with Rich Snippets Schema -->
+<!-- Optimized for SEO, accessibility, and affiliate conversion -->
+
+{% comment %}
+Usage: {% include enhanced-faq-section.html faqs=page.faqs product=page.product %}
+{% endcomment %}
+
+<section class="faq-section" id="faq">
+  <div class="faq-header">
+    <h2>Frequently Asked Questions</h2>
+    {% if include.product %}
+    <p class="faq-subtitle">Everything you need to know about {{ include.product }}</p>
+    {% else %}
+    <p class="faq-subtitle">Common questions about EarFun audio products</p>
+    {% endif %}
+  </div>
+  
+  <!-- FAQ Accordion with proper semantics -->
+  <div class="faq-accordion" role="tablist" aria-label="Frequently Asked Questions">
+    {% assign faq_data = include.faqs | default: site.data.default_faqs %}
+    {% for faq in faq_data limit:10 %}
+    <div class="faq-item">
+      <h3>
+        <button 
+          class="faq-question" 
+          type="button" 
+          role="tab"
+          aria-expanded="false"
+          aria-controls="faq-answer-{{ forloop.index }}"
+          id="faq-button-{{ forloop.index }}"
+          onclick="toggleFAQ({{ forloop.index }})"
+        >
+          <span class="question-text">{{ faq.question }}</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </h3>
+      
+      <div 
+        class="faq-answer" 
+        role="tabpanel"
+        id="faq-answer-{{ forloop.index }}"
+        aria-labelledby="faq-button-{{ forloop.index }}"
+        hidden
+      >
+        <div class="faq-content">
+          {{ faq.answer | markdownify }}
+          
+          {% if faq.affiliate_link and faq.product_name %}
+          <!-- Conversion-focused CTA within relevant FAQs -->
+          <div class="faq-cta">
+            <a href="{{ faq.affiliate_link }}" 
+               class="btn btn-outline btn-sm" 
+               target="_blank" 
+               rel="nofollow sponsored"
+               onclick="trackFAQClick('{{ faq.product_name }}', '{{ faq.question | truncate: 50, '' }}')">
+              🛍shopping Learn More About {{ faq.product_name }}
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <!-- "Still have questions?" CTA -->
+  <div class="faq-contact">
+    <h3>Still have questions?</h3>
+    <p>We're here to help you find the perfect EarFun audio products.</p>
+    <div class="contact-options">
+      <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Contact Us</a>
+      <a href="{{ '/guides/choosing-earbuds' | relative_url }}" class="btn btn-outline">Buying Guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Rich Snippets Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in faq_data limit:10 %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer | strip_html | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<!-- FAQ Accordion JavaScript -->
+<script>
+function toggleFAQ(index) {
+  const button = document.getElementById(`faq-button-${index}`);
+  const answer = document.getElementById(`faq-answer-${index}`);
+  const icon = button.querySelector('.faq-icon');
+  
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  
+  // Close all other FAQs
+  document.querySelectorAll('.faq-question').forEach((btn, i) => {
+    if (i + 1 !== index) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('active');
+      document.getElementById(`faq-answer-${i + 1}`).hidden = true;
+      btn.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+    }
+  });
+  
+  // Toggle current FAQ
+  if (isExpanded) {
+    button.setAttribute('aria-expanded', 'false');
+    button.classList.remove('active');
+    answer.hidden = true;
+    icon.style.transform = 'rotate(0deg)';
+  } else {
+    button.setAttribute('aria-expanded', 'true');
+    button.classList.add('active');
+    answer.hidden = false;
+    icon.style.transform = 'rotate(180deg)';
+    
+    // Track FAQ open for analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'faq_opened', {
+        'event_category': 'engagement',
+        'event_label': button.querySelector('.question-text').textContent.slice(0, 50)
+      });
+    }
+  }
+}
+
+// Track FAQ CTA clicks
+function trackFAQClick(product, question) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'faq_cta_click', {
+      'event_category': 'conversion',
+      'event_label': product,
+      'custom_parameter': question
+    });
+  }
+}
+
+// Keyboard navigation support
+document.addEventListener('keydown', function(e) {
+  if (e.target.classList.contains('faq-question')) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      e.target.click();
+    }
+  }
+});
+</script>
+
+<!-- FAQ Styles -->
+<style>
+.faq-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.faq-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+  background: #f8fafc;
+}
+
+.faq-question.active {
+  background: #eff6ff;
+  color: #1e40af;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.question-text {
+  flex: 1;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.faq-icon {
+  margin-left: 1rem;
+  color: #64748b;
+  transition: transform 0.3s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faq-question.active .faq-icon {
+  color: #1e40af;
+}
+
+.faq-answer {
+  background: white;
+}
+
+.faq-content {
+  padding: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.faq-content p {
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.faq-content ul, .faq-content ol {
+  color: #374151;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-content li {
+  margin-bottom: 0.5rem;
+}
+
+.faq-cta {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.faq-contact {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.faq-contact h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.faq-contact p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.contact-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #1e40af;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1e3a8a;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+}
+
+.btn-outline:hover {
+  background: #1e40af;
+  color: white;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .faq-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .faq-question {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .faq-content {
+    padding: 1rem;
+  }
+  
+  .contact-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
+
+/* Focus styles for accessibility */
+.faq-question:focus {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
+}
+
+/* Loading animation for dynamic content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-item {
+  animation: fadeIn 0.3s ease-out;
+}
+</style>
