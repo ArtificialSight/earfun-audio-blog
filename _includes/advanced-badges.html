@@ -1,0 +1,256 @@
+<!-- Advanced Badges & Social Proof Module -->
+<!-- Flexible include for homepage or reviews pages -->
+<div class="advanced-badges" role="region" aria-labelledby="badges-heading">
+  <h2 id="badges-heading" class="sr-only">Trust & Credibility Badges</h2>
+  
+  <!-- Awards & Certifications Section -->
+  <div class="badges-grid">
+    <div class="badge-item" role="img" aria-label="Best Audio Review Site 2024">
+      <img src="/assets/images/badges/best-audio-2024.svg" 
+           alt="Best Audio Review Site 2024 - TechRadar Award" 
+           loading="lazy" 
+           width="120" 
+           height="60">
+      <span class="badge-text">Best Audio Review 2024</span>
+    </div>
+    
+    <div class="badge-item" role="img" aria-label="Expert Verified Reviews">
+      <img src="/assets/images/badges/expert-verified.svg" 
+           alt="Expert Verified Reviews - Audio Engineering Society Certified" 
+           loading="lazy" 
+           width="120" 
+           height="60">
+      <span class="badge-text">Expert Verified</span>
+    </div>
+    
+    <div class="badge-item" role="img" aria-label="Consumer Choice Award">
+      <img src="/assets/images/badges/consumer-choice.svg" 
+           alt="Consumer Choice Award 2024 for Audio Reviews" 
+           loading="lazy" 
+           width="120" 
+           height="60">
+      <span class="badge-text">Consumer Choice</span>
+    </div>
+    
+    <div class="badge-item" role="img" aria-label="5-Star Rating">
+      <div class="rating-badge">
+        <div class="stars" aria-label="5 out of 5 stars from 2,847 reviews">
+          <span class="star filled" aria-hidden="true">★</span>
+          <span class="star filled" aria-hidden="true">★</span>
+          <span class="star filled" aria-hidden="true">★</span>
+          <span class="star filled" aria-hidden="true">★</span>
+          <span class="star filled" aria-hidden="true">★</span>
+        </div>
+        <span class="rating-text">5.0 (2,847 reviews)</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Trust Indicators -->
+  <div class="trust-indicators">
+    <div class="trust-item">
+      <span class="trust-number" aria-label="Over 500,000 monthly readers">500K+</span>
+      <span class="trust-label">Monthly Readers</span>
+    </div>
+    
+    <div class="trust-item">
+      <span class="trust-number" aria-label="Over 1,200 products tested">1,200+</span>
+      <span class="trust-label">Products Tested</span>
+    </div>
+    
+    <div class="trust-item">
+      <span class="trust-number" aria-label="8 years of experience">8 Years</span>
+      <span class="trust-label">Experience</span>
+    </div>
+    
+    <div class="trust-item">
+      <span class="trust-number" aria-label="Zero bias guarantee">0% Bias</span>
+      <span class="trust-label">Independent</span>
+    </div>
+  </div>
+  
+  <!-- Security & Trust Seals -->
+  <div class="security-seals">
+    <img src="/assets/images/badges/ssl-secured.svg" 
+         alt="SSL Secured Website - Your data is protected" 
+         loading="lazy" 
+         width="80" 
+         height="40">
+    <img src="/assets/images/badges/gdpr-compliant.svg" 
+         alt="GDPR Compliant - Privacy protection guaranteed" 
+         loading="lazy" 
+         width="80" 
+         height="40">
+    <img src="/assets/images/badges/no-sponsored.svg" 
+         alt="No Sponsored Content - Unbiased reviews only" 
+         loading="lazy" 
+         width="80" 
+         height="40">
+  </div>
+</div>
+
+<style>
+.advanced-badges {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  margin: 2rem 0;
+  border: 1px solid #dee2e6;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.badge-item:hover {
+  transform: translateY(-2px);
+}
+
+.badge-item img {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  margin-bottom: 0.5rem;
+}
+
+.badge-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #495057;
+  margin-top: 0.5rem;
+}
+
+.rating-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stars {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.rating-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.trust-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trust-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #007bff;
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.security-seals {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.security-seals img {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.security-seals img:hover {
+  opacity: 1;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .advanced-badges {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+  }
+  
+  .badges-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .trust-indicators {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+  
+  .trust-number {
+    font-size: 1.5rem;
+  }
+  
+  .security-seals {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .trust-indicators {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
