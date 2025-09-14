@@ -1,61 +1,93 @@
 <!-- Social Proof & Trust Badges Component -->
-<!-- Optimized for affiliate credibility, conversion, and accessibility -->
+<!-- Improved with authentic badge sources and fallback handling -->
 {% comment %}
 Usage: {% include social-proof-badges.html type="homepage" %}
 Types: homepage, review, product
 {% endcomment %}
 
-<section class="social-proof-section" aria-label="Trust badges and credibility indicators" role="complementary">
+<section aria-label="Trust badges and credibility indicators" class="social-proof-section" role="complementary">
   {% if include.type == 'homepage' or include.type == 'product' %}
   <!-- Trust Badges Bar -->
-  <div class="trust-badges" role="list" aria-label="Quality and trust certifications">
+  <div aria-label="Quality and trust certifications" class="trust-badges" role="list">
+    <!-- SSL/Security Badge -->
     <div class="badge-item" role="listitem">
-      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="9 12L11 14L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <div class="badge-icon-wrapper">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/ssl.svg" 
+             alt="SSL Secured" 
+             class="badge-icon-img" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+             loading="lazy">
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24" style="display:none;">
+          <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <path d="9 12L11 14L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
+      <span class="badge-text">SSL Secured</span>
+    </div>
+    
+    <!-- Trustpilot/Review Badge -->
+    <div class="badge-item" role="listitem">
+      <div class="badge-icon-wrapper">
+        <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-white.svg" 
+             alt="Trustpilot Reviews" 
+             class="badge-icon-img" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+             loading="lazy">
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24" style="display:none;">
+          <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
       <span class="badge-text">Verified Reviews</span>
     </div>
     
+    <!-- Money-Back Guarantee -->
     <div class="badge-item" role="listitem">
-      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.7088 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4905 2.02168 11.3363C2.16356 9.18209 2.99721 7.13214 4.39828 5.49688C5.79935 3.86162 7.69279 2.72851 9.79619 2.24721C11.8996 1.7659 14.1003 1.95918 16.07 2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="badge-text">Expert Tested</span>
+      <div class="badge-icon-wrapper">
+        <svg aria-hidden="true" class="badge-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+          <path d="M12 6V12L16 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
+      <span class="badge-text">30-Day Guarantee</span>
     </div>
     
+    <!-- Secure Payment -->
     <div class="badge-item" role="listitem">
-      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="badge-text">5-Star Rated</span>
-    </div>
-    
-    <div class="badge-item" role="listitem">
-      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path d="M9 12L2 5L5 2L12 9L19 2L22 5L15 12L22 19L19 22L12 15L5 22L2 19L9 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="badge-text">Secure Shopping</span>
+      <div class="badge-icon-wrapper">
+        <img src="https://js.stripe.com/v3/fingerprinted/img/payment-method-icons/card-2x.png" 
+             alt="Secure Payment" 
+             class="badge-icon-img payment-icon" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+             loading="lazy">
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24" style="display:none;">
+          <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"></rect>
+          <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"></line>
+        </svg>
+      </div>
+      <span class="badge-text">Secure Payment</span>
     </div>
   </div>
   {% endif %}
   
   {% if include.type == 'review' %}
   <!-- Review-specific badges -->
-  <div class="review-badges" role="list" aria-label="Review credibility indicators">
+  <div aria-label="Review credibility indicators" class="review-badges" role="list">
     <div class="badge-item" role="listitem">
-      <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="9 12L11 14L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <div class="badge-icon-wrapper">
+        <svg aria-hidden="true" class="badge-icon" fill="none" focusable="false" height="20" viewBox="0 0 24 24" width="20">
+          <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <path d="9 12L11 14L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
       <span class="badge-text">Verified Purchase</span>
     </div>
     
     <div class="badge-item" role="listitem">
-      <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <div class="badge-icon-wrapper">
+        <svg aria-hidden="true" class="badge-icon" fill="none" focusable="false" height="20" viewBox="0 0 24 24" width="20">
+          <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
       <span class="badge-text">Real User</span>
     </div>
   </div>
@@ -100,9 +132,33 @@ Types: homepage, review, product
   border-color: #dee2e6;
 }
 
-.badge-icon {
+.badge-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.badge-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(0.3);
+}
+
+.badge-icon-img.payment-icon {
+  width: 28px;
+  height: auto;
+  filter: none;
+}
+
+.badge-icon,
+.fallback-icon {
   flex-shrink: 0;
   color: #28a745;
+  width: 24px;
+  height: 24px;
 }
 
 .badge-text {
@@ -118,8 +174,13 @@ Types: homepage, review, product
     color: #000000;
   }
   
-  .badge-icon {
+  .badge-icon,
+  .fallback-icon {
     color: #000000;
+  }
+  
+  .badge-icon-img {
+    filter: brightness(0) invert(1);
   }
 }
 
@@ -163,6 +224,24 @@ Types: homepage, review, product
 @media (prefers-reduced-motion: reduce) {
   .badge-item {
     transition: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .badge-item {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #f8f9fa;
+  }
+  
+  .badge-item:hover {
+    background-color: #495057;
+    border-color: #6c757d;
+  }
+  
+  .badge-icon-img {
+    filter: brightness(0) invert(0.8);
   }
 }
 </style>
