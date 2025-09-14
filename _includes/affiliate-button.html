@@ -1,0 +1,8 @@
+<div class="affiliate-cta">
+  <a href="{{ include.link }}" class="btn btn-primary btn-lg" target="_blank" rel="nofollow sponsored">
+    Buy {{ include.product }} – ${{ include.price }}
+  </a>
+  {% if include.deal-text %}
+    <p class="deal-note">{{ include.deal-text }}</p>
+  {% endif %}
+</div>
