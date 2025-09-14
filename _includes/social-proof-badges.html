@@ -1,5 +1,5 @@
 <!-- Social Proof & Trust Badges Component -->
-<!-- Improved with authentic badge sources and fallback handling -->
+<!-- Updated to use uploaded asset image with proper fallbacks -->
 {% comment %}
 Usage: {% include social-proof-badges.html type="homepage" %}
 Types: homepage, review, product
@@ -12,28 +12,28 @@ Types: homepage, review, product
     <!-- SSL/Security Badge -->
     <div class="badge-item" role="listitem">
       <div class="badge-icon-wrapper">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/ssl.svg" 
-             alt="SSL Secured" 
+        <img src="/assets/109ryeuh1e4ffsumekj.jpg" 
+             alt="Professional Audio Review Badge - Verified by experts" 
              class="badge-icon-img" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
              loading="lazy">
-        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24" style="display:none;">
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" style="display:none;" viewBox="0 0 24 24" width="24">
           <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
           <path d="9 12L11 14L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
         </svg>
       </div>
-      <span class="badge-text">SSL Secured</span>
+      <span class="badge-text">Expert Verified</span>
     </div>
     
     <!-- Trustpilot/Review Badge -->
     <div class="badge-item" role="listitem">
       <div class="badge-icon-wrapper">
-        <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-white.svg" 
-             alt="Trustpilot Reviews" 
+        <img src="/assets/109ryeuh1e4ffsumekj.jpg" 
+             alt="Trusted Reviews Badge - Real user testimonials" 
              class="badge-icon-img" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
              loading="lazy">
-        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24" style="display:none;">
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" style="display:none;" viewBox="0 0 24 24" width="24">
           <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
         </svg>
       </div>
@@ -54,14 +54,14 @@ Types: homepage, review, product
     <!-- Secure Payment -->
     <div class="badge-item" role="listitem">
       <div class="badge-icon-wrapper">
-        <img src="https://js.stripe.com/v3/fingerprinted/img/payment-method-icons/card-2x.png" 
-             alt="Secure Payment" 
+        <img src="/assets/109ryeuh1e4ffsumekj.jpg" 
+             alt="Secure Payment Processing - Safe transactions" 
              class="badge-icon-img payment-icon" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
              loading="lazy">
-        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" viewBox="0 0 24 24" width="24" style="display:none;">
-          <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"></rect>
-          <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"></line>
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="24" style="display:none;" viewBox="0 0 24 24" width="24">
+          <rect height="14" rx="2" stroke="currentColor" stroke-width="2" width="20" x="2" y="5"></rect>
+          <line stroke="currentColor" stroke-width="2" x1="2" x2="22" y1="10" y2="10"></line>
         </svg>
       </div>
       <span class="badge-text">Secure Payment</span>
@@ -74,7 +74,12 @@ Types: homepage, review, product
   <div aria-label="Review credibility indicators" class="review-badges" role="list">
     <div class="badge-item" role="listitem">
       <div class="badge-icon-wrapper">
-        <svg aria-hidden="true" class="badge-icon" fill="none" focusable="false" height="20" viewBox="0 0 24 24" width="20">
+        <img src="/assets/109ryeuh1e4ffsumekj.jpg" 
+             alt="Verified Purchase Badge - Authentic user review" 
+             class="badge-icon-img" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+             loading="lazy">
+        <svg aria-hidden="true" class="badge-icon fallback-icon" fill="none" focusable="false" height="20" style="display:none;" viewBox="0 0 24 24" width="20">
           <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
           <path d="9 12L11 14L16 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
         </svg>
@@ -144,7 +149,8 @@ Types: homepage, review, product
   width: 24px;
   height: 24px;
   object-fit: contain;
-  filter: brightness(0) invert(0.3);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .badge-icon-img.payment-icon {
@@ -180,7 +186,7 @@ Types: homepage, review, product
   }
   
   .badge-icon-img {
-    filter: brightness(0) invert(1);
+    filter: contrast(1.2);
   }
 }
 
@@ -241,7 +247,7 @@ Types: homepage, review, product
   }
   
   .badge-icon-img {
-    filter: brightness(0) invert(0.8);
+    filter: brightness(0.9) contrast(1.1);
   }
 }
 </style>
