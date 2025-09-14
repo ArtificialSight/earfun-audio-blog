@@ -1,0 +1,224 @@
+<!-- Interactive Comparison Table Include -->
+{% assign products_array = include.products | split: '[' | last | split: ']' | first | split: ',' %}
+
+<div class="comparison-table-container" role="region" aria-label="Product Comparison Table">
+  <style>
+    .comparison-table-container {
+      margin: 2rem 0;
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 2px;
+    }
+    
+    .comparison-table {
+      width: 100%;
+      min-width: 800px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+      position: relative;
+    }
+    
+    .comparison-table th {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .comparison-table td {
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
+    }
+    
+    .comparison-table tr:hover td {
+      background-color: #f8fafc;
+    }
+    
+    .product-highlight {
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%) !important;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .product-highlight::after {
+      content: '⭐ RECOMMENDED';
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #e74c3c;
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-weight: 500;
+      transform: rotate(15deg);
+    }
+    
+    .price-cell {
+      font-weight: 700;
+      color: #2d3748;
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: #a0aec0;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+    
+    .sale-price {
+      color: #e53e3e;
+      font-weight: 700;
+    }
+    
+    .rating-cell {
+      color: #f6ad55;
+      font-size: 1.1rem;
+    }
+    
+    .feature-yes {
+      color: #38a169;
+      font-weight: 600;
+    }
+    
+    .feature-no {
+      color: #e53e3e;
+      font-weight: 600;
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+      text-decoration: none;
+      color: white;
+    }
+    
+    .cta-button:focus {
+      outline: 3px solid #667eea;
+      outline-offset: 2px;
+    }
+    
+    .pros-list {
+      text-align: left;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: #4a5568;
+    }
+    
+    .pros-list li {
+      margin-bottom: 0.25rem;
+    }
+    
+    @media (max-width: 768px) {
+      .comparison-table-container {
+        margin: 1rem -1rem;
+      }
+      
+      .comparison-table th,
+      .comparison-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+      }
+      
+      .cta-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+  
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th scope="col">Model</th>
+        <th scope="col">Price</th>
+        <th scope="col">Driver Size</th>
+        <th scope="col">ANC</th>
+        <th scope="col">Battery Life</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Water Resistance</th>
+        <th scope="col">Multipoint</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Key Features</th>
+        <th scope="col">Buy Now</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product_json in include.products %}
+        {% assign product = product_json %}
+        <tr>
+          <td class="{% if product.highlight == 'true' %}product-highlight{% endif %}">
+            <strong>{{ product.name }}</strong>
+          </td>
+          <td class="price-cell">
+            {% if product.original_price %}
+              <span class="original-price">{{ product.original_price }}</span>
+            {% endif %}
+            <span class="{% if product.original_price %}sale-price{% endif %}">{{ product.price }}</span>
+          </td>
+          <td>{{ product.driver_size }}</td>
+          <td class="{% if product.anc contains 'Yes' or product.anc contains 'Adaptive' %}feature-yes{% else %}feature-no{% endif %}">
+            {{ product.anc }}
+          </td>
+          <td>{{ product.battery }}</td>
+          <td>{{ product.weight }}</td>
+          <td>{{ product.water_resistance }}</td>
+          <td class="{% if product.multipoint == 'Yes' %}feature-yes{% else %}feature-no{% endif %}">
+            {{ product.multipoint }}
+          </td>
+          <td class="rating-cell">{{ product.rating }}</td>
+          <td class="pros-list">
+            <ul style="margin: 0; padding-left: 1rem; list-style: none;">
+              {% for pro in product.pros %}
+                <li>✓ {{ pro }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+          <td>
+            <a href="{{ product.link }}" 
+               class="cta-button" 
+               target="_blank" 
+               rel="nofollow sponsored"
+               aria-label="Buy {{ product.name }} now">
+              🛒 Buy Now
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Accessibility improvements -->
+<div class="sr-only">
+  <h3>Comparison Table Summary</h3>
+  <p>This table compares different EarFun earbud models across key features including price, specifications, and ratings. Each row represents a different model with purchase links provided.</p>
+</div>
