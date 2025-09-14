@@ -1,0 +1,285 @@
+<!-- Related Products Component -->
+<div class="related-products" role="region" aria-labelledby="related-products-heading">
+  <h3 id="related-products-heading">🔍 Similar Products You Might Like</h3>
+  
+  <div class="products-grid" role="list" aria-label="Related products recommendations">
+    {% assign products_array = include.products | jsonify | split: '[' | last | split: ']' | first %}
+    {% assign products = products_array | split: '},' %}
+    
+    {% for product_data in products %}
+      {% assign product = product_data | append: '}' | strip %}
+      {% if product contains '{' %}
+        {% assign name = product | split: '"name":"' | last | split: '"' | first %}
+        {% assign price = product | split: '"price":"' | last | split: '"' | first %}
+        {% assign link = product | split: '"link":"' | last | split: '"' | first %}
+        {% assign reason = product | split: '"reason":"' | last | split: '"' | first %}
+        {% assign rating = product | split: '"rating":"' | last | split: '"' | first %}
+        {% assign image = product | split: '"image":"' | last | split: '"' | first %}
+        
+        <article class="product-card" role="listitem">
+          {% if image and image != '' %}
+            <div class="product-image">
+              <img src="{{ image | relative_url }}" 
+                   alt="{{ name }}" 
+                   loading="lazy"
+                   width="150"
+                   height="150">
+            </div>
+          {% endif %}
+          
+          <div class="product-info">
+            <h4 class="product-name">
+              <a href="{{ link | relative_url }}" 
+                 class="product-link"
+                 aria-label="Read review of {{ name }}">
+                {{ name }}
+              </a>
+            </h4>
+            
+            {% if rating and rating != '' %}
+              <div class="product-rating" aria-label="Rating {{ rating }} stars">
+                <span class="stars" aria-hidden="true">{{ rating }}</span>
+                <span class="sr-only">{{ rating }} out of 5 stars</span>
+              </div>
+            {% endif %}
+            
+            {% if price and price != '' %}
+              <div class="product-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-amount">{{ price }}</span>
+              </div>
+            {% endif %}
+            
+            {% if reason and reason != '' %}
+              <p class="recommendation-reason">
+                <span class="reason-icon" aria-hidden="true">💡</span>
+                {{ reason }}
+              </p>
+            {% endif %}
+            
+            <div class="product-actions">
+              <a href="{{ link | relative_url }}" 
+                 class="btn btn-outline btn-sm"
+                 aria-label="Read full review of {{ name }}">
+                Read Review
+              </a>
+            </div>
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+  <div class="related-footer">
+    <p class="browse-more">
+      <span aria-hidden="true">📂</span>
+      Looking for more options? Browse our 
+      <a href="/reviews/" class="browse-link">complete reviews</a> or 
+      <a href="/best/" class="browse-link">best-of lists</a>.
+    </p>
+  </div>
+</div>
+
+<!-- CSS for Related Products styling -->
+<style>
+.related-products {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.related-products h3 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.product-image img {
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.product-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.product-link:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.product-rating {
+  margin-bottom: 0.75rem;
+  color: #ffc107;
+  font-size: 1rem;
+}
+
+.product-price {
+  margin-bottom: 1rem;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  display: block;
+}
+
+.price-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.recommendation-reason {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #1565c0;
+}
+
+.reason-icon {
+  margin-right: 0.5rem;
+}
+
+.product-actions {
+  margin-top: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-outline:hover {
+  background: #007bff;
+  color: white;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.related-footer {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.browse-more {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.browse-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.browse-link:hover {
+  text-decoration: underline;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .related-products {
+    padding: 1.5rem 1rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .product-card {
+    padding: 1rem;
+  }
+  
+  .related-products h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .related-products {
+    margin: 2rem -1rem;
+    border-radius: 0;
+  }
+}
+</style>
