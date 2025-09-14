@@ -1,8 +1,165 @@
-<div class="affiliate-cta">
-  <a href="{{ include.link }}" class="btn btn-primary btn-lg" target="_blank" rel="nofollow sponsored">
-    Buy {{ include.product }} – ${{ include.price }}
+<!-- Enhanced Affiliate Button Component with Accessibility & SEO -->
+<div class="affiliate-cta" role="region" aria-label="Purchase option">
+  <a class="btn btn-primary btn-lg affiliate-btn" 
+     href="{{ include.link }}" 
+     rel="nofollow sponsored" 
+     target="_blank"
+     aria-label="Buy {{ include.product }} for ${{ include.price }} - Opens in new tab"
+     data-product="{{ include.product }}"
+     data-price="{{ include.price }}">
+    <span class="btn-icon" aria-hidden="true">🛒</span>
+    <span class="btn-text">
+      Buy {{ include.product }}
+      {% if include.price %}
+        <span class="price">– ${{ include.price }}</span>
+      {% endif %}
+    </span>
   </a>
+  
   {% if include.deal-text %}
-    <p class="deal-note">{{ include.deal-text }}</p>
+    <p class="deal-note" role="note" aria-label="Special offer">
+      <span class="deal-icon" aria-hidden="true">⚡</span>
+      {{ include.deal-text }}
+    </p>
+  {% endif %}
+  
+  {% if include.savings %}
+    <p class="savings-badge" role="note" aria-label="Savings amount">
+      <span class="savings-text">Save {{ include.savings }}</span>
+    </p>
   {% endif %}
 </div>
+
+<!-- Enhanced Styling -->
+<style>
+.affiliate-cta {
+  margin: 1.5rem 0;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.affiliate-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.affiliate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.affiliate-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: scale(1.02);
+  text-decoration: none;
+  color: white;
+}
+
+.affiliate-btn:focus {
+  outline: 3px solid #80bdff;
+  outline-offset: 2px;
+}
+
+.btn-icon {
+  font-size: 1.1em;
+}
+
+.price {
+  font-weight: 700;
+  color: #28a745;
+}
+
+.deal-note {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.savings-badge {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  display: inline-block;
+  background: linear-gradient(90deg, #d4edda, #c3e6cb);
+  color: #155724;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.deal-icon,
+.savings-text {
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .affiliate-cta {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .affiliate-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .deal-note {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .affiliate-btn {
+    border: 2px solid currentColor;
+  }
+  
+  .deal-note {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .affiliate-cta,
+  .affiliate-btn {
+    transition: none;
+  }
+  
+  .affiliate-cta:hover {
+    transform: none;
+  }
+  
+  .affiliate-btn:hover {
+    transform: none;
+  }
+}
+</style>
