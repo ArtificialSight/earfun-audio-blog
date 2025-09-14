@@ -5,6 +5,16 @@ description: Discover the best EarFun earbuds, headphones, and speakers with exp
 keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
 ---
 
+<!-- Deal Alert Box -->
+{% include deal-alert.html 
+   title="🔥 Limited Time Deal Alert" 
+   product="EarFun Air Pro 4" 
+   original_price="$79.99" 
+   sale_price="$59.99" 
+   savings="$20 OFF" 
+   link="https://amzn.to/earfun-air-pro-4" 
+   urgency="Ends in 24 hours!" %}
+
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
@@ -15,6 +25,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
     <div class="cta-buttons">
       <a class="cta-btn primary" href="{{ '/reviews/' | relative_url }}">View Reviews</a>
       <a class="cta-btn secondary" href="{{ '/best/' | relative_url }}">Best Products</a>
+      <a class="cta-btn deals" href="{{ '/deals/' | relative_url }}">🔥 Hot Deals</a>
     </div>
   </div>
 </section>
@@ -35,6 +46,11 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
         <li>• Multipoint Bluetooth connection</li>
       </ul>
       <a class="cta-btn" href="{{ '/reviews/earfun-air-pro-3/' | relative_url }}">Read Review</a>
+      {% include affiliate-button.html 
+         product="EarFun Air Pro 3" 
+         price="79.99" 
+         link="https://amzn.to/earfun-air-pro-3" 
+         deal-text="Best Price Found" %}
     </div>
     
     <!-- Wave Pro -->
@@ -49,11 +65,16 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
         <li>• Memory foam ear cushions</li>
       </ul>
       <a class="cta-btn" href="{{ '/reviews/earfun-wave-pro/' | relative_url }}">Read Review</a>
+      {% include affiliate-button.html 
+         product="EarFun Wave Pro" 
+         price="49.99" 
+         link="https://amzn.to/earfun-wave-pro" 
+         deal-text="Great Value Pick" %}
     </div>
     
     <!-- UBoom X -->
     <div class="review-card">
-      <img src="{{ '/assets/earfun-uboom-x.svg' | relative_url }}" alt="EarFun UBoom X portable Bluetooth speaker" class="review-image"/>
+      <img src="{{ '/assets/earfun-uboom-x.jpg' | relative_url }}" alt="EarFun UBoom X portable Bluetooth speaker" class="review-image"/>
       <h3>EarFun UBoom X</h3>
       <div class="review-rating"><span class="stars">★★★★★</span> 4.9/5</div>
       <div class="review-price">$89.99</div>
@@ -63,11 +84,16 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
         <li>• Rugged, portable design</li>
       </ul>
       <a class="cta-btn" href="{{ '/reviews/earfun-uboom-x/' | relative_url }}">Read Review</a>
+      {% include affiliate-button.html 
+         product="EarFun UBoom X" 
+         price="89.99" 
+         link="https://amzn.to/earfun-uboom-x" 
+         deal-text="Editor's Choice" %}
     </div>
     
     <!-- Tune Pro -->
     <div class="review-card">
-      <img src="{{ '/assets/289vccpbqag.png' | relative_url }}" alt="EarFun Tune Pro true wireless earbuds" class="review-image"/>
+      <img src="{{ '/assets/earfun-tune-pro.jpg' | relative_url }}" alt="EarFun Tune Pro true wireless earbuds" class="review-image"/>
       <h3>EarFun Tune Pro</h3>
       <div class="review-rating"><span class="stars">★★★★☆</span> 4.5/5</div>
       <div class="review-price">$39.99</div>
@@ -77,6 +103,11 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
         <li>• Compact charging case</li>
       </ul>
       <a class="cta-btn" href="{{ '/reviews/earfun-tune-pro/' | relative_url }}">Read Review</a>
+      {% include affiliate-button.html 
+         product="EarFun Tune Pro" 
+         price="39.99" 
+         link="https://amzn.to/earfun-tune-pro" 
+         deal-text="Budget Best Pick" %}
     </div>
   </div>
 </section>
@@ -94,6 +125,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
           <th>Waterproof</th>
           <th>Rating</th>
           <th>Price</th>
+          <th>Buy Now</th>
         </tr>
       </thead>
       <tbody>
@@ -104,6 +136,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
           <td>IPX5</td>
           <td>4.8/5</td>
           <td>$79.99</td>
+          <td><a href="https://amzn.to/earfun-air-pro-3" rel="nofollow sponsored" target="_blank" class="buy-link">Buy Now</a></td>
         </tr>
         <tr>
           <td>Wave Pro</td>
@@ -112,6 +145,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
           <td>—</td>
           <td>4.6/5</td>
           <td>$49.99</td>
+          <td><a href="https://amzn.to/earfun-wave-pro" rel="nofollow sponsored" target="_blank" class="buy-link">Buy Now</a></td>
         </tr>
         <tr>
           <td>UBoom X</td>
@@ -120,6 +154,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
           <td>IPX7</td>
           <td>4.9/5</td>
           <td>$89.99</td>
+          <td><a href="https://amzn.to/earfun-uboom-x" rel="nofollow sponsored" target="_blank" class="buy-link">Buy Now</a></td>
         </tr>
         <tr>
           <td>Tune Pro</td>
@@ -128,6 +163,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
           <td>IPX7</td>
           <td>4.5/5</td>
           <td>$39.99</td>
+          <td><a href="https://amzn.to/earfun-tune-pro" rel="nofollow sponsored" target="_blank" class="buy-link">Buy Now</a></td>
         </tr>
       </tbody>
     </table>
@@ -138,22 +174,26 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
 <section class="deals" style="margin-top:2em;">
   <h2>Deals & Where to Buy</h2>
   <ul>
-    <li>• Official EarFun Store: <a href="https://www.myearfun.com/collections/earbuds" target="_blank" rel="noopener">Latest deals here</a></li>
-    <li>• Amazon: <a href="https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F" target="_blank" rel="noopener">Shop on Amazon</a></li>
+    <li>• Official EarFun Store: <a href="https://www.myearfun.com/collections/earbuds" rel="noopener" target="_blank">Latest deals here</a></li>
+    <li>• Amazon: <a href="https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F" rel="noopener" target="_blank">Shop on Amazon</a></li>
+    <li>• Best Buy: <a href="https://www.bestbuy.com/site/searchpage.jsp?st=earfun" rel="noopener" target="_blank">Best Buy Selection</a></li>
   </ul>
+  <div style="text-align: center; margin-top: 1rem;">
+    <a href="{{ '/deals/' | relative_url }}" class="cta-btn primary">🔥 View All Deals</a>
+  </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq" style="margin-top:2em;">
   <h2>Frequently Asked Questions</h2>
   <dl>
-    <dt><strong>Which EarFun earbuds are best for working out?</strong></dt>
+    <dt>Which EarFun earbuds are best for working out?</dt>
     <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
     
-    <dt><strong>Does EarFun support multipoint Bluetooth?</strong></dt>
+    <dt>Does EarFun support multipoint Bluetooth?</dt>
     <dd>Yes, select models like Air Pro 3 can connect to two devices at once.</dd>
     
-    <dt><strong>What is EarFun's warranty?</strong></dt>
+    <dt>What is EarFun's warranty?</dt>
     <dd>All official products include an 18-month warranty when purchased from authorized retailers.</dd>
   </dl>
 </section>
@@ -164,6 +204,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
   <ul>
     <li>• <a href="{{ '/guides/choosing-earbuds/' | relative_url }}">How to Choose Earbuds: Full Guide</a></li>
     <li>• <a href="{{ '/reviews/' | relative_url }}">All Reviews Archive</a></li>
+    <li>• <a href="{{ '/best/' | relative_url }}">Best EarFun Products</a></li>
   </ul>
 </section>
 
@@ -171,13 +212,16 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
 <section class="subscribe" style="margin-top:2em;">
   <h2>Don't Miss Reviews & Deals!</h2>
   <form action="#" method="post">
-    <input type="email" name="email" placeholder="Your email" required="" aria-label="Your email"/>
+    <input type="email" name="email" placeholder="Your email" required aria-label="Your email"/>
     <button type="submit" class="cta-btn primary">Subscribe</button>
   </form>
-  <p><small>No spam, only quality content. Unsubscribe at any time.</small></p>
+  <p>No spam, only quality content. Unsubscribe at any time.</p>
 </section>
 
 <section class="disclosure" style="margin-top:2em; font-size: 0.93em;">
   <h2>How We Review</h2>
   <p>Our team tests every product hands-on for weeks, evaluating sound, comfort, features, and value. We update our reviews as new software or competitors arrive to keep our readers informed with the latest and most honest recommendations.</p>
 </section>
+
+<!-- Global Affiliate Disclosure -->
+{% include affiliate-disclosure.html %}
