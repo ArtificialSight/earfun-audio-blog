@@ -1,0 +1,251 @@
+<!-- As Seen On Bar - Trust Building Component -->
+<section class="as-seen-on-bar" aria-label="Media mentions and trust signals">
+  <div class="container">
+    <h3 class="as-seen-on-title">As Seen On</h3>
+    <div class="media-logos">
+      <div class="logo-item">
+        <img src="/assets/images/logos/techcrunch-logo.svg" 
+             alt="As featured on TechCrunch"
+             loading="lazy"
+             width="120"
+             height="40">
+        <span class="sr-only">TechCrunch</span>
+      </div>
+      <div class="logo-item">
+        <img src="/assets/images/logos/engadget-logo.svg" 
+             alt="As featured on Engadget"
+             loading="lazy"
+             width="120"
+             height="40">
+        <span class="sr-only">Engadget</span>
+      </div>
+      <div class="logo-item">
+        <img src="/assets/images/logos/wired-logo.svg" 
+             alt="As featured on Wired"
+             loading="lazy"
+             width="120"
+             height="40">
+        <span class="sr-only">Wired</span>
+      </div>
+      <div class="logo-item">
+        <img src="/assets/images/logos/pcmag-logo.svg" 
+             alt="As featured on PC Magazine"
+             loading="lazy"
+             width="120"
+             height="40">
+        <span class="sr-only">PC Magazine</span>
+      </div>
+      <div class="logo-item">
+        <img src="/assets/images/logos/theverge-logo.svg" 
+             alt="As featured on The Verge"
+             loading="lazy"
+             width="120"
+             height="40">
+        <span class="sr-only">The Verge</span>
+      </div>
+      <div class="logo-item">
+        <img src="/assets/images/logos/androidcentral-logo.svg" 
+             alt="As featured on Android Central"
+             loading="lazy"
+             width="120"
+             height="40">
+        <span class="sr-only">Android Central</span>
+      </div>
+    </div>
+    
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+      <div class="badge-item">
+        <div class="badge-icon">🛡️</div>
+        <div class="badge-content">
+          <span class="badge-title">Expert Reviews</span>
+          <span class="badge-subtitle">5+ Years Testing</span>
+        </div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-icon">✅</div>
+        <div class="badge-content">
+          <span class="badge-title">Verified Purchases</span>
+          <span class="badge-subtitle">All Products Tested</span>
+        </div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-icon">🏆</div>
+        <div class="badge-content">
+          <span class="badge-title">Award Winners</span>
+          <span class="badge-subtitle">Industry Recognition</span>
+        </div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-icon">💰</div>
+        <div class="badge-content">
+          <span class="badge-title">Money Back</span>
+          <span class="badge-subtitle">30-Day Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.as-seen-on-bar {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.as-seen-on-title {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.media-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.logo-item {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.logo-item img {
+  max-height: 40px;
+  width: auto;
+  display: block;
+}
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.badge-title {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.875rem;
+}
+
+.badge-subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .as-seen-on-bar {
+    padding: 1.5rem 0;
+  }
+  
+  .media-logos {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .logo-item img {
+    max-height: 32px;
+  }
+  
+  .trust-badges {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  
+  .badge-item {
+    padding: 0.75rem;
+  }
+  
+  .badge-icon {
+    font-size: 1.25rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .as-seen-on-bar {
+    background: white;
+    border-color: #000;
+  }
+  
+  .badge-item {
+    border-color: #000;
+  }
+  
+  .logo-item {
+    filter: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logo-item,
+  .badge-item {
+    transition: none;
+  }
+  
+  .badge-item:hover {
+    transform: none;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
