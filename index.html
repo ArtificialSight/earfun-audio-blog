@@ -3,255 +3,181 @@ layout: default
 title: EarFun Audio - Premium Earbuds & Audio Gear Reviews
 description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion.
 keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
----<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <meta name="description" content="{{ page.description }}">
-  <meta name="keywords" content="{{ page.keywords }}">
+---
+
+<div class="container">
+  <!-- Navigation is handled by default layout -->
   
-  <!-- OpenGraph Meta Tags -->
-  <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://earfun-audio-blog.github.io/">
-  <meta property="og:image" content="https://earfun-audio-blog.github.io/assets/hero-earfun-products.jpg">
-  <meta property="og:site_name" content="EarFun Audio Review Blog">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="{{ page.description }}">
-  <meta name="twitter:image" content="https://earfun-audio-blog.github.io/assets/hero-earfun-products.jpg">
-  
-  <!-- Additional SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="EarFun Audio Review Team">
-  <link rel="canonical" href="https://earfun-audio-blog.github.io/">
-  
-  <!-- JSON-LD Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "EarFun Audio Review Blog",
-    "url": "https://earfun-audio-blog.github.io/",
-    "description": "{{ page.description }}",
-    "publisher": {
-      "@type": "Organization",
-      "name": "EarFun Audio Review Team"
-    }
-  }
-  </script>
-  
-  <link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
-  <div class="container">
-    <!-- Navigation -->
-    <nav class="nav">
-      <div class="logo">
-        <img src="assets/logo.svg" alt="EarFun Audio Logo" width="40" height="40">
-        <div class="word">EarFun Audio</div>
-      </div>
-      <div class="links">
-        <a href="reviews.html">Reviews</a>
-        <a href="best/">Best Of</a>
-        <a href="choosing-earbuds.html">Buying Guide</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="kicker">Premium Audio Reviews</div>
-        <h1>Discover the Best EarFun Audio Products</h1>
-        <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
-        <img src="assets/hero-earfun-products.jpg" alt="Collection of premium EarFun audio products including earbuds and speakers" class="hero-image" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;">
-        <div class="cta-buttons">
-          <button class="cta-btn primary" onclick="window.location.href='reviews.html'">View Reviews</button>
-          <button class="cta-btn secondary" onclick="window.location.href='best/'">Best Products</button>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Featured Product Review Cards -->
-    <section class="products" id="products">
-      <h2>Top EarFun Product Reviews</h2>
-      <div class="product-grid">
-        <!-- Air Pro 3 -->
-        <div class="review-card">
-          <img src="assets/earfun-air-pro-3.jpg" alt="EarFun Air Pro 3 wireless earbuds with premium design and ANC" class="review-image">
-          <h3>EarFun Air Pro 3</h3>
-          <div class="review-rating"><span class="stars">★★★★★</span> 4.8/5</div>
-          <div class="review-price">$79.99</div>
-          <ul class="features">
-            <li>Hybrid Active Noise Cancellation</li>
-            <li>45 hours battery (with case)</li>
-            <li>Multipoint Bluetooth connection</li>
-          </ul>
-          <button class="cta-btn" onclick="window.location.href='earfun-air-pro-3.html'">Read Review</button>
-        </div>
-        
-        <!-- Wave Pro -->
-        <div class="review-card">
-          <img src="assets/earfun-wave-pro.jpg" alt="EarFun Wave Pro over-ear headphones" class="review-image">
-          <h3>EarFun Wave Pro</h3>
-          <div class="review-rating"><span class="stars">★★★★☆</span> 4.6/5</div>
-          <div class="review-price">$49.99</div>
-          <ul class="features">
-            <li>Hi-Res Audio certification</li>
-            <li>80 hours battery with ANC off</li>
-            <li>Memory foam ear cushions</li>
-          </ul>
-          <button class="cta-btn" onclick="window.location.href='earfun-wave-pro.html'">Read Review</button>
-        </div>
-        
-        <!-- UBoom X -->
-        <div class="review-card">
-          <img src="assets/earfun-uboom-x.svg" alt="EarFun UBoom X portable Bluetooth speaker" class="review-image">
-          <h3>EarFun UBoom X</h3>
-          <div class="review-rating"><span class="stars">★★★★★</span> 4.9/5</div>
-          <div class="review-price">$89.99</div>
-          <ul class="features">
-            <li>360° sound, waterproof (IPX7)</li>
-            <li>16 hours playback, deep bass</li>
-            <li>Rugged, portable design</li>
-          </ul>
-          <button class="cta-btn" onclick="window.location.href='earfun-uboom-x.html'">Read Review</button>
-        </div>
-        
-        <!-- Tune Pro -->
-        <div class="review-card">
-          <img src="assets/289vccpbqag.png" alt="EarFun Tune Pro true wireless earbuds" class="review-image">
-          <h3>EarFun Tune Pro</h3>
-          <div class="review-rating"><span class="stars">★★★★☆</span> 4.5/5</div>
-          <div class="review-price">$39.99</div>
-          <ul class="features">
-            <li>Low-latency gaming mode</li>
-            <li>IPX7 waterproof</li>
-            <li>Compact charging case</li>
-          </ul>
-          <button class="cta-btn" onclick="window.location.href='earfun-tune-pro.html'">Read Review</button>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Comparison Table -->
-    <section class="comparison">
-      <h2>Product Comparison</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Key Feature</th>
-            <th>Battery</th>
-            <th>Waterproof</th>
-            <th>Rating</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Air Pro 3</td>
-            <td>ANC, Multipoint</td>
-            <td>45h</td>
-            <td>IPX5</td>
-            <td>4.8/5</td>
-            <td>$79.99</td>
-          </tr>
-          <tr>
-            <td>Wave Pro</td>
-            <td>Hi-Res, Over-ear</td>
-            <td>80h</td>
-            <td>—</td>
-            <td>4.6/5</td>
-            <td>$49.99</td>
-          </tr>
-          <tr>
-            <td>UBoom X</td>
-            <td>360° Sound</td>
-            <td>16h</td>
-            <td>IPX7</td>
-            <td>4.9/5</td>
-            <td>$89.99</td>
-          </tr>
-          <tr>
-            <td>Tune Pro</td>
-            <td>Gaming Mode</td>
-            <td>30h</td>
-            <td>IPX7</td>
-            <td>4.5/5</td>
-            <td>$39.99</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    
-    <!-- Deal Highlights & Buy -->
-    <section class="deals" style="margin-top:2em;">
-      <h2>Deals & Where to Buy</h2>
-      <ul>
-        <li>Official EarFun Store: <a href="https://www.myearfun.com/collections/earbuds" rel="noopener" target="_blank">Latest deals here</a></li>
-        <li>Amazon: <a href="https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F" rel="noopener" target="_blank">Shop on Amazon</a></li>
-      </ul>
-    </section>
-    
-    <!-- FAQ -->
-    <section class="faq" style="margin-top:2em;">
-      <h2>Frequently Asked Questions</h2>
-      <dl>
-        <dt>Which EarFun earbuds are best for working out?</dt>
-        <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
-        <dt>Does EarFun support multipoint Bluetooth?</dt>
-        <dd>Yes, select models like Air Pro 3 can connect to two devices at once.</dd>
-        <dt>What is EarFun's warranty?</dt>
-        <dd>All official products include an 18-month warranty when purchased from authorized retailers.</dd>
-      </dl>
-    </section>
-    
-    <!-- Buying Guides & Review Archive -->
-    <section class="guides" style="margin-top:2em;">
-      <h2>More From EarFun Audio</h2>
-      <ul>
-        <li><a href="choosing-earbuds.html">How to Choose Earbuds: Full Guide</a></li>
-        <li><a href="reviews.html">All Reviews Archive</a></li>
-      </ul>
-    </section>
-    
-    <!-- Newsletter & Process -->
-    <section class="subscribe" style="margin-top:2em;">
-      <h2>Don't Miss Reviews & Deals!</h2>
-      <form action="#" method="post">
-        <input type="email" name="email" placeholder="Your email" required>
-        <button class="cta-btn primary" type="submit">Subscribe</button>
-      </form>
-      <p>No spam, only quality content. Unsubscribe at any time.</p>
-    </section>
-    
-    <section class="disclosure" style="margin-top:2em; font-size: 0.93em;">
-      <h2>How We Review</h2>
-      <p>Our team tests every product hands-on for weeks, evaluating sound, comfort, features, and value. We update our reviews as new software or competitors arrive to keep our readers informed with the latest and most honest recommendations.</p>
-    </section>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="footer">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <div>
-        <p style="margin: 0;">© 2024 EarFun Audio Review Blog. All rights reserved.</p>
-        <p style="margin: 4px 0 0; font-size: 12px;">Independent reviews and recommendations for EarFun audio products.</p>
-      </div>
-      <div style="display: flex; gap: 20px;">
-        <a href="reviews.html">Reviews</a>
-        <a href="best/">Best Of</a>
-        <a href="contact.html">Contact</a>
-        <a href="for-brands.html">For Brands</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="kicker">Premium Audio Reviews</div>
+      <h1>Discover the Best EarFun Audio Products</h1>
+      <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
+      <img src="{{ site.baseurl }}/hero.png" alt="Collection of premium EarFun audio products including earbuds and speakers" class="hero-image" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
+      <div class="cta-buttons">
+        <button class="cta-btn primary" onclick="window.location.href='{{ site.baseurl }}/reviews/'">View Reviews</button>
+        <button class="cta-btn secondary" onclick="window.location.href='{{ site.baseurl }}/best/'">Best Products</button>
       </div>
     </div>
-  </footer>
-</body>
-</html>
+  </section>
+  
+  <!-- Featured Product Review Cards -->
+  <section class="products" id="products">
+    <h2>Top EarFun Product Reviews</h2>
+    <div class="product-grid">
+      <!-- Air Pro 3 -->
+      <div class="review-card">
+        <img src="{{ site.baseurl }}/assets/images/earfun-air-pro-3.jpg" alt="EarFun Air Pro 3 wireless earbuds with premium design and ANC" class="review-image" />
+        <h3>EarFun Air Pro 3</h3>
+        <div class="review-rating"><span class="stars">★★★★★</span> 4.8/5</div>
+        <div class="review-price">$79.99</div>
+        <ul class="features">
+          <li>Hybrid Active Noise Cancellation</li>
+          <li>45 hours battery (with case)</li>
+          <li>Multipoint Bluetooth connection</li>
+        </ul>
+        <button class="cta-btn" onclick="window.location.href='{{ site.baseurl }}/earfun-air-pro-3.html'">Read Review</button>
+      </div>
+      
+      <!-- Wave Pro -->
+      <div class="review-card">
+        <img src="{{ site.baseurl }}/assets/images/earfun-wave-pro.jpg" alt="EarFun Wave Pro over-ear headphones" class="review-image" />
+        <h3>EarFun Wave Pro</h3>
+        <div class="review-rating"><span class="stars">★★★★☆</span> 4.6/5</div>
+        <div class="review-price">$49.99</div>
+        <ul class="features">
+          <li>Hi-Res Audio certification</li>
+          <li>80 hours battery with ANC off</li>
+          <li>Memory foam ear cushions</li>
+        </ul>
+        <button class="cta-btn" onclick="window.location.href='{{ site.baseurl }}/earfun-wave-pro.html'">Read Review</button>
+      </div>
+      
+      <!-- UBoom X -->
+      <div class="review-card">
+        <img src="{{ site.baseurl }}/assets/images/earfun-uboom-x.jpg" alt="EarFun UBoom X portable Bluetooth speaker" class="review-image" />
+        <h3>EarFun UBoom X</h3>
+        <div class="review-rating"><span class="stars">★★★★★</span> 4.9/5</div>
+        <div class="review-price">$89.99</div>
+        <ul class="features">
+          <li>360° sound, waterproof (IPX7)</li>
+          <li>16 hours playback, deep bass</li>
+          <li>Rugged, portable design</li>
+        </ul>
+        <button class="cta-btn" onclick="window.location.href='{{ site.baseurl }}/earfun-uboom-x.html'">Read Review</button>
+      </div>
+      
+      <!-- Tune Pro -->
+      <div class="review-card">
+        <img src="{{ site.baseurl }}/assets/images/earfun-tune-pro.jpg" alt="EarFun Tune Pro true wireless earbuds" class="review-image" />
+        <h3>EarFun Tune Pro</h3>
+        <div class="review-rating"><span class="stars">★★★★☆</span> 4.5/5</div>
+        <div class="review-price">$39.99</div>
+        <ul class="features">
+          <li>Low-latency gaming mode</li>
+          <li>IPX7 waterproof</li>
+          <li>Compact charging case</li>
+        </ul>
+        <button class="cta-btn" onclick="window.location.href='{{ site.baseurl }}/earfun-tune-pro.html'">Read Review</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Comparison Table -->
+  <section class="comparison">
+    <h2>Product Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Key Feature</th>
+          <th>Battery</th>
+          <th>Waterproof</th>
+          <th>Rating</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Air Pro 3</td>
+          <td>ANC, Multipoint</td>
+          <td>45h</td>
+          <td>IPX5</td>
+          <td>4.8/5</td>
+          <td>$79.99</td>
+        </tr>
+        <tr>
+          <td>Wave Pro</td>
+          <td>Hi-Res, Over-ear</td>
+          <td>80h</td>
+          <td>—</td>
+          <td>4.6/5</td>
+          <td>$49.99</td>
+        </tr>
+        <tr>
+          <td>UBoom X</td>
+          <td>360° Sound</td>
+          <td>16h</td>
+          <td>IPX7</td>
+          <td>4.9/5</td>
+          <td>$89.99</td>
+        </tr>
+        <tr>
+          <td>Tune Pro</td>
+          <td>Gaming Mode</td>
+          <td>30h</td>
+          <td>IPX7</td>
+          <td>4.5/5</td>
+          <td>$39.99</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <!-- Deal Highlights & Buy -->
+  <section class="deals" style="margin-top:2em;">
+    <h2>Deals & Where to Buy</h2>
+    <ul>
+      <li>Official EarFun Store: <a href="https://www.myearfun.com/collections/earbuds" target="_blank" rel="noopener">Latest deals here</a></li>
+      <li>Amazon: <a href="https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F" target="_blank" rel="noopener">Shop on Amazon</a></li>
+    </ul>
+  </section>
+  
+  <!-- FAQ -->
+  <section class="faq" style="margin-top:2em;">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      <dt>Which EarFun earbuds are best for working out?</dt>
+      <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
+      <dt>Does EarFun support multipoint Bluetooth?</dt>
+      <dd>Yes, select models like Air Pro 3 can connect to two devices at once.</dd>
+      <dt>What is EarFun's warranty?</dt>
+      <dd>All official products include an 18-month warranty when purchased from authorized retailers.</dd>
+    </dl>
+  </section>
+  
+  <!-- Buying Guides & Review Archive -->
+  <section class="guides" style="margin-top:2em;">
+    <h2>More From EarFun Audio</h2>
+    <ul>
+      <li><a href="{{ site.baseurl }}/choosing-earbuds.html">How to Choose Earbuds: Full Guide</a></li>
+      <li><a href="{{ site.baseurl }}/reviews/">All Reviews Archive</a></li>
+    </ul>
+  </section>
+  
+  <!-- Newsletter & Process -->
+  <section class="subscribe" style="margin-top:2em;">
+    <h2>Don't Miss Reviews & Deals!</h2>
+    <form action="#" method="post">
+      <input type="email" name="email" placeholder="Your email" required />
+      <button type="submit" class="cta-btn primary">Subscribe</button>
+    </form>
+    <p>No spam, only quality content. Unsubscribe at any time.</p>
+  </section>
+  
+  <section class="disclosure" style="margin-top:2em; font-size: 0.93em;">
+    <h3>How We Review</h3>
+    <p>Our team tests every product hands-on for weeks, evaluating sound, comfort, features, and value. We update our reviews as new software or competitors arrive to keep our readers informed with the latest and most honest recommendations.</p>
+  </section>
+</div>
