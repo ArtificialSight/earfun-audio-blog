@@ -1,0 +1,23 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ include.name }}",
+  "image": ["{{ include.image | default: page.hero_image | relative_url }}"],
+  "brand": {"@type": "Brand", "name": "EarFun"},
+  "description": "{{ include.description | default: page.description | strip_newlines | escape }}",
+  "sku": "{{ include.sku | default: page.sku | default: include.name | slugify }}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ include.rating | default: page.rating | default: 4.6 }}",
+    "reviewCount": "{{ include.review_count | default: page.review_count | default: 28 }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "{{ include.price | default: page.price | default: '79.99' }}",
+    "availability": "https://schema.org/{% if include.in_stock != false %}InStock{% else %}OutOfStock{% endif %}",
+    "url": "{{ include.url | default: page.url | absolute_url }}"
+  }
+}
+</script>
