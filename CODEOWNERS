@@ -1,0 +1,109 @@
+# Code Owners for EarFun Audio Blog
+# This file defines who needs to review and approve changes to different parts of the repository.
+# GitHub will automatically request reviews from the appropriate code owners when PRs are created.
+
+# === GLOBAL DEFAULTS ===
+# Default reviewers for any file that doesn't have specific owners below
+* @ArtificialSight
+
+# === CONTENT & EDITORIAL ===
+# All content files (reviews, guides, pages)
+*.md @ArtificialSight @content-team
+*.html @ArtificialSight @content-team
+reviews/ @ArtificialSight @content-team @seo-team
+guides/ @ArtificialSight @content-team @seo-team
+best/ @ArtificialSight @content-team @seo-team
+deals/ @ArtificialSight @content-team @affiliate-team
+
+# === TECHNICAL INFRASTRUCTURE ===
+# Core Jekyll configuration and layouts
+_config.yml @ArtificialSight @tech-leads
+_layouts/ @ArtificialSight @tech-leads @frontend-team
+_includes/ @ArtificialSight @tech-leads @frontend-team
+_data/ @ArtificialSight @tech-leads @data-team
+
+# === AFFILIATE & MONETIZATION ===
+# Affiliate-related components and data
+_includes/affiliate-* @ArtificialSight @affiliate-team @legal-team
+_includes/product-* @ArtificialSight @affiliate-team @frontend-team
+_includes/price-* @ArtificialSight @affiliate-team @data-team
+_data/deals* @ArtificialSight @affiliate-team @data-team
+for-brands.md @ArtificialSight @affiliate-team @legal-team
+
+# === STYLING & DESIGN ===
+# CSS and design assets
+assets/css/ @ArtificialSight @frontend-team @design-team
+*.css @ArtificialSight @frontend-team @design-team
+assets/images/ @ArtificialSight @design-team @content-team
+*.svg @ArtificialSight @design-team
+*.png @ArtificialSight @design-team
+*.jpg @ArtificialSight @design-team
+
+# === SEO & ANALYTICS ===
+# SEO-critical files require SEO team approval
+index.html @ArtificialSight @seo-team @content-team
+404.html @ArtificialSight @seo-team @frontend-team
+_includes/schema* @ArtificialSight @seo-team @tech-leads
+
+# === AUTOMATION & CI ===
+# GitHub workflows and automation
+.github/ @ArtificialSight @tech-leads @devops-team
+*.yml @ArtificialSight @tech-leads
+*.yaml @ArtificialSight @tech-leads
+package.json @ArtificialSight @tech-leads @frontend-team
+Gemfile* @ArtificialSight @tech-leads
+
+# === DOCUMENTATION & GOVERNANCE ===
+# Project governance and documentation
+README.md @ArtificialSight @tech-leads @content-team
+CONTRIBUTING.md @ArtificialSight @tech-leads @content-team
+CODEOWNERS @ArtificialSight @tech-leads
+
+# === SECURITY & COMPLIANCE ===
+# Security-sensitive files
+.github/workflows/ @ArtificialSight @tech-leads @security-team
+_config.yml @ArtificialSight @tech-leads @security-team
+contact* @ArtificialSight @legal-team @content-team
+
+# === PERFORMANCE CRITICAL ===
+# Files that significantly impact site performance
+_layouts/default.html @ArtificialSight @tech-leads @performance-team
+assets/css/main.css @ArtificialSight @frontend-team @performance-team
+
+# ============================================================================
+# TEAM DEFINITIONS & RESPONSIBILITIES
+# ============================================================================
+
+# @tech-leads - Senior developers, technical architecture decisions
+# @frontend-team - HTML/CSS/JS, user interface, responsive design
+# @content-team - Editorial content, product reviews, writing quality
+# @seo-team - Search optimization, structured data, meta tags
+# @affiliate-team - Monetization strategy, affiliate links, conversion optimization
+# @design-team - Visual design, branding, images, user experience
+# @data-team - Data files, product information, pricing, availability
+# @legal-team - Compliance, disclosures, terms, privacy
+# @security-team - Security reviews, vulnerability management
+# @performance-team - Site speed, Core Web Vitals, optimization
+# @devops-team - CI/CD, deployment, infrastructure
+
+# ============================================================================
+# REVIEW REQUIREMENTS BY CHANGE TYPE
+# ============================================================================
+
+# CRITICAL CHANGES (require 2+ approvals):
+# - _config.yml modifications
+# - Default layout changes  
+# - Affiliate infrastructure
+# - Security-related files
+
+# STANDARD CHANGES (require 1 approval):
+# - Content updates
+# - CSS styling
+# - New features
+# - Bug fixes
+
+# FAST-TRACK CHANGES (can be self-approved by code owners):
+# - Typo fixes
+# - Minor content updates
+# - Image optimizations
+# - Documentation updates
