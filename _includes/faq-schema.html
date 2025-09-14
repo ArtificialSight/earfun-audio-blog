@@ -1,0 +1,196 @@
+<!-- FAQ Schema Component with Accessible Display -->
+<div class="faq-section" role="region" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">❓ Frequently Asked Questions</h2>
+  
+  <div class="faq-list" role="list">
+    {% assign faq_array = include.questions | jsonify | split: '[' | last | split: ']' | first %}
+    {% assign faqs = faq_array | split: '},' %}
+    
+    {% for faq_data in faqs %}
+      {% assign faq = faq_data | append: '}' | strip %}
+      {% if faq contains '{' %}
+        {% assign question = faq | split: '"question":"' | last | split: '"' | first %}
+        {% assign answer = faq | split: '"answer":"' | last | split: '"' | first %}
+        
+        <div class="faq-item" role="listitem">
+          <details class="faq-details">
+            <summary class="faq-question" role="button" aria-expanded="false">
+              <span class="question-icon" aria-hidden="true">❓</span>
+              <h3 class="question-text">{{ question }}</h3>
+              <span class="expand-icon" aria-hidden="true">▼</span>
+            </summary>
+            
+            <div class="faq-answer" role="region" aria-label="Answer to: {{ question }}">
+              <div class="answer-content">
+                <span class="answer-icon" aria-hidden="true">✓</span>
+                <p>{{ answer }}</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+  <div class="faq-footer">
+    <p class="more-questions">
+      <span aria-hidden="true">🤔</span>
+      Have more questions? 
+      <a href="/contact/" class="contact-link">Contact our audio experts</a> 
+      or browse our <a href="/guides/" class="guides-link">buying guides</a>.
+    </p>
+  </div>
+</div>
+
+<!-- Schema.org FAQPage structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% assign faq_array = include.questions | jsonify | split: '[' | last | split: ']' | first %}
+    {% assign faqs = faq_array | split: '},' %}
+    {% for faq_data in faqs %}
+      {% assign faq = faq_data | append: '}' | strip %}
+      {% if faq contains '{' %}
+        {% assign question = faq | split: '"question":"' | last | split: '"' | first %}
+        {% assign answer = faq | split: '"answer":"' | last | split: '"' | first %}
+        {
+          "@type": "Question",
+          "name": "{{ question }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ answer }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<!-- CSS for FAQ styling (can be moved to main CSS file) -->
+<style>
+.faq-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.faq-section h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+}
+
+.faq-details summary {
+  padding: 1rem;
+  cursor: pointer;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.2s ease;
+}
+
+.faq-details summary:hover {
+  background: #f8f9fa;
+}
+
+.faq-details summary:focus {
+  outline: 2px solid #007bff;
+  outline-offset: -2px;
+}
+
+.faq-details[open] summary {
+  background: #e3f2fd;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.faq-details[open] .expand-icon {
+  transform: rotate(180deg);
+}
+
+.question-text {
+  flex: 1;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.question-icon, .answer-icon {
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.expand-icon {
+  font-size: 0.8rem;
+  color: #6c757d;
+  transition: transform 0.2s ease;
+}
+
+.faq-answer {
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.answer-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.answer-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.faq-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.more-questions {
+  margin: 0;
+  color: #6c757d;
+}
+
+.contact-link, .guides-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover, .guides-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 1rem;
+  }
+  
+  .faq-details summary {
+    padding: 0.75rem;
+  }
+  
+  .question-text {
+    font-size: 1rem;
+  }
+}
+</style>
