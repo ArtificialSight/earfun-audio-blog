@@ -1,23 +1,252 @@
-title: Audio Gear & EarFun Reviews
-description: Honest audio gear reviews, buying guides, and EarFun-focused coverage.
+# Site Settings
+title: "EarFun Audio Blog - Expert Reviews & Buying Guides"
+description: "Honest audio gear reviews, EarFun product guides, buying recommendations, and exclusive deals. Your trusted source for audio equipment insights."
+tagline: "Your Trusted Audio Guide"
+keywords: "EarFun reviews, audio gear, headphones, earbuds, wireless earphones, bluetooth speakers, audio equipment reviews"
+author: "EarFun Audio Blog"
+email: "hello@earfunaudioblog.com"
+
+# Build Settings
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+# Timezone
 timezone: America/New_York
+
+# Jekyll Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-url: https://artificialsight.github.io
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+
+# URLs
+url: "https://artificialsight.github.io"
 baseurl: "/earfun-audio-blog"
+permalink: /:year/:month/:day/:title/
+
+# SEO & Social
+social:
+  name: "EarFun Audio Blog"
+  links:
+    - "https://twitter.com/earfunaudioblog"
+    - "https://facebook.com/earfunaudioblog"
+    - "https://instagram.com/earfunaudioblog"
+    - "https://youtube.com/@earfunaudioblog"
+
+twitter:
+  username: earfunaudioblog
+  card: summary_large_image
+
+facebook:
+  app_id: 1234567890
+  publisher: https://facebook.com/earfunaudioblog
+
+logo: "/assets/images/logo.png"
+
+# Google Analytics
+google_analytics: G-XXXXXXXXXX
+
+# Navigation
 navigation:
-  - name: Home
-    url: /
-  - name: Reviews
-    url: /reviews/
-  - name: Best Products
-    url: /best/
-  - name: Deals
-    url: /deals/
-  - name: For Brands
-    url: /for-brands/
-  - name: Contact
-    url: /contact/
+  - name: "Home"
+    url: "/"
+    description: "Latest audio reviews and deals"
+  - name: "Reviews"
+    url: "/reviews/"
+    description: "In-depth product reviews"
+  - name: "Best Of"
+    url: "/best/"
+    description: "Top audio gear recommendations"
+  - name: "Guides"
+    url: "/guides/"
+    description: "Buying guides and tutorials"
+  - name: "Deals"
+    url: "/deals/"
+    description: "Latest audio gear deals"
+  - name: "For Brands"
+    url: "/for-brands/"
+    description: "Partnership opportunities"
+  - name: "Contact"
+    url: "/contact/"
+    description: "Get in touch"
+
+# Collections
+collections:
+  reviews:
+    output: true
+    permalink: /review/:name/
+  guides:
+    output: true
+    permalink: /guide/:name/
+  deals:
+    output: true
+    permalink: /deal/:name/
+
+# Defaults for Front Matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      share: true
+      author: "EarFun Audio Blog"
+      image: "/assets/images/default-og-image.jpg"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      author: "EarFun Audio Blog"
+      image: "/assets/images/default-og-image.jpg"
+  - scope:
+      path: ""
+      type: "reviews"
+    values:
+      layout: "review"
+      comments: true
+      share: true
+      author: "EarFun Audio Blog"
+      schema_type: "Review"
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "guide"
+      comments: true
+      share: true
+      author: "EarFun Audio Blog"
+      schema_type: "HowTo"
+
+# Pagination
+paginate: 12
+paginate_path: "/page:num/"
+
+# Content Processing
+excerpt_separator: "<!--more-->"
+
+# Build Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - webpack.config.js
+
+# Include specific files
+include:
+  - _pages
+  - .htaccess
+  - "robots.txt"
+  - "sitemap.xml"
+
+# Sass Configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Compression
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
+  blanklines: false
+  profile: false
+  ignore:
+    envs: [local]
+
+# Site Features
+features:
+  search: true
+  reading_time: true
+  related_posts: true
+  social_sharing: true
+  comments: true
+  newsletter: true
+  dark_mode: true
+  toc: true
+  breadcrumbs: true
+
+# Contact Information
+contact:
+  email: "hello@earfunaudioblog.com"
+  partnerships: "partnerships@earfunaudioblog.com"
+  phone: "+1-555-AUDIO-01"
+  address: "123 Audio Street, Sound City, SC 12345"
+
+# Business Information
+business:
+  name: "EarFun Audio Blog"
+  legal_name: "EarFun Audio Blog LLC"
+  founded: "2025"
+  type: "AudioBlog"
+  industry: "Audio Equipment Reviews"
+  description: "Professional audio equipment reviews and buying guides"
+
+# Local Development
+liveReload: true
+incremental: false
+profile: false
+
+# GitHub Pages Compatibility
+github: [metadata]
+remote_theme: 
+
+# Future Posts
+future: false
+
+# Plugin Settings
+feed:
+  categories:
+    - reviews
+    - deals
+    - guides
+  excerpt_only: true
+
+sitemap:
+  file: "/sitemap.xml"
+
+# Security Headers (for Netlify/custom hosting)
+security:
+  content_security_policy: true
+  x_frame_options: "DENY"
+  x_content_type_options: "nosniff"
+  x_xss_protection: "1; mode=block"
+  strict_transport_security: "max-age=31536000; includeSubDomains"
+
+# Performance
+optimization:
+  minify_css: true
+  minify_js: true
+  lazy_loading: true
+  webp_images: true
+  critical_css: true
