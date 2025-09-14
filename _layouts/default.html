@@ -1,47 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {%- seo -%}
-    <link rel="icon" href="{{ "/favicon.png" | relative_url }}">
+    <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "/assets/styles.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
     <style>
-      /* Position CTA and hide duplicate Deals nav item */
+      /* Fix navigation layout */
       .nav .links {
         display: flex;
         align-items: center;
-      }
-      .nav .links a[href$="earfun-deals-and-coupons"]:not(.cta-btn) {
-        display: none;
+        gap: 1rem;
       }
       .nav .links .cta-btn {
         margin-left: auto;
+        background: #2563eb;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 4px;
       }
     </style>
-    {%- include schema.html -%}
-  </head>
-  <body>
+    {% if page.schema %}
+      <script type="application/ld+json">
+        {{ page.schema | jsonify }}
+      </script>
+    {% endif %}
+</head>
+<body>
     <div class="container">
       <nav class="nav">
         <div class="logo">
-          <img src="{{ "/assets/logo.svg" | relative_url }}" alt="Audio Gear logo">
+          <img src="{{ '/assets/logo.svg' | relative_url }}" alt="Audio Gear logo" width="40" height="40">
           <div class="word">{{ site.title }}</div>
         </div>
         <div class="links">
           {% for item in site.navigation %}
             <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
           {% endfor %}
-          <a class="cta-btn" href="{{ "/earfun-deals-and-coupons" | relative_url }}">Deals</a>
+          <a class="cta-btn" href="{{ '/deals/' | relative_url }}">Deals</a>
         </div>
       </nav>
+      
       {{ content }}
+      
       <footer class="footer">
-        <div>© {{ "now" | date: "%Y" }} {{ site.title }} · Built with Jekyll · <a href="{{ "/privacy/" | relative_url }}">Privacy</a> · <a href="{{ "/disclosure/" | relative_url }}">Disclosure</a></div>
+        <div>
+          © {{ "now" | date: "%Y" }} {{ site.title }} · Built with Jekyll · 
+          <a href="{{ '/privacy/' | relative_url }}">Privacy</a> · 
+          <a href="{{ '/disclosure/' | relative_url }}">Disclosure</a>
+        </div>
       </footer>
     </div>
-  </body>
+</body>
 </html>
