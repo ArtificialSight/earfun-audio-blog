@@ -1,0 +1,8 @@
+- name: Amazon
+  link: "https://www.amazon.com/dp/REPLACE_TUNE?tag=your-aff-id"
+  price: "39.99"
+  status: "In Stock"
+- name: EarFun Official
+  link: "https://www.earfun.com/products/tune-pro?aff_id=YOUR_ID"
+  price: "39.99"
+  status: "In Stock"
