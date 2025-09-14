@@ -1,0 +1,115 @@
+<!-- Price Comparison Component -->
+<div class="price-comparison" role="region" aria-labelledby="price-comparison-heading">
+  <h3 id="price-comparison-heading">💰 Best {{ include.product }} Deals</h3>
+  
+  <div class="price-grid" role="list" aria-label="Price comparison for {{ include.product }}">
+    {% assign retailers_array = include.retailers | jsonify | split: '[' | last | split: ']' | first %}
+    {% assign retailers = retailers_array | split: '},' %}
+    
+    {% for retailer_data in retailers %}
+      {% assign retailer = retailer_data | append: '}' | strip %}
+      {% if retailer contains '{' %}
+        {% assign name = retailer | split: '"name":"' | last | split: '"' | first %}
+        {% assign price = retailer | split: '"price":"' | last | split: '"' | first %}
+        {% assign link = retailer | split: '"link":"' | last | split: '"' | first %}
+        {% assign badge = retailer | split: '"badge":"' | last | split: '"' | first %}
+        
+        <div class="price-card" role="listitem">
+          <div class="retailer-header">
+            <h4 class="retailer-name">{{ name }}</h4>
+            {% if badge and badge != '' %}
+              <span class="price-badge badge-{{ badge | downcase | replace: ' ', '-' }}">{{ badge }}</span>
+            {% endif %}
+          </div>
+          
+          <div class="price-display">
+            <span class="price-amount" aria-label="Price {{ price }}">{{ price }}</span>
+          </div>
+          
+          <div class="retailer-actions">
+            <a href="{{ link }}" 
+               class="btn btn-primary btn-purchase" 
+               target="_blank" 
+               rel="nofollow sponsored noopener"
+               aria-label="Buy {{ include.product }} from {{ name }} for {{ price }}">
+              <span class="btn-icon" aria-hidden="true">🛒</span>
+              Buy from {{ name }}
+            </a>
+          </div>
+          
+          <div class="retailer-benefits">
+            {% if name contains 'Amazon' %}
+              <ul class="benefits-list" aria-label="Amazon benefits">
+                <li>✓ Prime eligible</li>
+                <li>✓ Free returns</li>
+                <li>✓ Fast shipping</li>
+              </ul>
+            {% elsif name contains 'EarFun' or name contains 'Official' %}
+              <ul class="benefits-list" aria-label="Official store benefits">
+                <li>✓ Warranty support</li>
+                <li>✓ Latest firmware</li>
+                <li>✓ Direct support</li>
+              </ul>
+            {% elsif name contains 'Best Buy' %}
+              <ul class="benefits-list" aria-label="Best Buy benefits">
+                <li>✓ Store pickup</li>
+                <li>✓ Geek Squad support</li>
+                <li>✓ Price matching</li>
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  
+  <div class="comparison-footer">
+    <p class="price-disclaimer">
+      <small>
+        <strong>Price Tracking:</strong> Prices updated every 24 hours. 
+        <a href="#affiliate-disclosure" class="disclosure-link">Affiliate links help support our reviews</a>.
+      </small>
+    </p>
+    
+    <div class="deal-alert">
+      <p>
+        <span aria-hidden="true">🔔</span>
+        Want alerts for {{ include.product }} deals? 
+        <a href="/deals/alerts/" class="alert-signup">Set up price alerts</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Schema.org structured data for price comparison -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ include.product }}",
+  "offers": [
+    {% assign retailers_array = include.retailers | jsonify | split: '[' | last | split: ']' | first %}
+    {% assign retailers = retailers_array | split: '},' %}
+    {% for retailer_data in retailers %}
+      {% assign retailer = retailer_data | append: '}' | strip %}
+      {% if retailer contains '{' %}
+        {% assign name = retailer | split: '"name":"' | last | split: '"' | first %}
+        {% assign price_raw = retailer | split: '"price":"' | last | split: '"' | first %}
+        {% assign link = retailer | split: '"link":"' | last | split: '"' | first %}
+        {% assign price_number = price_raw | remove: '$' | strip %}
+        {
+          "@type": "Offer",
+          "price": "{{ price_number }}",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "{{ name }}"
+          },
+          "url": "{{ link }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  ]
+}
+</script>
