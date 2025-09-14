@@ -1,0 +1,244 @@
+<!-- Product Review Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "@id": "{{ site.url }}{{ page.url }}#review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "{{ page.title | remove: ' Review:' | remove: 'Review:' | remove: ' Review' | remove: 'Review' | strip }}",
+    {% if page.image %}
+    "image": [
+      "{{ page.image | absolute_url }}"
+    ],
+    {% endif %}
+    "description": "{{ page.description | strip_html | truncate: 300 }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "EarFun"
+    },
+    "category": "{{ page.category | default: 'Audio Equipment' }}",
+    "sku": "{{ page.sku | default: page.slug }}",
+    "model": "{{ page.title | remove: 'EarFun ' | remove: ' Review:' | remove: 'Review:' | remove: ' Review' | remove: 'Review' | strip }}",
+    {% if page.price %}
+    "offers": {
+      "@type": "Offer",
+      "price": "{{ page.price | remove: '$' }}",
+      "priceCurrency": "USD",
+      "availability": "{{ page.availability | default: 'https://schema.org/InStock' }}",
+      "seller": {
+        "@type": "Organization",
+        "name": "{{ page.retailer | default: 'Amazon' }}"
+      },
+      "url": "{{ page.affiliate_link }}",
+      "priceValidUntil": "{{ page.price_valid | default: '2025-12-31' }}"
+    },
+    {% endif %}
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ page.rating | default: 4.0 }}",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "{{ page.review_count | default: 1 }}"
+    }
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating | default: 4.0 }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author | default: 'EarFun Audio Blog' }}",
+    "url": "{{ site.url }}/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | default: 'EarFun Audio Blog' }}",
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/logo.svg' | absolute_url }}",
+      "width": 200,
+      "height": 60
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "reviewBody": "{{ page.description | strip_html | truncate: 500 }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "headline": "{{ page.title }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "inLanguage": "en-US",
+  "keywords": [
+    {% if page.keywords %}
+      {% assign keywords = page.keywords | split: ', ' %}
+      {% for keyword in keywords %}
+        "{{ keyword }}"{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% else %}
+      "EarFun",
+      "{{ page.title | remove: 'EarFun ' | remove: ' Review:' | remove: 'Review:' | remove: ' Review' | remove: 'Review' | strip }}",
+      "wireless earbuds",
+      "audio review",
+      "headphones"
+    {% endif %}
+  ],
+  "about": {
+    "@type": "Thing",
+    "name": "{{ page.title | remove: ' Review:' | remove: 'Review:' | remove: ' Review' | remove: 'Review' | strip }}"
+  },
+  "positiveNotes": [
+    {% if page.pros %}
+      {% assign pros = page.pros | split: '\n' %}
+      {% for pro in pros %}
+        {% assign clean_pro = pro | strip | remove: '• ' | remove: '- ' %}
+        {% if clean_pro != '' %}
+          "{{ clean_pro }}"{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  ],
+  "negativeNotes": [
+    {% if page.cons %}
+      {% assign cons = page.cons | split: '\n' %}
+      {% for con in cons %}
+        {% assign clean_con = con | strip | remove: '• ' | remove: '- ' %}
+        {% if clean_con != '' %}
+          "{{ clean_con }}"{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  ]
+}
+</script>
+
+<!-- Additional Product Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.title | remove: ' Review:' | remove: 'Review:' | remove: ' Review' | remove: 'Review' | strip }}",
+  "description": "{{ page.description | strip_html | truncate: 300 }}",
+  {% if page.image %}
+  "image": [
+    "{{ page.image | absolute_url }}"
+  ],
+  {% endif %}
+  "brand": {
+    "@type": "Brand",
+    "name": "EarFun",
+    "url": "https://myearfun.com"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "EarFun",
+    "url": "https://myearfun.com"
+  },
+  "category": "{{ page.category | default: 'Consumer Electronics > Audio > Headphones & Earbuds' }}",
+  "model": "{{ page.title | remove: 'EarFun ' | remove: ' Review:' | remove: 'Review:' | remove: ' Review' | remove: 'Review' | strip }}",
+  "sku": "{{ page.sku | default: page.slug }}",
+  "gtin": "{{ page.gtin }}",
+  "mpn": "{{ page.mpn | default: page.slug }}",
+  {% if page.price %}
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ page.price | remove: '$' }}",
+    "priceCurrency": "USD",
+    "availability": "{{ page.availability | default: 'https://schema.org/InStock' }}",
+    "condition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ page.retailer | default: 'Amazon' }}"
+    },
+    "url": "{{ page.affiliate_link }}",
+    "priceValidUntil": "{{ page.price_valid | default: '2025-12-31' }}",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "businessDays": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+          ]
+        },
+        "cutoffTime": "14:00",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "3",
+          "unitCode": "DAY"
+        }
+      }
+    }
+  },
+  {% endif %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ page.rating | default: 4.0 }}",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "{{ page.review_count | default: 1 }}",
+    "reviewCount": "{{ page.review_count | default: 1 }}"
+  },
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author | default: 'EarFun Audio Blog' }}"
+    },
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "reviewBody": "{{ page.description | strip_html | truncate: 500 }}",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "{{ page.rating | default: 4.0 }}",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {% if page.features %}
+  "additionalProperty": [
+    {% assign features = page.features | split: '\n' %}
+    {% for feature in features %}
+      {% assign clean_feature = feature | strip | remove: '• ' | remove: '- ' %}
+      {% if clean_feature != '' %}
+        {
+          "@type": "PropertyValue",
+          "name": "Feature",
+          "value": "{{ clean_feature }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "url": "{{ site.url }}{{ page.url }}",
+  "sameAs": [
+    "https://myearfun.com",
+    "{{ page.affiliate_link }}"
+  ],
+  "isRelatedTo": {
+    "@type": "Product",
+    "name": "EarFun Audio Products",
+    "brand": {
+      "@type": "Brand",
+      "name": "EarFun"
+    }
+  }
+}
+</script>
