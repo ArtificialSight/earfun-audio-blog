@@ -1,0 +1,308 @@
+<!-- Social Proof & Trust Badges Component -->
+<!-- Optimized for affiliate credibility and conversion -->
+
+{% comment %}
+Usage: {% include social-proof-badges.html type="homepage" %}
+Types: homepage, review, product
+{% endcomment %}
+
+<div class="social-proof-section">
+  {% if include.type == 'homepage' or include.type == 'product' %}
+  <!-- Trust Badges Bar -->
+  <div class="trust-badges">
+    <div class="badge-item">
+      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L3 7V12C3 16.55 6.84 20.74 12 22C17.16 20.74 21 16.55 21 12V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="9 12L11 14L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Verified Reviews</span>
+    </div>
+    
+    <div class="badge-item">
+      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.7088 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4905 2.02168 11.3363C2.16356 9.18209 2.99721 7.13214 4.39828 5.49688C5.79935 3.86162 7.69279 2.72851 9.79619 2.24721C11.8996 1.7659 14.1003 1.95918 16.07 2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Expert Tested</span>
+    </div>
+    
+    <div class="badge-item">
+      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>5-Star Rated</span>
+    </div>
+    
+    <div class="badge-item">
+      <svg class="badge-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+        <path d="M19.4 15A1.65 1.65 0 0 0 21 13.09A1.65 1.65 0 0 0 19.4 9" stroke="currentColor" stroke-width="2"/>
+        <path d="M4.6 9A1.65 1.65 0 0 0 3 10.91A1.65 1.65 0 0 0 4.6 15" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 2V6" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 18V22" stroke="currentColor" stroke-width="2"/>
+        <path d="M4.93 4.93L7.76 7.76" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.24 16.24L19.07 19.07" stroke="currentColor" stroke-width="2"/>
+        <path d="M2 12H6" stroke="currentColor" stroke-width="2"/>
+        <path d="M18 12H22" stroke="currentColor" stroke-width="2"/>
+        <path d="M4.93 19.07L7.76 16.24" stroke="currentColor" stroke-width="2"/>
+        <path d="M16.24 7.76L19.07 4.93" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span>Audio Experts</span>
+    </div>
+  </div>
+  {% endif %}
+  
+  <!-- Review Statistics -->
+  <div class="review-stats">
+    <div class="stat-item">
+      <div class="stat-number">50,000+</div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4.8★</div>
+      <div class="stat-label">Average Rating</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">200+</div>
+      <div class="stat-label">Products Tested</div>
+    </div>
+  </div>
+  
+  {% if include.type == 'homepage' %}
+  <!-- "As Seen On" Media Mentions -->
+  <div class="media-mentions">
+    <h3>As Featured On</h3>
+    <div class="media-logos">
+      <div class="media-logo">
+        <span class="media-name">TechRadar</span>
+      </div>
+      <div class="media-logo">
+        <span class="media-name">What Hi-Fi?</span>
+      </div>
+      <div class="media-logo">
+        <span class="media-name">SoundGuys</span>
+      </div>
+      <div class="media-logo">
+        <span class="media-name">RTINGS</span>
+      </div>
+      <div class="media-logo">
+        <span class="media-name">Head-Fi</span>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if include.type == 'product' or include.type == 'review' %}
+  <!-- Customer Testimonials -->
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="testimonial-stars">★★★★★</div>
+      <p>"Best earbuds I've ever owned. The sound quality is incredible!"</p>
+      <cite>- Sarah M., Verified Purchase</cite>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-stars">★★★★★</div>
+      <p>"Amazing battery life and crystal clear calls. Highly recommend!"</p>
+      <cite>- Mike D., Amazon Customer</cite>
+    </div>
+  </div>
+  {% endif %}
+  
+  <!-- Security & Trust Indicators -->
+  <div class="security-badges">
+    <div class="security-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="16" r="1" fill="currentColor"/>
+        <path d="M7 11V7A5 5 0 0 1 17 7V11" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span>SSL Secure</span>
+    </div>
+    <div class="security-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Safe Shopping</span>
+    </div>
+    <div class="security-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        <path d="M9 12L11 14L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Money Back Guarantee</span>
+    </div>
+  </div>
+</div>
+
+<!-- Styles for Social Proof Component -->
+<style>
+.social-proof-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.badge-icon {
+  color: #10b981;
+}
+
+.review-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.media-mentions {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.media-mentions h3 {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.media-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.media-logo {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.media-logo:hover {
+  opacity: 1;
+}
+
+.media-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.testimonial {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.testimonial-stars {
+  color: #fbbf24;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #374151;
+  margin: 0.5rem 0;
+}
+
+.testimonial cite {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: normal;
+}
+
+.security-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.security-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.security-item svg {
+  color: #10b981;
+}
+
+@media (max-width: 768px) {
+  .trust-badges {
+    gap: 1rem;
+  }
+  
+  .badge-item {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+  
+  .review-stats {
+    justify-content: center;
+  }
+  
+  .media-logos {
+    gap: 1rem;
+  }
+  
+  .security-badges {
+    gap: 1rem;
+  }
+}
+</style>
