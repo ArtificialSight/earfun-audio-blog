@@ -1,234 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
-  <meta name="author" content="{{ page.author | default: site.author }}">
-  
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}"/>
+  <meta name="author" content="{{ page.author | default: site.author }}"/>
   {%- seo -%}
-  
+
   <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
-  <link rel="manifest" href="{{ '/assets/images/site.webmanifest' | relative_url }}">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}"/>
+  <link rel="manifest" href="{{ '/assets/images/site.webmanifest' | relative_url }}"/>
+
   <!-- Preconnects for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="//www.google-analytics.com">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="dns-prefetch" href="//www.google-analytics.com"/>
+
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets - FIXED: Reference the correct premium CSS -->
-  <link rel="stylesheet" href="{{ '/styles.cssstyles.cssstyles.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/styles.cssstyles.cssstyles.css' | relative_url }}"/>
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}"/>
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}"/>
   {% if page.extra_css %}
     {% for css in page.extra_css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
+      <link rel="stylesheet" href="{{ css | relative_url }}"/>
     {% endfor %}
   {% endif %}
-  
-  <!-- Critical CSS -->
+
   <style>
-    /* Critical above-the-fold styles */
-    body { 
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
-      margin: 0;
+    /* Critical ABT styles incl. disclosure and CTA consistency */
+    :root{
+      --brand:#1e40af; --text:#0f172a; --bg:#ffffff; --border:#e2e8f0;
+      --gradient-brand:linear-gradient(135deg,#1e40af,#2563eb);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--brand); }
-    .cta-btn {
-      background: var(--gradient-brand);
-      color: white !important;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .cta-btn:hover { 
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg), var(--shadow-electric);
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      color: var(--text);
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .mobile-menu-btn { display: block; }
-    }
+    body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;line-height:1.6;color:var(--text);background:var(--bg);margin:0}
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
+    .nav-links{display:flex;gap:2rem;align-items:center;list-style:none;margin:0;padding:0}
+    .nav-links a{text-decoration:none;color:var(--text);font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--brand)}
+    .cta-btn,.btn{background:var(--gradient-brand);color:#fff !important;padding:.625rem 1rem;border-radius:8px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s ease;border:none;cursor:pointer}
+    .btn-outline{background:#fff;color:var(--brand)!important;border:2px solid var(--brand)}
+    .btn-outline:hover{background:var(--brand);color:#fff!important}
+    .cta-btn:hover,.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem;background:#000;color:#fff;z-index:999}
+    .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.5rem;color:var(--text)}
+    @media(max-width:768px){.nav-links{display:none}.mobile-menu-btn{display:block}}
+    /* Above-the-fold disclosure bar */
+    .disclosure-bar{background:#0b1020;color:#e2e8f0;font-size:.9rem}
+    .disclosure-bar .container{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.5rem 1rem}
+    .disclosure-bar a{color:#93c5fd;text-decoration:underline}
   </style>
-  
-  <!-- Structured Data -->
+
   {% if page.schema or layout.schema %}
     <script type="application/ld+json">
-    {{ page.schema | default: layout.schema | jsonify }}
+      {{ page.schema | default: layout.schema | jsonify }}
     </script>
   {% endif %}
-  
-  <!-- Global site schema -->
+
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "{{ site.title }}",
-    "url": "{{ site.url }}{{ site.baseurl }}",
-    "description": "{{ site.description }}",
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ site.business.name | default: site.title }}",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{{ site.logo | absolute_url }}"
-      }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "{{ site.url }}{{ site.baseurl }}/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"{{ site.title }}","url":"{{ site.url }}{{ site.baseurl }}","description":"{{ site.description }}"}
   </script>
-  
-  <!-- Analytics -->
+
   {% if site.google_analytics %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ site.google_analytics }}', {
-        'anonymize_ip': true,
-        'respect_privacy': true
-      });
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.google_analytics }}',{anonymize_ip:true});
     </script>
   {% endif %}
 </head>
 <body>
-  <!-- Skip to content for accessibility -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <!-- Header -->
+
+  <!-- Global Above-the-fold Affiliate Disclosure -->
+  <div class="disclosure-bar" role="note" aria-label="Affiliate disclosure">
+    <div class="container">
+      <span>Disclosure: We may earn commissions from qualifying purchases made through links on this site — at no extra cost to you.</span>
+      <span>
+        <a href="{{ '/privacy-policy/' | relative_url }}">Privacy</a> ·
+        <a href="{{ '/terms-of-use/' | relative_url }}">Terms</a> ·
+        <a href="{{ '/for-brands/' | relative_url }}">For Brands</a>
+      </span>
+    </div>
+  </div>
+
   <header class="site-header" role="banner">
     <div class="container">
       <nav class="nav" role="navigation" aria-label="Main navigation">
-        <!-- Logo -->
-        <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-          {% if site.logo %}
-            <img src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" width="32" height="32">
-          {% endif %}
+        <a class="logo" aria-label="{{ site.title }} home" href="{{ '/' | relative_url }}">
+          {% if site.logo %}<img src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" width="32" height="32"/>{% endif %}
           {{ site.title }}
         </a>
-        
-        <!-- Desktop Navigation -->
         <ul class="nav-links" role="menubar">
           {% for item in site.navigation %}
             <li role="none">
-              <a href="{{ item.url | relative_url }}"
-                 role="menuitem"
-                 {% if page.url == item.url %}aria-current="page"{% endif %}
-                 title="{{ item.description | default: item.name }}">
-                {{ item.name }}
-              </a>
+              <a href="{{ item.url | relative_url }}" role="menuitem" {% if page.url == item.url %}aria-current="page"{% endif %} title="{{ item.description | default: item.name }}">{{ item.name }}</a>
             </li>
           {% endfor %}
-          <li role="none">
-            <a class="cta-btn" href="{{ '/deals/' | relative_url }}" role="menuitem" title="Latest deals">
-              🔥 Deals
-            </a>
-          </li>
+          <li role="none"><a class="cta-btn" href="{{ '/deals/' | relative_url }}" role="menuitem" title="Latest deals">🔥 Deals</a></li>
         </ul>
-        
-        <!-- Mobile Menu Button -->
         <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </nav>
     </div>
   </header>
-  
-  <!-- Breadcrumbs -->
+
   {% if page.breadcrumbs != false and page.url != '/' %}
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb-list">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          {% assign url_parts = page.url | split: '/' %}
-          {% assign url_build = '' %}
-          {% for part in url_parts %}
-            {% unless part == '' %}
-              {% assign url_build = url_build | append: '/' | append: part %}
-              {% if forloop.last %}
-                <li aria-current="page">{{ page.title | default: part | capitalize }}</li>
-              {% else %}
-                <li><a href="{{ url_build }}">{{ part | capitalize }}</a></li>
-              {% endif %}
-            {% endunless %}
-          {% endfor %}
-        </ol>
-      </div>
-    </nav>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        {% assign url_parts = page.url | split: '/' %}
+        {% assign url_build = '' %}
+        {% for part in url_parts %}
+          {% unless part == '' %}
+            {% assign url_build = url_build | append: '/' | append: part %}
+            {% if forloop.last %}
+              <li aria-current="page">{{ page.title | default: part | capitalize }}</li>
+            {% else %}
+              <li><a href="{{ url_build }}">{{ part | capitalize }}</a></li>
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </ol>
+    </div>
+  </nav>
   {% endif %}
-  
-  <!-- Main Content -->
-  <main class="main-content" id="main-content" role="main">
+
+  <main id="main-content" class="main-content" role="main">
     {{ content }}
   </main>
-  
-  <!-- Footer -->
+
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
-        <!-- Footer Navigation -->
         <nav class="footer-nav" aria-label="Footer navigation">
-          <h4>Quick Links</h4>
+          <strong>Quick Links</strong>
           <ul>
             {% for item in site.navigation %}
               <li><a href="{{ item.url | relative_url }}">{{ item.name }}</a></li>
@@ -236,69 +150,44 @@
             <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
           </ul>
         </nav>
-        
-        <!-- Contact Info -->
         <div class="footer-contact">
-          <h4>Contact</h4>
+          <strong>Contact</strong>
           <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
           <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships }}</a></p>
         </div>
-        
-        <!-- Social Links -->
         <div class="footer-social">
-          <h4>Follow Us</h4>
+          <strong>Follow Us</strong>
           <div class="social-links">
             {% if site.social.links %}
               {% for link in site.social.links %}
-                {% assign platform = link | split: '/' | slice: 2 %}
-                <a href="{{ link }}" target="_blank" rel="noopener" aria-label="Follow us on {{ platform }}">
-                  {% case platform %}
-                    {% when 'twitter.com' %}🐦
-                    {% when 'facebook.com' %}📘
-                    {% when 'instagram.com' %}📸
-                    {% when 'youtube.com' %}📺
-                    {% else %}🔗
-                  {% endcase %}
-                </a>
+                <a href="{{ link }}" target="_blank" rel="noopener" aria-label="Social link">🔗</a>
               {% endfor %}
             {% endif %}
           </div>
         </div>
       </div>
-      
-      <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>© {{ "now" | date: "%Y" }} {{ site.title }}. Built with Jekyll.</p>
+        © {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.
         <div class="footer-legal">
-          <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
-          <a href="{{ '/terms/' | relative_url }}">Terms of Service</a>
-          <a href="{{ '/disclosure/' | relative_url }}">Affiliate Disclosure</a>
+          <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
+          <a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a>
+          <a href="{{ '/for-brands/' | relative_url }}">For Brands</a>
         </div>
       </div>
     </div>
   </footer>
-  
-  <!-- JavaScript -->
+
   <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
   {% if page.extra_js %}
     {% for js in page.extra_js %}
       <script defer src="{{ js | relative_url }}"></script>
     {% endfor %}
   {% endif %}
-  
-  <!-- Mobile Menu Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const navLinks = document.querySelector('.nav-links');
-      
-      if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-          const expanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !expanded);
-          navLinks.classList.toggle('active');
-        });
-      }
+    document.addEventListener('DOMContentLoaded',function(){
+      const btn=document.querySelector('.mobile-menu-btn');
+      const links=document.querySelector('.nav-links');
+      if(btn&&links){btn.addEventListener('click',function(){const ex=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!ex);links.classList.toggle('active');});}
     });
   </script>
 </body>
