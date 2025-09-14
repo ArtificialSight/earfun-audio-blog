@@ -13,12 +13,10 @@ navigation:
     url: /
   - name: Reviews
     url: /reviews/
-  - name: Buying Guides
-    url: /
+  - name: Best Products
+    url: /best/
   - name: Deals
-    url: /earfun-deals-and-coupons
-  - name: About
-    url: /about/
+    url: /deals/
   - name: For Brands
     url: /for-brands/
   - name: Contact
