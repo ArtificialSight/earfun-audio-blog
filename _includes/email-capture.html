@@ -1,0 +1,349 @@
+<!-- Email Capture Component -->
+<div class="email-capture-container" role="region" aria-label="Newsletter Subscription">
+  <style>
+    .email-capture-container {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .email-capture-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+      50% { transform: translateX(-20%) translateY(-20%) rotate(180deg); }
+    }
+    
+    .email-capture-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .email-capture-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .email-capture-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+    
+    .email-capture-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 400px;
+      margin: 0 auto 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .email-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.95);
+    }
+    
+    .email-input:focus {
+      outline: 3px solid #ffd700;
+      outline-offset: 2px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .email-input::placeholder {
+      color: #666;
+      opacity: 0.8;
+    }
+    
+    .email-submit {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+      white-space: nowrap;
+    }
+    
+    .email-submit:hover {
+      background: linear-gradient(135deg, #ee5a24 0%, #c44323 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    }
+    
+    .email-submit:focus {
+      outline: 3px solid #ffd700;
+      outline-offset: 2px;
+    }
+    
+    .email-submit:active {
+      transform: translateY(0);
+    }
+    
+    .privacy-text {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 1rem;
+      line-height: 1.4;
+    }
+    
+    .privacy-text a {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+    
+    .privacy-text a:hover {
+      color: #fff;
+    }
+    
+    .benefits-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .benefit-icon {
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .email-capture-container {
+        margin: 1rem -1rem;
+        padding: 1.5rem 1rem;
+        border-radius: 0;
+      }
+      
+      .email-capture-title {
+        font-size: 1.4rem;
+      }
+      
+      .email-capture-subtitle {
+        font-size: 1rem;
+      }
+      
+      .email-capture-form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .email-input {
+        min-width: auto;
+        width: 100%;
+      }
+      
+      .benefits-list {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+    
+    /* Success/Error states */
+    .email-capture-success {
+      background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+    }
+    
+    .email-capture-error {
+      background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+    }
+    
+    /* Loading state */
+    .email-submit.loading {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
+    .email-submit.loading::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+      border: 2px solid transparent;
+      border-top: 2px solid currentColor;
+      border-radius: 50%;
+      display: inline-block;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <div class="email-capture-content">
+    <h3 class="email-capture-title">
+      {% if include.title %}{{ include.title }}{% else %}📧 Never Miss a Deal!{% endif %}
+    </h3>
+    
+    <p class="email-capture-subtitle">
+      {% if include.subtitle %}{{ include.subtitle }}{% else %}Get exclusive EarFun discounts, early access to reviews, and audio gear deals delivered straight to your inbox.{% endif %}
+    </p>
+    
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <span class="benefit-icon">🎁</span>
+        <span>Exclusive Deals</span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">🚀</span>
+        <span>Early Reviews</span>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">🔔</span>
+        <span>Price Alerts</span>
+      </div>
+    </div>
+    
+    <form class="email-capture-form" action="#" method="post" aria-label="Newsletter subscription form">
+      <input 
+        type="email" 
+        class="email-input" 
+        placeholder="{% if include.placeholder %}{{ include.placeholder }}{% else %}Enter your email address{% endif %}"
+        required
+        aria-label="Email address for newsletter subscription"
+        name="email"
+        id="email-{{ include.id | default: 'capture' }}"
+      >
+      <button type="submit" class="email-submit" aria-label="Subscribe to newsletter">
+        {% if include.button_text %}{{ include.button_text }}{% else %}🚀 Subscribe for Deals{% endif %}
+      </button>
+    </form>
+    
+    <p class="privacy-text">
+      {% if include.privacy_text %}
+        {{ include.privacy_text }}
+      {% else %}
+        🔒 We respect your privacy. Unsubscribe anytime. No spam, just great deals! <a href="/privacy-policy/">Privacy Policy</a>
+      {% endif %}
+    </p>
+  </div>
+  
+  <!-- Hidden honeypot field for spam protection -->
+  <div style="display: none;">
+    <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
+  </div>
+</div>
+
+<!-- JavaScript for form handling -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('.email-capture-form');
+    
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = form.querySelector('.email-input').value;
+        const submitBtn = form.querySelector('.email-submit');
+        const container = form.closest('.email-capture-container');
+        
+        // Basic email validation
+        if (!email || !isValidEmail(email)) {
+          showMessage('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Check honeypot
+        const honeypot = form.querySelector('input[name="honeypot"]');
+        if (honeypot && honeypot.value) {
+          return; // Likely spam
+        }
+        
+        // Show loading state
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual endpoint)
+        setTimeout(() => {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          
+          // Show success message
+          showMessage('Thank you! Check your email for confirmation.', 'success');
+          form.reset();
+          
+          // Track conversion (replace with your analytics)
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'newsletter_signup', {
+              'event_category': 'engagement',
+              'event_label': 'email_capture'
+            });
+          }
+        }, 1500);
+        
+        function showMessage(message, type) {
+          const messageDiv = document.createElement('div');
+          messageDiv.textContent = message;
+          messageDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+            ${type === 'success' ? 'background: #00b894;' : 'background: #e17055;'}
+          `;
+          
+          document.body.appendChild(messageDiv);
+          
+          setTimeout(() => {
+            messageDiv.remove();
+          }, 3000);
+        }
+        
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Accessibility improvements -->
+<div class="sr-only">
+  <h3>Newsletter Subscription</h3>
+  <p>Subscribe to our newsletter to receive exclusive deals, early product reviews, and price alerts for EarFun audio products. We respect your privacy and you can unsubscribe at any time.</p>
+</div>
