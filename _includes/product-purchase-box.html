@@ -1,0 +1,265 @@
+<!-- Product Purchase Box Component -->
+<!-- Enhanced affiliate CTA with pricing, availability, and trust signals -->
+<div class="product-purchase-box">
+  <div class="purchase-header">
+    <h3 class="product-name">{{ include.product }}</h3>
+    
+    <div class="pricing-section">
+      {% if include.sale_price %}
+        <div class="price-display">
+          <span class="sale-price">${{ include.sale_price }}</span>
+          <span class="original-price">${{ include.price }}</span>
+          {% if include.savings %}
+            <span class="savings-badge">{{ include.savings }}</span>
+          {% endif %}
+        </div>
+      {% else %}
+        <span class="current-price">${{ include.price }}</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="purchase-details">
+    {% if include.availability %}
+      <div class="availability-status">
+        <span class="status-icon">✅</span>
+        <span class="status-text">{{ include.availability }}</span>
+      </div>
+    {% endif %}
+
+    {% if include.warranty %}
+      <div class="warranty-info">
+        <span class="warranty-icon">🛡️</span>
+        <span class="warranty-text">{{ include.warranty }}</span>
+      </div>
+    {% endif %}
+
+    {% if include.return_policy %}
+      <div class="return-policy">
+        <span class="return-icon">↩️</span>
+        <span class="return-text">{{ include.return_policy }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="cta-section">
+    <a href="{{ include.link }}" 
+       class="purchase-button primary-cta" 
+       target="_blank" 
+       rel="nofollow sponsored"
+       onclick="gtag('event', 'click', {'event_category': 'affiliate', 'event_label': '{{ include.product }}'});">
+      {% if include.cta_text %}
+        {{ include.cta_text }}
+      {% else %}
+        🛒 Buy Now - Best Price
+      {% endif %}
+    </a>
+    
+    {% if include.subtitle %}
+      <p class="purchase-subtitle">{{ include.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="trust-signals">
+    <div class="shipping-info">
+      <span class="shipping-icon">🚚</span>
+      <span>Free shipping worldwide</span>
+    </div>
+    
+    <div class="security-info">
+      <span class="security-icon">🔒</span>
+      <span>Secure checkout</span>
+    </div>
+  </div>
+
+  <!-- Affiliate Disclosure -->
+  <div class="affiliate-note">
+    <small>*This is an affiliate link. We may earn a commission at no extra cost to you.</small>
+  </div>
+</div>
+
+<!-- CSS Styles for the Component -->
+<style>
+.product-purchase-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-purchase-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+}
+
+.purchase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.product-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.pricing-section {
+  text-align: right;
+}
+
+.price-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sale-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #feca57;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.current-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #feca57;
+}
+
+.savings-badge {
+  background: #ff6b6b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+.purchase-details {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.availability-status,
+.warranty-info,
+.return-policy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.purchase-button {
+  display: inline-block;
+  background: #ff6b6b;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  border: 2px solid transparent;
+  min-width: 220px;
+}
+
+.purchase-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+.purchase-subtitle {
+  margin: 12px 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.trust-signals {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.shipping-info,
+.security-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.affiliate-note {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .purchase-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .pricing-section {
+    text-align: center;
+  }
+  
+  .price-display {
+    justify-content: center;
+  }
+  
+  .trust-signals {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  
+  .purchase-button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+</style>
