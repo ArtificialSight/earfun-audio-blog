@@ -1,0 +1,8 @@
+- name: Amazon
+  link: "https://www.amazon.com/dp/REPLACE_UBOOMX?tag=your-aff-id"
+  price: "89.99"
+  status: "In Stock"
+- name: EarFun Official
+  link: "https://www.earfun.com/products/uboom-x?aff_id=YOUR_ID"
+  price: "89.99"
+  status: "In Stock"
