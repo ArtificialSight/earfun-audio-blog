@@ -1,0 +1,69 @@
+<!-- Affiliate Disclosure Component -->
+<div class="affiliate-disclosure">
+  <div class="disclosure-content">
+    <span class="disclosure-icon">ℹ️</span>
+    <p class="disclosure-text">
+      <strong>Affiliate Disclosure:</strong> This post contains affiliate links. 
+      When you purchase through our links, we may earn a commission at no extra cost to you. 
+      This helps support our blog and allows us to continue providing honest, in-depth reviews.
+      <a href="/affiliate-policy/" class="disclosure-link">Learn more about our affiliate policy</a>.
+    </p>
+  </div>
+</div>
+
+<style>
+.affiliate-disclosure {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 24px 0;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.disclosure-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.disclosure-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.disclosure-text {
+  margin: 0;
+  line-height: 1.5;
+  color: #495057;
+}
+
+.disclosure-text strong {
+  color: #212529;
+}
+
+.disclosure-link {
+  color: #007bff;
+  text-decoration: none;
+  border-bottom: 1px dotted #007bff;
+}
+
+.disclosure-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+  border-bottom-style: solid;
+}
+
+@media (max-width: 768px) {
+  .affiliate-disclosure {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .disclosure-content {
+    gap: 8px;
+  }
+}
+</style>
