@@ -1,0 +1,8 @@
+- name: Amazon
+  link: "https://www.amazon.com/dp/REPLACE_AIRPRO3?tag=your-aff-id"
+  price: "79.99"
+  status: "In Stock"
+- name: EarFun Official
+  link: "https://www.earfun.com/products/air-pro-3?aff_id=YOUR_ID"
+  price: "79.99"
+  status: "In Stock"
