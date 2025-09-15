@@ -20,67 +20,58 @@ Your comprehensive resource for making informed decisions about EarFun audio pro
 ## Popular Guides
 
 ### 🎧 Choosing the Perfect EarFun Earbuds
+
 Navigate the world of EarFun earbuds with our comprehensive selection guide. Learn about features, fit, and which model is right for your lifestyle.
 
-[**Complete Earbud Choosing Guide →**]({{ '/guides/choosing-earbuds/' | relative_url }})
+[Complete Earbud Choosing Guide →]({{ '/guides/choosing-earbuds/' | relative_url }})
 
-*Compare features, understand specifications, and find your perfect match*
+Compare features, understand specifications, and find your perfect match
 
 ## Guide Categories
 
-<div class="guides-grid">
-  <div class="guide-category">
-    <h3>🛒 Buying Guides</h3>
-    <p>Expert advice on selecting the right EarFun products for your needs and budget</p>
-    <ul>
-      <li><a href="{{ '/guides/choosing-earbuds/' | relative_url }}">How to Choose EarFun Earbuds</a></li>
-      <li>EarFun Headphones Buying Guide <em>(Coming Soon)</em></li>
-      <li>Budget vs Premium: Which EarFun? <em>(Coming Soon)</em></li>
-    </ul>
-  </div>
-  
-  <div class="guide-category">
-    <h3>⚙️ Setup & Optimization</h3>
-    <p>Get the most out of your EarFun devices with our setup and configuration guides</p>
-    <ul>
-      <li>EarFun App Setup Guide <em>(Coming Soon)</em></li>
-      <li>Optimizing Sound Quality <em>(Coming Soon)</em></li>
-      <li>Custom EQ Settings <em>(Coming Soon)</em></li>
-    </ul>
-  </div>
-  
-  <div class="guide-category">
-    <h3>🔧 Troubleshooting</h3>
-    <p>Solutions to common issues and maintenance tips for your EarFun products</p>
-    <ul>
-      <li>Connection Problems <em>(Coming Soon)</em></li>
-      <li>Battery Optimization <em>(Coming Soon)</em></li>
-      <li>Cleaning & Maintenance <em>(Coming Soon)</em></li>
-    </ul>
-  </div>
-  
-  <div class="guide-category">
-    <h3>🎯 Usage Tips</h3>
-    <p>Advanced tips and tricks to enhance your EarFun listening experience</p>
-    <ul>
-      <li>Sports & Fitness Usage <em>(Coming Soon)</em></li>
-      <li>Commuting with EarFun <em>(Coming Soon)</em></li>
-      <li>Gaming Audio Setup <em>(Coming Soon)</em></li>
-    </ul>
-  </div>
-</div>
+### 🛒 Buying Guides
+
+Expert advice on selecting the right EarFun products for your needs and budget
+
+- • [How to Choose EarFun Earbuds]({{ '/guides/choosing-earbuds/' | relative_url }})
+- • EarFun Headphones Buying Guide (Coming Soon)
+- • Budget vs Premium: Which EarFun? (Coming Soon)
+
+### ⚙️ Setup & Optimization
+
+Get the most out of your EarFun devices with our setup and configuration guides
+
+- • EarFun App Setup Guide (Coming Soon)
+- • Optimizing Sound Quality (Coming Soon)
+- • Custom EQ Settings (Coming Soon)
+
+### 🔧 Troubleshooting
+
+Solutions to common issues and maintenance tips for your EarFun products
+
+- • Connection Problems (Coming Soon)
+- • Battery Optimization (Coming Soon)
+- • Cleaning & Maintenance (Coming Soon)
+
+### 🎯 Usage Tips
+
+Advanced tips and tricks to enhance your EarFun listening experience
+
+- • Sports & Fitness Usage (Coming Soon)
+- • Commuting with EarFun (Coming Soon)
+- • Gaming Audio Setup (Coming Soon)
 
 ## What Makes Our Guides Special?
 
-- **Real-World Testing**: Every guide is based on hands-on experience
-- **Clear Instructions**: Step-by-step processes with visual aids
-- **Updated Content**: Regularly refreshed with latest product info
-- **User-Focused**: Written for actual users, not marketing
-- **Comprehensive Coverage**: From basics to advanced techniques
+• Real-World Testing: Every guide is based on hands-on experience
+• Clear Instructions: Step-by-step processes with visual aids
+• Updated Content: Regularly refreshed with latest product info
+• User-Focused: Written for actual users, not marketing
+• Comprehensive Coverage: From basics to advanced techniques
 
 ## Getting Started
 
-New to EarFun? Start with our **[Choosing EarFun Earbuds Guide]({{ '/guides/choosing-earbuds/' | relative_url }})** to understand the lineup and find the perfect model for your needs.
+New to EarFun? Start with our [Choosing EarFun Earbuds Guide]({{ '/guides/choosing-earbuds/' | relative_url }}) to understand the lineup and find the perfect model for your needs.
 
 Already own EarFun products? Check back regularly as we add new guides covering setup, optimization, and advanced usage techniques.
 
@@ -88,13 +79,11 @@ Already own EarFun products? Check back regularly as we add new guides covering 
 
 Can't find the guide you're looking for? Here are some additional resources:
 
-- Browse our **[Product Reviews]({{ '/reviews/' | relative_url }})** for detailed product insights
-- Check our **[Best Of Lists]({{ '/best/' | relative_url }})** for curated recommendations
-- Visit our **[Contact Page]({{ '/contact/' | relative_url }})** to suggest new guide topics
+- • Browse our [Product Reviews]({{ '/reviews/' | relative_url }}) for detailed product insights
+- • Check our [Best Of Lists]({{ '/best/' | relative_url }}) for curated recommendations
+- • Visit our [Contact Page]({{ '/contact/' | relative_url }}) to suggest new guide topics
 
----
-
-**Pro Tip**: Bookmark this page and check back regularly. We're constantly adding new guides based on user requests and the latest EarFun product releases.
+Pro Tip: Bookmark this page and check back regularly. We're constantly adding new guides based on user requests and the latest EarFun product releases.
 
 <style>
 .guides-grid {
