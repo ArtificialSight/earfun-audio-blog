@@ -18,7 +18,7 @@
       {% endif %}
     </div>
   </div>
-
+  
   <div class="purchase-details">
     {% if include.availability %}
       <div class="availability-status">
@@ -26,14 +26,14 @@
         <span class="status-text">{{ include.availability }}</span>
       </div>
     {% endif %}
-
+    
     {% if include.warranty %}
       <div class="warranty-info">
         <span class="warranty-icon">🛡️</span>
         <span class="warranty-text">{{ include.warranty }}</span>
       </div>
     {% endif %}
-
+    
     {% if include.return_policy %}
       <div class="return-policy">
         <span class="return-icon">↩️</span>
@@ -41,12 +41,12 @@
       </div>
     {% endif %}
   </div>
-
+  
   <div class="cta-section">
     <a href="{{ include.link }}" 
        class="purchase-button primary-cta" 
        target="_blank" 
-       rel="nofollow sponsored"
+       rel="sponsored noopener"
        onclick="gtag('event', 'click', {'event_category': 'affiliate', 'event_label': '{{ include.product }}'});">
       {% if include.cta_text %}
         {{ include.cta_text }}
@@ -59,22 +59,22 @@
       <p class="purchase-subtitle">{{ include.subtitle }}</p>
     {% endif %}
   </div>
-
+  
   <div class="trust-signals">
     <div class="shipping-info">
       <span class="shipping-icon">🚚</span>
-      <span>Free shipping worldwide</span>
+      Free shipping worldwide
     </div>
     
     <div class="security-info">
       <span class="security-icon">🔒</span>
-      <span>Secure checkout</span>
+      Secure checkout
     </div>
   </div>
-
+  
   <!-- Affiliate Disclosure -->
   <div class="affiliate-note">
-    <small>*This is an affiliate link. We may earn a commission at no extra cost to you.</small>
+    *This is an affiliate link. We may earn a commission at no extra cost to you.
   </div>
 </div>
 
