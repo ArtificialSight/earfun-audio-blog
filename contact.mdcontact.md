@@ -24,18 +24,21 @@ last_modified: 2025-09-14
       <div class="contact-section">
         <h2>Media & Partnership Inquiries</h2>
         <p>For press samples, product reviews, partnership opportunities, and campaign collaborations:</p>
+        
         <div class="contact-email">
           <a href="mailto:partnerships@earfunaudioblog.com" class="email-link">
             <i class="icon-email"></i>
             partnerships@earfunaudioblog.com
           </a>
         </div>
+        
         <p class="response-time">We typically respond within one business day.</p>
       </div>
 
       <div class="contact-section">
         <h2>General Inquiries</h2>
         <p>For general questions, feedback, or technical support:</p>
+        
         <div class="contact-email">
           <a href="mailto:hello@earfunaudioblog.com" class="email-link">
             <i class="icon-email"></i>
@@ -64,7 +67,8 @@ last_modified: 2025-09-14
           <li>Site statistics and audience demographics</li>
           <li>Editorial calendar and upcoming content</li>
         </ul>
-        <p><a href="/press-kit/" class="press-kit-link">Download Press Kit</a></p>
+        
+        <a href="{{ '/press-kit/' | relative_url }}" class="press-kit-link">Download Press Kit</a>
       </div>
     </div>
 
@@ -72,10 +76,10 @@ last_modified: 2025-09-14
       <div class="contact-info-box">
         <h3>Quick Facts</h3>
         <ul class="quick-facts">
-          <li><strong>Focus:</strong> EarFun audio products</li>
-          <li><strong>Established:</strong> 2025</li>
-          <li><strong>Content:</strong> Reviews, guides, deals</li>
-          <li><strong>Audience:</strong> Audio enthusiasts</li>
+          <li><span>Focus:</span> EarFun audio products</li>
+          <li><span>Established:</span> 2025</li>
+          <li><span>Content:</span> Reviews, guides, deals</li>
+          <li><span>Audience:</span> Audio enthusiasts</li>
         </ul>
       </div>
 
@@ -100,7 +104,7 @@ last_modified: 2025-09-14
       <div class="newsletter-signup">
         <h3>Stay Updated</h3>
         <p>Get the latest reviews and deals delivered to your inbox.</p>
-        <form class="newsletter-form" action="#" method="post">
+        <form action="#" method="post" class="newsletter-form">
           <input type="email" placeholder="Your email address" required class="email-input">
           <button type="submit" class="subscribe-btn">Subscribe</button>
         </form>
