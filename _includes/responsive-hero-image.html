@@ -1,0 +1,144 @@
+<!-- Responsive Hero Image Component -->
+<!-- Modern picture element with WebP/AVIF support, responsive srcset, lazy loading -->
+
+<picture class="responsive-hero-image{% if include.class %} {{ include.class }}{% endif %}">
+  <!-- AVIF sources for modern browsers (best compression) -->
+  {% if include.avif_base %}
+    <source 
+      srcset="{{ include.avif_base }}-320.avif 320w,
+              {{ include.avif_base }}-480.avif 480w,
+              {{ include.avif_base }}-768.avif 768w,
+              {{ include.avif_base }}-1024.avif 1024w,
+              {{ include.avif_base }}-1440.avif 1440w,
+              {{ include.avif_base }}-1920.avif 1920w"
+      sizes="{{ include.sizes | default: '(max-width: 768px) 100vw, (max-width: 1024px) 75vw, 50vw' }}"
+      type="image/avif">
+  {% endif %}
+  
+  <!-- WebP sources for modern browsers (good compression) -->
+  {% if include.webp_base %}
+    <source 
+      srcset="{{ include.webp_base }}-320.webp 320w,
+              {{ include.webp_base }}-480.webp 480w,
+              {{ include.webp_base }}-768.webp 768w,
+              {{ include.webp_base }}-1024.webp 1024w,
+              {{ include.webp_base }}-1440.webp 1440w,
+              {{ include.webp_base }}-1920.webp 1920w"
+      sizes="{{ include.sizes | default: '(max-width: 768px) 100vw, (max-width: 1024px) 75vw, 50vw' }}"
+      type="image/webp">
+  {% endif %}
+  
+  <!-- JPG fallback for all browsers -->
+  <img 
+    src="{{ include.src | default: include.jpg_base | append: '-768.jpg' }}"
+    srcset="{{ include.jpg_base }}-320.jpg 320w,
+            {{ include.jpg_base }}-480.jpg 480w,
+            {{ include.jpg_base }}-768.jpg 768w,
+            {{ include.jpg_base }}-1024.jpg 1024w,
+            {{ include.jpg_base }}-1440.jpg 1440w,
+            {{ include.jpg_base }}-1920.jpg 1920w"
+    sizes="{{ include.sizes | default: '(max-width: 768px) 100vw, (max-width: 1024px) 75vw, 50vw' }}"
+    alt="{{ include.alt | strip_html }}"
+    loading="{{ include.loading | default: 'lazy' }}"
+    decoding="{{ include.decoding | default: 'async' }}"
+    width="{{ include.width | default: '1920' }}"
+    height="{{ include.height | default: '1080' }}"
+    class="hero-image"
+    {% if include.priority %}fetchpriority="high"{% endif %}
+    onerror="this.style.display='none'">
+</picture>
+
+<!-- CSS for responsive hero image -->
+<style>
+.responsive-hero-image {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+/* Aspect ratio containers for different hero types */
+.hero-16-9 .hero-image {
+  aspect-ratio: 16 / 9;
+}
+
+.hero-4-3 .hero-image {
+  aspect-ratio: 4 / 3;
+}
+
+.hero-square .hero-image {
+  aspect-ratio: 1 / 1;
+}
+
+.hero-21-9 .hero-image {
+  aspect-ratio: 21 / 9;
+}
+
+/* Hover effects */
+.hero-image:hover {
+  transform: scale(1.02);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image {
+    transition: none;
+  }
+  
+  .hero-image:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero-image {
+    filter: contrast(1.2);
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .hero-image {
+    filter: brightness(0.9);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .responsive-hero-image {
+    border-radius: 12px;
+  }
+}
+
+/* Loading state placeholder */
+.hero-image {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.hero-image[src] {
+  background: none;
+  animation: none;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+</style>
