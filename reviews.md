@@ -2,149 +2,180 @@
 layout: default
 title: "EarFun Product Reviews - Expert Audio Reviews & Buying Guide"
 permalink: /reviews/
-description: "Comprehensive reviews of EarFun's best-selling headphones, earbuds, and speakers. Expert ratings, detailed analysis, and buying recommendations for Air Pro 4, Tune Pro, Wave Pro, and Free Pro 3."
+description: "Comprehensive reviews of EarFun's best-selling headphones, earbuds, and speakers. Expert ratings, detailed analysis, and buying recommendations."
+paginate: true
 ---
 
 # EarFun Product Reviews - Expert Audio Gear Analysis
 
-## 🏆 Best-Selling EarFun Products - Comprehensive Reviews
+## 🏆 Latest Reviews - Comprehensive Product Testing
 
 Discover our in-depth reviews of EarFun's top-rated audio products. Each review includes detailed testing, sound quality analysis, battery life assessment, and real-world performance evaluation to help you make informed purchasing decisions.
 
-### ⭐ Top Rated Earbuds & Headphones
+<!-- Paginated Reviews -->
+{% for post in paginator.posts %}
+  {% if post.categories contains 'reviews' or post.layout == 'review' %}
+  <article class="review-summary">
+    <div class="review-header">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      {% if post.rating %}<div class="rating">{{ post.rating }}</div>{% endif %}
+      {% if post.price %}<div class="price">${{ post.price }}</div>{% endif %}
+    </div>
+    
+    <div class="review-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+      {% if post.categories %}
+        <span class="categories">
+          {% for category in post.categories %}
+            <span class="category-tag">{{ category }}</span>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+    
+    {% if post.image %}
+    <div class="review-image">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+    </div>
+    {% endif %}
+    
+    <div class="review-excerpt">
+      {{ post.excerpt | strip_html | truncatewords: 30 }}
+    </div>
+    
+    <div class="review-actions">
+      <a href="{{ post.url | relative_url }}" class="read-more-btn">Read Full Review</a>
+      {% if post.buy_link %}
+        <a href="{{ post.buy_link }}" class="affiliate-btn" target="_blank" rel="nofollow sponsored">🛒 Buy Now</a>
+      {% endif %}
+    </div>
+  </article>
+  {% endif %}
+{% endfor %}
 
-<div class="review-cards-grid">
+<!-- Pagination Navigation -->
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Reviews pagination">
+  <ul class="pagination-list">
+    {% if paginator.previous_page %}
+      <li class="pagination-item">
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link" rel="prev">
+          ← Previous Page
+        </a>
+      </li>
+    {% endif %}
+    
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <li class="pagination-item">
+          <span class="pagination-link pagination-current" aria-current="page">{{ page }}</span>
+        </li>
+      {% elsif page == 1 %}
+        <li class="pagination-item">
+          <a href="{{ '/reviews/' | relative_url }}" class="pagination-link">{{ page }}</a>
+        </li>
+      {% else %}
+        <li class="pagination-item">
+          <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-link">{{ page }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    
+    {% if paginator.next_page %}
+      <li class="pagination-item">
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link" rel="next">
+          Next Page →
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+  
+  <div class="pagination-info">
+    <p>Showing {{ paginator.per_page | times: paginator.page | minus: paginator.per_page | plus: 1 }}–{% if paginator.page == paginator.total_pages %}{{ paginator.total_posts }}{% else %}{{ paginator.per_page | times: paginator.page }}{% endif %} of {{ paginator.total_posts }} reviews</p>
+  </div>
+</nav>
+{% endif %}
 
-{% include review-card.html 
-  title="EarFun Air Pro 4" 
-  tagline="Premium ANC Earbuds - Flagship Features Under $100" 
-  image="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop&crop=center&auto=format&q=80" 
-  url="/reviews/earfun-air-pro-4/" 
-  rating="⭐⭐⭐⭐⭐" 
-  score="4.8" 
-  price="79.99" 
-  badge="Editor's Choice" 
-  category="Premium Earbuds" 
-  features="Adaptive ANC Technology,LDAC & LE Audio Support,11-Hour Battery Life,Multipoint Connectivity,IPX5 Water Resistance" 
-  buy_link="#affiliate-link" 
-%}
+<!-- Featured Review Categories -->
+{% unless paginator.page and paginator.page > 1 %}
+<section class="featured-categories">
+  <h2>📊 Browse Reviews by Category</h2>
+  
+  <div class="category-grid">
+    <div class="category-card">
+      <h3>Premium Earbuds</h3>
+      <p>High-end wireless earbuds with ANC</p>
+      <a href="{{ '/reviews/category/premium-earbuds/' | relative_url }}">View Reviews →</a>
+    </div>
+    
+    <div class="category-card">
+      <h3>Budget Picks</h3>
+      <p>Best value audio gear under $100</p>
+      <a href="{{ '/reviews/category/budget/' | relative_url }}">View Reviews →</a>
+    </div>
+    
+    <div class="category-card">
+      <h3>Sports & Fitness</h3>
+      <p>Workout-optimized earbuds and headphones</p>
+      <a href="{{ '/reviews/category/sports/' | relative_url }}">View Reviews →</a>
+    </div>
+    
+    <div class="category-card">
+      <h3>Over-Ear Headphones</h3>
+      <p>Premium over-ear headphones for audiophiles</p>
+      <a href="{{ '/reviews/category/headphones/' | relative_url }}">View Reviews →</a>
+    </div>
+  </div>
+</section>
 
-{% include review-card.html 
-  title="EarFun Free Pro 3" 
-  tagline="Best Budget ANC Earbuds - Premium Features for Less" 
-  image="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=300&fit=crop&crop=center&auto=format&q=80" 
-  url="/reviews/earfun-free-pro-3/" 
-  rating="⭐⭐⭐⭐" 
-  score="4.5" 
-  price="59.99" 
-  badge="Best Budget Pick" 
-  category="Budget Earbuds" 
-  features="Hybrid ANC Technology,9-Hour Playback,aptX Adaptive Codec,6-Mic System,Quick Charge" 
-  buy_link="#affiliate-link" 
-%}
+<section class="review-tools">
+  <h2>🔍 Find Your Perfect Audio Gear</h2>
+  
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h3>Product Comparison</h3>
+      <p>Compare EarFun models side-by-side</p>
+      <a href="{{ '/comparisons/' | relative_url }}">Compare Products →</a>
+    </div>
+    
+    <div class="tool-card">
+      <h3>Buying Guides</h3>
+      <p>Expert guidance for your next purchase</p>
+      <a href="{{ '/guides/' | relative_url }}">View Guides →</a>
+    </div>
+    
+    <div class="tool-card">
+      <h3>Deal Alerts</h3>
+      <p>Latest discounts and special offers</p>
+      <a href="{{ '/deals/' | relative_url }}">Current Deals →</a>
+    </div>
+  </div>
+</section>
+{% endunless %}
 
-{% include review-card.html 
-  title="EarFun Wave Pro" 
-  tagline="Premium Over-Ear Headphones - Studio-Quality Sound" 
-  image="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=300&fit=crop&crop=center&auto=format&q=80" 
-  url="/reviews/earfun-wave-pro/" 
-  rating="⭐⭐⭐⭐⭐" 
-  score="4.7" 
-  price="149.99" 
-  badge="Audiophile Choice" 
-  category="Over-Ear Headphones" 
-  features="40mm Dynamic Drivers,45-Hour Battery Life,Hi-Res Audio Certified,Premium Materials,Foldable Design" 
-  buy_link="#affiliate-link" 
-%}
-
-{% include review-card.html 
-  title="EarFun Tune Pro" 
-  tagline="Ultimate Workout Companion - Secure Fit & Sweat Resistant" 
-  image="{{ '/assets/EarfunTunePro.jpg' | relative_url }}" 
-  url="/reviews/earfun-tune-pro/" 
-  rating="⭐⭐⭐⭐" 
-  score="4.4" 
-  price="69.99" 
-  badge="Best for Sports" 
-  category="Sports Earbuds" 
-  features="Secure Ear Hook Design,IPX7 Waterproof Rating,8-Hour Continuous Play,Enhanced Bass Response,Touch Controls" 
-  buy_link="#affiliate-link" 
-%}
-
-</div>
-
----
-
-## 📊 EarFun Product Comparison - Find Your Perfect Match
-
-| Model     | Price   | Battery Life     | ANC         | Best For              | Rating        |
-|-----------|---------|------------------|-------------|----------------------|---------------|
-| Air Pro 4 | $79.99  | 11hrs (30+ total)| ✅ Adaptive | Flagship features    | ⭐⭐⭐⭐⭐  |
-| Free Pro 3| $59.99  | 9hrs (32 total)  | ✅ Hybrid  | Budget ANC           | ⭐⭐⭐⭐    |
-| Wave Pro  | $149.99 | 45hrs            | ❌         | Audiophile/Professional | ⭐⭐⭐⭐⭐  |
-| Tune Pro  | $69.99  | 8hrs (24 total)  | ❌         | Sports/Fitness       | ⭐⭐⭐⭐    |
-
----
-
-## 🛍️ Where to Buy EarFun Products - Best Deals & Prices
-
-### Official Retailers:
-
-- • EarFun Direct - [Shop Official Store](#affiliate-link) (Best warranty & support)
-- • Amazon - [Browse EarFun on Amazon](#affiliate-link) (Fast shipping & returns)
-- • Best Buy - [Find EarFun at Best Buy](#affiliate-link) (In-store testing available)
-
-### 💰 Current Deals & Discounts:
-
-- • 🔥 Limited Time: Save 20% on Air Pro 4 with code AIRPRO20
-- • 🔥 Bundle Deal: Free Pro 3 + Charging Case for $79.99 (Save $30)
-- • 🔥 Back to School: Student discount available on Wave Pro
-
----
-
-## ❓ Frequently Asked Questions
-
-### Which EarFun model is best for me?
-
-• For Premium Features: Air Pro 4 (Best overall value)
-• For Budget Buyers: Free Pro 3 (Best bang for buck)
-• For Audiophiles: Wave Pro (Professional quality)
-• For Fitness: Tune Pro (Workout optimized)
-
-### Do EarFun products work with iPhone and Android?
-
-Yes! All EarFun products feature universal Bluetooth compatibility and work seamlessly with iPhone, Android, Windows, Mac, and other Bluetooth-enabled devices.
-
-### What's included in the warranty?
-
-All EarFun products include a comprehensive 18-month warranty covering manufacturing defects, plus dedicated customer support and free firmware updates.
-
----
-
-## 🔍 Additional EarFun Reviews
-
-### Complete Review Archive:
-
-- • [EarFun UBOOM L Speaker Review]({{ '/reviews/earfun-uboom-l/' | relative_url }}) - Portable Bluetooth speaker
-- • [EarFun OpenJump Review]({{ '/reviews/earfun-openjump/' | relative_url }}) - Open-ear sports headphones  
-- • [EarFun Air Pro 3 Review]({{ '/reviews/earfun-air-pro-3/' | relative_url }}) - Previous generation flagship
-
-### Buying Guides:
-
-- • [How to Choose the Right EarFun Earbuds]({{ '/choosing-earbuds/' | relative_url }})
-- • [EarFun vs Competitors Comparison]({{ '/comparisons/' | relative_url }})
-- • [EarFun Maintenance & Care Guide]({{ '/earbud-maintenance/' | relative_url }})
-
----
-
-## 📧 Stay Updated with Latest Reviews
-
-Get notified about new EarFun product reviews, exclusive deals, and audio gear recommendations:
-
-[📧 Subscribe to Our Newsletter](#newsletter-signup) - Never miss a review or deal!
-
-### About Our Review Process
-
-Our reviews are based on extensive hands-on testing, technical measurements, and real-world usage scenarios. We evaluate each product across multiple criteria including sound quality, build quality, battery life, features, and value proposition. Our recommendations are independent and unbiased - we only recommend products we would personally use and purchase.
-
-*Disclosure: We may earn affiliate commissions from purchases made through our links at no additional cost to you. This helps support our independent testing and review process.*
+<!-- FAQ Section (only on first page) -->
+{% unless paginator.page and paginator.page > 1 %}
+<section class="review-faq">
+  <h2>❓ Frequently Asked Questions</h2>
+  
+  <details class="faq-item">
+    <summary>How do we test EarFun products?</summary>
+    <p>Our reviews are based on extensive hands-on testing, technical measurements, and real-world usage scenarios. We evaluate each product across multiple criteria including sound quality, build quality, battery life, features, and value proposition.</p>
+  </details>
+  
+  <details class="faq-item">
+    <summary>Are our reviews unbiased?</summary>
+    <p>Yes! Our recommendations are independent and unbiased - we only recommend products we would personally use and purchase. We may earn affiliate commissions from purchases made through our links at no additional cost to you.</p>
+  </details>
+  
+  <details class="faq-item">
+    <summary>How often do we publish new reviews?</summary>
+    <p>We publish new reviews regularly as EarFun releases new products. Subscribe to our newsletter to get notified about the latest reviews and exclusive deals.</p>
+  </details>
+  
+  <details class="faq-item">
+    <summary>Do EarFun products work with all devices?</summary>
+    <p>Yes! All EarFun products feature universal Bluetooth compatibility and work seamlessly with iPhone, Android, Windows, Mac, and other Bluetooth-enabled devices.</p>
+  </details>
+</section>
+{% endunless %}
