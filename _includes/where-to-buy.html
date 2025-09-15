@@ -3,7 +3,7 @@
   <ul>
     {% for r in include.retailers %}
       <li>
-        <a href="{{ r.link }}" target="_blank" rel="nofollow sponsored">{{ r.name }}</a>
+        <a href="{{ r.link }}" target="_blank" rel="sponsored noopener">{{ r.name }}</a>
         {% if r.price %} – ${{ r.price }}{% endif %}
         {% if r.status %} <span class="stock-status">{{ r.status }}</span>{% endif %}
       </li>
