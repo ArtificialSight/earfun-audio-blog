@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Skip Link Target -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   
   <!-- Jekyll SEO Tag - handles all meta tags, Open Graph, Twitter Cards, etc. -->
   {% seo %}
@@ -46,16 +49,16 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
-      <nav aria-label="Main navigation" class="main-nav" role="navigation">
+      <nav class="main-nav" role="navigation" aria-label="Primary">
         <div class="nav-brand">
           <a class="site-logo" href="{{ '/' | relative_url }}">
-            <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" width="150" height="50">
+            <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" width="150" height="50">
           </a>
         </div>
         
-        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-controls="nav-links" aria-expanded="false">
+        <button class="mobile-menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -63,12 +66,12 @@
         
         <div class="nav-links" id="nav-links">
           <ul class="nav-menu">
-            <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-            <li><a href="{{ '/reviews/' | relative_url }}" {% if page.url contains '/reviews/' %}class="active"{% endif %}>Reviews</a></li>
-            <li><a href="{{ '/guides/' | relative_url }}" {% if page.url contains '/guides/' %}class="active"{% endif %}>Guides</a></li>
-            <li><a href="{{ '/brands/' | relative_url }}" {% if page.url contains '/brands/' %}class="active"{% endif %}>Brands</a></li>
-            <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
-            <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
+            <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="{{ '/reviews/' | relative_url }}"{% if page.url contains '/reviews/' %} aria-current="page"{% endif %}>Reviews</a></li>
+            <li><a href="{{ '/guides/' | relative_url }}"{% if page.url contains '/guides/' %} aria-current="page"{% endif %}>Guides</a></li>
+            <li><a href="{{ '/best/' | relative_url }}"{% if page.url contains '/best/' %} aria-current="page"{% endif %}>Best</a></li>
+            <li><a href="{{ '/deals/' | relative_url }}"{% if page.url contains '/deals/' %} aria-current="page"{% endif %}>Deals</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -76,7 +79,7 @@
   </header>
 
   <!-- Main Content -->
-  <main class="site-main" id="main-content">
+  <main class="site-main" id="main-content" role="main">
     <div class="container">
       {% if page.layout == 'post' or page.layout == 'review' %}
         <!-- Affiliate Disclosure and Social Proof Badges before Product Reviews -->
@@ -107,29 +110,31 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
-            <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
-            <li><a href="{{ '/brands/' | relative_url }}">Top Brands</a></li>
-            <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
-            <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
-            <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-          </ul>
-        </div>
+        <nav class="footer-nav" role="navigation" aria-label="Footer">
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
+              <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
+              <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
+              <li><a href="{{ '/deals/' | relative_url }}">Deals</a></li>
+              <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
+              <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+            </ul>
+          </div>
+        </nav>
         
         <div class="footer-contact">
-          <h4>Contact</h4>
+          <h3>Contact</h3>
           <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
           <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships }}</a></p>
         </div>
         
         <div class="footer-social">
-          <h4>Follow Us</h4>
+          <h3>Follow Us</h3>
           <div class="social-links">
             {% if site.social.links %}
               {% for link in site.social.links %}
@@ -141,12 +146,14 @@
       </div>
       
       <div class="footer-bottom">
-        <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
-        <div class="footer-legal">
-          <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
-          <a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a>
-          <a href="{{ '/for-brands/' | relative_url }}">For Brands</a>
-        </div>
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
+        <nav class="footer-legal" role="navigation" aria-label="Legal">
+          <ul>
+            <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
+            <li><a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a></li>
+            <li><a href="{{ '/for-brands/' | relative_url }}">For Brands</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </footer>
