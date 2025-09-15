@@ -49,12 +49,15 @@ social:
     - "https://facebook.com/earfunaudioblog"
     - "https://instagram.com/earfunaudioblog"
     - "https://youtube.com/@earfunaudioblog"
+
 twitter:
   username: earfunaudioblog
   card: summary_large_image
+
 facebook:
   app_id: 1234567890
   publisher: https://facebook.com/earfunaudioblog
+
 logo: "/assets/images/logo.png"
 
 # Google Analytics
@@ -63,25 +66,25 @@ google_analytics: G-XXXXXXXXXX
 # Navigation
 navigation:
   - name: "Home"
-    url: "/"
+    url: "{{ '/' | relative_url }}"
     description: "Latest audio reviews and deals"
   - name: "Reviews"
-    url: "/reviews/"
+    url: "{{ '/reviews/' | relative_url }}"
     description: "In-depth product reviews"
   - name: "Best Of"
-    url: "/best/"
+    url: "{{ '/best/' | relative_url }}"
     description: "Top audio gear recommendations"
   - name: "Guides"
-    url: "/guides/"
+    url: "{{ '/guides/' | relative_url }}"
     description: "Buying guides and tutorials"
   - name: "Deals"
-    url: "/deals/"
+    url: "{{ '/deals/' | relative_url }}"
     description: "Latest audio gear deals"
   - name: "For Brands"
-    url: "/for-brands/"
+    url: "{{ '/for-brands/' | relative_url }}"
     description: "Partnership opportunities"
   - name: "Contact"
-    url: "/contact/"
+    url: "{{ '/contact/' | relative_url }}"
     description: "Get in touch"
 
 # Collections
