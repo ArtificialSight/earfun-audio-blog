@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
@@ -55,18 +55,19 @@
   }
   </script>
 </head>
+
 <body>
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container">
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <nav aria-label="Primary" class="main-nav" role="navigation">
         <div class="nav-brand">
-          <a href="{{ '/' | relative_url }}" class="site-logo">
-            <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" width="150" height="50">
+          <a class="site-logo" href="{{ '/' | relative_url }}">
+            <img alt="{{ site.title }}" height="50" width="150" src="{{ '/logo.svg' | relative_url }}">
           </a>
         </div>
         
-        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-controls="nav-links" aria-expanded="false">
+        <button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-btn">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -74,20 +75,20 @@
         
         <div class="nav-links" id="nav-links">
           <ul class="nav-menu">
-            <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
-            <li><a href="{{ '/reviews/' | relative_url }}"{% if page.url contains '/reviews/' %} class="active"{% endif %}>Reviews</a></li>
-            <li><a href="{{ '/guides/' | relative_url }}"{% if page.url contains '/guides/' %} class="active"{% endif %}>Guides</a></li>
-            <li><a href="{{ '/brands/' | relative_url }}"{% if page.url contains '/brands/' %} class="active"{% endif %}>Brands</a></li>
-            <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="active"{% endif %}>About</a></li>
-            <li><a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} class="active"{% endif %}>Contact</a></li>
+            <li><a {% if page.url == '/' %}class="active"{% endif %} href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a {% if page.url contains '/reviews/' %}class="active"{% endif %} href="{{ '/reviews/' | relative_url }}">Reviews</a></li>
+            <li><a {% if page.url contains '/guides/' %}class="active"{% endif %} href="{{ '/guides/' | relative_url }}">Guides</a></li>
+            <li><a {% if page.url contains '/best/' %}class="active"{% endif %} href="{{ '/best/' | relative_url }}">Best</a></li>
+            <li><a {% if page.url contains '/deals/' %}class="active"{% endif %} href="{{ '/deals/' | relative_url }}">Deals</a></li>
+            <li><a {% if page.url == '/contact/' %}class="active"{% endif %} href="{{ '/contact/' | relative_url }}">Contact</a></li>
           </ul>
         </div>
       </nav>
     </div>
   </header>
-
+  
   <!-- Main Content -->
-  <main class="site-main" id="main-content">
+  <main class="site-main" id="main-content" role="main">
     <div class="container">
       {% if page.layout == 'post' or page.layout == 'review' %}
         <!-- Affiliate Disclosure and Social Proof Badges before Product Reviews -->
@@ -99,7 +100,7 @@
         <!-- Product Reviews Header -->
         {% if page.layout == 'review' or page.product_review %}
           <section class="product-reviews-header">
-            <h2>Product Reviews</h2>
+            <h1>Product Reviews</h1>
           </section>
         {% endif %}
       {% endif %}
@@ -116,35 +117,37 @@
       {% endif %}
     </div>
   </main>
-
+  
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
-            <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
-            <li><a href="{{ '/brands/' | relative_url }}">Top Brands</a></li>
-            <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
-            <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
-            <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-          </ul>
-        </div>
+        <nav aria-label="Footer" class="footer-nav" role="navigation">
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
+              <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
+              <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
+              <li><a href="{{ '/deals/' | relative_url }}">Deals</a></li>
+              <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
+              <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+            </ul>
+          </div>
+        </nav>
         
         <div class="footer-contact">
-          <h3>Contact</h3>
-          <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
-          <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships }}</a></p>
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:contact@earfun-audio.com">{{ site.contact.email }}</a></p>
+          <p>Partnerships: <a href="mailto:partnerships@earfun-audio.com">{{ site.contact.partnerships }}</a></p>
         </div>
         
         <div class="footer-social">
-          <h3>Follow Us</h3>
+          <h4>Follow Us</h4>
           <div class="social-links">
             {% if site.social.links %}
               {% for link in site.social.links %}
-                <a href="{{ link }}" target="_blank" rel="noopener" aria-label="Social link">🔗</a>
+                <a aria-label="Social link" href="{{ link }}" rel="noopener" target="_blank">🔗</a>
               {% endfor %}
             {% endif %}
           </div>
@@ -153,15 +156,17 @@
       
       <div class="footer-bottom">
         <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
-        <div class="footer-legal">
-          <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
-          <a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a>
-          <a href="{{ '/for-brands/' | relative_url }}">For Brands</a>
-        </div>
+        <nav aria-label="Legal" class="footer-legal" role="navigation">
+          <ul>
+            <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
+            <li><a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a></li>
+            <li><a href="{{ '/for-brands/' | relative_url }}">For Brands</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </footer>
-
+  
   <!-- Scripts -->
   <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
   {% if page.extra_js %}
