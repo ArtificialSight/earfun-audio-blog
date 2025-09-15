@@ -53,12 +53,12 @@
     <div class="container">
       <nav class="main-nav" role="navigation" aria-label="Primary">
         <div class="nav-brand">
-          <a class="site-logo" href="{{ '/' | relative_url }}">
+          <a href="{{ '/' | relative_url }}" class="site-logo">
             <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" width="150" height="50">
           </a>
         </div>
         
-        <button class="mobile-menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -66,12 +66,12 @@
         
         <div class="nav-links" id="nav-links">
           <ul class="nav-menu">
-            <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
-            <li><a href="{{ '/reviews/' | relative_url }}"{% if page.url contains '/reviews/' %} aria-current="page"{% endif %}>Reviews</a></li>
-            <li><a href="{{ '/guides/' | relative_url }}"{% if page.url contains '/guides/' %} aria-current="page"{% endif %}>Guides</a></li>
-            <li><a href="{{ '/best/' | relative_url }}"{% if page.url contains '/best/' %} aria-current="page"{% endif %}>Best</a></li>
-            <li><a href="{{ '/deals/' | relative_url }}"{% if page.url contains '/deals/' %} aria-current="page"{% endif %}>Deals</a></li>
-            <li><a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a></li>
+            <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="{{ '/reviews/' | relative_url }}" {% if page.url contains '/reviews/' %}aria-current="page"{% endif %}>Reviews</a></li>
+            <li><a href="{{ '/guides/' | relative_url }}" {% if page.url contains '/guides/' %}aria-current="page"{% endif %}>Guides</a></li>
+            <li><a href="{{ '/best/' | relative_url }}" {% if page.url contains '/best/' %}aria-current="page"{% endif %}>Best</a></li>
+            <li><a href="{{ '/deals/' | relative_url }}" {% if page.url contains '/deals/' %}aria-current="page"{% endif %}>Deals</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -79,7 +79,7 @@
   </header>
 
   <!-- Main Content -->
-  <main class="site-main" id="main-content" role="main">
+  <main class="site-main" role="main" id="main-content">
     <div class="container">
       {% if page.layout == 'post' or page.layout == 'review' %}
         <!-- Affiliate Disclosure and Social Proof Badges before Product Reviews -->
@@ -91,7 +91,7 @@
         <!-- Product Reviews Header -->
         {% if page.layout == 'review' or page.product_review %}
           <section class="product-reviews-header">
-            <h1>Product Reviews</h1>
+            <h2>Product Reviews</h2>
           </section>
         {% endif %}
       {% endif %}
@@ -120,7 +120,6 @@
               <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
               <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
               <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
-              <li><a href="{{ '/deals/' | relative_url }}">Deals</a></li>
               <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
               <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
             </ul>
@@ -159,10 +158,10 @@
   </footer>
 
   <!-- Scripts -->
-  <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   {% if page.extra_js %}
     {% for js in page.extra_js %}
-      <script defer src="{{ js | relative_url }}"></script>
+      <script src="{{ js | relative_url }}" defer></script>
     {% endfor %}
   {% endif %}
   
