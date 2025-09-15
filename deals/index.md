@@ -3,9 +3,14 @@ layout: default
 title: Latest EarFun Deals
 permalink: /deals/
 description: Hand-picked EarFun discounts and price drops from official store and retailers.
+last_updated: 2025-09-15
+disclaimer: 'Prices change frequently—check final price at retailer.'
 ---
 
 # 🔥 Latest EarFun Deals
+
+<div class="deal-disclaimer">{{ page.disclaimer }}</div>
+<div class="last-updated">Last updated: {{ page.last_updated | date: "%B %d, %Y" }}</div>
 
 > Prices update frequently. Always check final price at retailer.
 
@@ -26,16 +31,11 @@ description: Hand-picked EarFun discounts and price drops from official store an
       <li>✓ 50-Hour Battery Life</li>
       <li>✓ LDAC Hi-Res Audio</li>
     </ul>
-    {% include affiliate-button.html 
-       product="EarFun Air Pro 4" 
-       price="59.99" 
-       link="https://amzn.to/earfun-air-pro-4" 
-       deal-text="Limited Time - 25% OFF" 
-       savings="$20" %}
+    {% include affiliate-button.html product="EarFun Air Pro 4" price="59.99" link="https://amzn.to/earfun-air-pro-4" deal-text="Limited Time - 25% OFF" savings="$20" %}
   </div>
 
   <!-- Tune Pro Deal -->
-  <div class="deal-card">
+  <div class="deal-card value">
     <div class="deal-badge">💰 BEST VALUE</div>
     <h3>EarFun Tune Pro</h3>
     <div class="price-section">
@@ -48,15 +48,11 @@ description: Hand-picked EarFun discounts and price drops from official store an
       <li>✓ IPX7 Waterproof</li>
       <li>✓ Gaming Mode</li>
     </ul>
-    {% include affiliate-button.html 
-       product="EarFun Tune Pro" 
-       price="29.99" 
-       link="https://amzn.to/earfun-tune-pro" 
-       deal-text="Budget Champion" %}
+    {% include affiliate-button.html product="EarFun Tune Pro" price="29.99" link="https://amzn.to/earfun-tune-pro" deal-text="Budget Champion" %}
   </div>
 
   <!-- Wave Pro Deal -->
-  <div class="deal-card">
+  <div class="deal-card premium">
     <div class="deal-badge">🎧 PREMIUM</div>
     <h3>EarFun Wave Pro</h3>
     <div class="price-section">
@@ -69,15 +65,11 @@ description: Hand-picked EarFun discounts and price drops from official store an
       <li>✓ 80-Hour Battery</li>
       <li>✓ Over-Ear Comfort</li>
     </ul>
-    {% include affiliate-button.html 
-       product="EarFun Wave Pro" 
-       price="39.99" 
-       link="https://amzn.to/earfun-wave-pro" 
-       deal-text="Premium Pick" %}
+    {% include affiliate-button.html product="EarFun Wave Pro" price="39.99" link="https://amzn.to/earfun-wave-pro" deal-text="Premium Pick" %}
   </div>
 
   <!-- UBoom X Deal -->
-  <div class="deal-card">
+  <div class="deal-card speaker">
     <div class="deal-badge">📱 SPEAKER</div>
     <h3>EarFun UBoom X</h3>
     <div class="price-section">
@@ -90,62 +82,44 @@ description: Hand-picked EarFun discounts and price drops from official store an
       <li>✓ IPX7 Waterproof</li>
       <li>✓ 16-Hour Playtime</li>
     </ul>
-    {% include affiliate-button.html 
-       product="EarFun UBoom X" 
-       price="69.99" 
-       link="https://amzn.to/earfun-uboom-x" 
-       deal-text="Speaker Special" %}
+    {% include affiliate-button.html product="EarFun UBoom X" price="69.99" link="https://amzn.to/earfun-uboom-x" deal-text="Speaker Special" %}
   </div>
 </div>
 
 ## Where to Find More Deals
 
-<div class="retailer-links">
-  <div class="retailer-card">
-    <h3>🛒 Amazon</h3>
-    <p>Prime shipping, frequent lightning deals</p>
-    <a href="https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F" target="_blank" rel="noopener" class="retailer-btn">Shop Amazon</a>
-  </div>
-  
-  <div class="retailer-card">
-    <h3>🏪 EarFun Official</h3>
-    <p>Direct from manufacturer, exclusive bundles</p>
-    <a href="https://www.myearfun.com/collections/earbuds" target="_blank" rel="noopener" class="retailer-btn">Official Store</a>
-  </div>
-  
-  <div class="retailer-card">
-    <h3>🔵 Best Buy</h3>
-    <p>In-store pickup, Geek Squad support</p>
-    <a href="https://www.bestbuy.com/site/searchpage.jsp?st=earfun" target="_blank" rel="noopener" class="retailer-btn">Best Buy</a>
-  </div>
-</div>
+### 🛒 Amazon
+Prime shipping, frequent lightning deals  
+[Shop Amazon](https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F)
+
+### 🏪 EarFun Official
+Direct from manufacturer, exclusive bundles  
+[Official Store](https://www.myearfun.com/collections/earbuds)
+
+### 🔵 Best Buy
+In-store pickup, Geek Squad support  
+[Best Buy](https://www.bestbuy.com/site/searchpage.jsp?st=earfun)
 
 ## Deal Alerts & Tips
 
-<div class="deal-tips">
-  <h3>💡 How to Save More</h3>
-  <ul>
-    <li><strong>Prime Day & Black Friday:</strong> EarFun typically offers 30-40% discounts</li>
-    <li><strong>Stack Coupons:</strong> Look for on-page coupons + promo codes</li>
-    <li><strong>Bundle Deals:</strong> Buy multiple items for extra savings</li>
-    <li><strong>Newsletter:</strong> Subscribe below for exclusive deal alerts</li>
-  </ul>
-</div>
+### 💡 How to Save More
+
+• **Prime Day & Black Friday**: EarFun typically offers 30-40% discounts
+• **Stack Coupons**: Look for on-page coupons + promo codes  
+• **Bundle Deals**: Buy multiple items for extra savings
+• **Newsletter**: Subscribe below for exclusive deal alerts
 
 ## Subscribe for Deal Alerts
 
+### 🔔 Never Miss a Deal
+Get notified when EarFun products go on sale
+
 <div class="newsletter-signup">
-  <h3>🔔 Never Miss a Deal</h3>
-  <p>Get notified when EarFun products go on sale</p>
-  <form action="#" method="post" class="deal-newsletter">
-    <input type="email" name="email" placeholder="Your email address" required>
-    <button type="submit" class="subscribe-btn">Get Deal Alerts</button>
+  <form>
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Get Deal Alerts</button>
   </form>
   <small>No spam, only the best deals. Unsubscribe anytime.</small>
 </div>
-
----
-
-*Last updated: {{ site.time | date: "%B %d, %Y" }}*
 
 {% include affiliate-disclosure.html %}
