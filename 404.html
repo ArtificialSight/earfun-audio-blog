@@ -36,25 +36,19 @@ description: Sorry, the page you're looking for doesn't exist. Browse our EarFun
         </a>
         
         <a href="{{ '/guides/' | relative_url }}" class="quick-link">
-          <strong>📚 Buying Guides</strong>
-          <span>Expert advice for choosing earbuds</span>
+          <strong>📚 Guides</strong>
+          <span>Buying guides and comparisons</span>
         </a>
         
         <a href="{{ '/' | relative_url }}" class="quick-link">
-          <strong>🏠 Homepage</strong>
-          <span>Return to main page</span>
-        </a>
-        
-        <a href="{{ '/best/' | relative_url }}" class="quick-link">
-          <strong>⭐ Best Products</strong>
-          <span>Top-rated EarFun earbuds</span>
-        </a>
-        
-        <a href="{{ '/contact/' | relative_url }}" class="quick-link">
-          <strong>📞 Contact Us</strong>
-          <span>Get help and support</span>
+          <strong>🏠 Home</strong>
+          <span>Back to homepage</span>
         </a>
       </div>
+    </div>
+    
+    <div class="back-home">
+      <a href="{{ '/' | relative_url }}" class="cta-btn primary">← Back to Home</a>
     </div>
   </div>
 </div>
@@ -62,121 +56,114 @@ description: Sorry, the page you're looking for doesn't exist. Browse our EarFun
 <style>
 .error-page {
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
 .error-content h1 {
   font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
 .error-code {
   font-size: 1.2rem;
-  color: #e74c3c;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 .error-message {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.search-section {
   margin: 2rem 0;
 }
 
-.search-section h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
+.search-section {
+  margin: 3rem 0;
 }
 
 .search-box {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .search-box input {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
+  padding: 0.75rem;
   border: 2px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
   width: 300px;
-  max-width: 100%;
+  font-size: 1rem;
 }
 
 .search-box button {
   padding: 0.75rem 1.5rem;
-  background: #3498db;
+  background: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
 }
 
-.search-box button:hover {
-  background: #2980b9;
-}
-
-.quick-links h3 {
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
+.quick-links {
+  margin: 3rem 0;
 }
 
 .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .quick-link {
   display: block;
   padding: 1.5rem;
-  background: #f8f9fa;
-  border: 2px solid #e9ecef;
+  border: 2px solid #eee;
   border-radius: 8px;
   text-decoration: none;
-  color: inherit;
+  color: #333;
   transition: all 0.3s ease;
 }
 
 .quick-link:hover {
-  background: #e9ecef;
-  border-color: #3498db;
+  border-color: #007bff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.2);
 }
 
 .quick-link strong {
   display: block;
-  color: #2c3e50;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
 .quick-link span {
-  color: #666;
   font-size: 0.9rem;
+  color: #666;
+}
+
+.back-home {
+  margin-top: 3rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #0056b3;
 }
 
 @media (max-width: 768px) {
-  .error-page {
-    padding: 1rem;
-  }
-  
-  .error-content h1 {
-    font-size: 2rem;
-  }
-  
   .search-box {
     flex-direction: column;
     align-items: center;
@@ -184,21 +171,16 @@ description: Sorry, the page you're looking for doesn't exist. Browse our EarFun
   
   .search-box input {
     width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  
-  .link-grid {
-    grid-template-columns: 1fr;
+    max-width: 300px;
   }
 }
 </style>
 
 <script>
 function performSearch() {
-  const query = document.getElementById('search-input').value;
-  if (query.trim()) {
-    // Redirect to home page with search parameter
-    window.location.href = '/?search=' + encodeURIComponent(query);
+  const searchTerm = document.getElementById('search-input').value;
+  if (searchTerm.trim()) {
+    window.location.href = '/search/?q=' + encodeURIComponent(searchTerm);
   }
 }
 
