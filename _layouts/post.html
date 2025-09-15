@@ -2,6 +2,89 @@
 layout: default
 ---
 
+{% if page.product %}
+<!-- Product JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.product.name | escape }}",
+  "description": "{{ page.product.description | escape }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ page.product.brand | default: 'EarFun' }}"
+  },
+  "model": "{{ page.product.model | escape }}",
+  "category": "{{ page.product.category | default: 'Headphones' }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{{ site.baseurl }}{{ page.product.image }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "{{ page.product.currency | default: 'USD' }}",
+    "price": "{{ page.product.price }}",
+    "availability": "{{ page.product.availability | default: 'https://schema.org/InStock' }}",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ page.product.seller | default: 'Amazon' }}"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ page.rating.value }}",
+    "bestRating": "{{ page.rating.best | default: '5' }}",
+    "worstRating": "{{ page.rating.worst | default: '1' }}",
+    "ratingCount": "{{ page.rating.count | default: '1' }}"
+  }
+}
+</script>
+{% endif %}
+
+{% if page.review %}
+<!-- Review JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "{{ page.title | escape }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.review.author | default: site.author.name | default: 'EarFun Audio Team' }}"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating.value }}",
+    "bestRating": "{{ page.rating.best | default: '5' }}",
+    "worstRating": "{{ page.rating.worst | default: '1' }}"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "{{ page.product.name | escape }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "{{ page.product.brand | default: 'EarFun' }}"
+    },
+    "model": "{{ page.product.model | escape }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.product.image }}"
+    }
+  },
+  "reviewBody": "{{ page.description | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | default: 'EarFun Audio' }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.baseurl }}/assets/logo.svg"
+    }
+  }
+}
+</script>
+{% endif %}
+
 <article class="post">
   <header class="post-header" style="margin-bottom:1rem">
     <h1 style="margin:0 0 .25rem 0">{{ page.title }}</h1>
@@ -9,7 +92,7 @@ layout: default
       <p class="sub" style="opacity:.85;margin:.25rem 0 0 0">{{ page.subtitle }}</p>
     {% endif %}
   </header>
-
+  
   <div class="post-body">
     {{ content }}
   </div>
