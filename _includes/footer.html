@@ -1,0 +1,47 @@
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+      <nav aria-label="Footer" class="footer-nav" role="navigation">
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
+            <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
+            <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
+            <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
+            <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+        <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships }}</a></p>
+      </div>
+      
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          {% if site.social.links %}
+            {% for link in site.social.links %}
+              <a aria-label="Social link" href="{{ link }}" rel="noopener" target="_blank">🔗</a>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
+      <nav aria-label="Legal" class="footer-legal" role="navigation">
+        <ul>
+          <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
+          <li><a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a></li>
+          <li><a href="{{ '/for-brands/' | relative_url }}">For Brands</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
