@@ -20,59 +20,58 @@ Discover our expertly curated selection of the best EarFun audio products. From 
 ## Featured Categories
 
 ### 🎧 Best EarFun Earbuds
+
 Explore our top picks for EarFun's wireless earbuds, featuring the latest models with active noise cancellation, premium sound quality, and exceptional battery life.
 
-[**View Best EarFun Earbuds →**]({{ '/best/earfun-earbuds/' | relative_url }})
+[View Best EarFun Earbuds →]({{ '/best/earfun-earbuds/' | relative_url }})
 
-*Featuring Air Pro 4, Free Pro 3, and other top-rated models*
+Featuring Air Pro 4, Free Pro 3, and other top-rated models
 
 ### 🔊 Best EarFun Headphones & Speakers
+
 From over-ear headphones to portable Bluetooth speakers, discover EarFun's best audio devices for every listening scenario.
 
-[**View Best Headphones & Speakers →**]({{ '/best/earfun-headphones-and-speakers/' | relative_url }})
+[View Best Headphones & Speakers →]({{ '/best/earfun-headphones-and-speakers/' | relative_url }})
 
-*Including Wave Pro, UBOOM series, and premium headphone models*
+Including Wave Pro, UBOOM series, and premium headphone models
 
 ## Why Choose EarFun?
 
-- **Premium Sound Quality**: Advanced drivers and audio processing
-- **Long Battery Life**: Industry-leading playback times
-- **Comfort & Fit**: Ergonomic designs for extended listening
-- **Value for Money**: High-end features at accessible prices
-- **Reliable Build Quality**: Durable construction for daily use
+• Premium Sound Quality: Advanced drivers and audio processing
+• Long Battery Life: Industry-leading playback times
+• Comfort & Fit: Ergonomic designs for extended listening
+• Value for Money: High-end features at accessible prices
+• Reliable Build Quality: Durable construction for daily use
 
 ## Our Review Process
 
 Our "Best Of" selections are based on:
-- **Extensive Testing**: Minimum 2-week evaluation period
-- **Real-World Usage**: Daily testing across various scenarios
-- **Technical Analysis**: Audio quality, battery life, and connectivity
-- **User Feedback**: Community reviews and ratings
-- **Value Assessment**: Performance vs. price comparison
+
+• Extensive Testing: Minimum 2-week evaluation period
+• Real-World Usage: Daily testing across various scenarios
+• Technical Analysis: Audio quality, battery life, and connectivity
+• User Feedback: Community reviews and ratings
+• Value Assessment: Performance vs. price comparison
 
 ## Quick Navigation
 
-<div class="best-categories-grid">
-  <div class="category-card">
-    <h3>True Wireless Earbuds</h3>
-    <p>Premium ANC models, sports earbuds, and everyday listening companions</p>
-    <a href="{{ '/best/earfun-earbuds/' | relative_url }}" class="btn-primary">Explore Earbuds</a>
-  </div>
-  
-  <div class="category-card">
-    <h3>Headphones & Speakers</h3>
-    <p>Over-ear headphones, portable speakers, and home audio solutions</p>
-    <a href="{{ '/best/earfun-headphones-and-speakers/' | relative_url }}" class="btn-primary">Explore Audio Gear</a>
-  </div>
-</div>
+### True Wireless Earbuds
+
+Premium ANC models, sports earbuds, and everyday listening companions
+
+[Explore Earbuds]({{ '/best/earfun-earbuds/' | relative_url }})
+
+### Headphones & Speakers
+
+Over-ear headphones, portable speakers, and home audio solutions
+
+[Explore Audio Gear]({{ '/best/earfun-headphones-and-speakers/' | relative_url }})
 
 ## Latest Updates
 
 Our "Best Of" lists are regularly updated as new EarFun products are released and thoroughly tested. Check back frequently for the latest recommendations and newly reviewed products.
 
----
-
-**Need Help Choosing?** Visit our [**Buying Guides**]({{ '/guides/' | relative_url }}) for detailed comparisons and selection advice, or explore our complete [**Reviews Archive**]({{ '/reviews/' | relative_url }}) for in-depth product evaluations.
+Need Help Choosing? Visit our [Buying Guides]({{ '/guides/' | relative_url }}) for detailed comparisons and selection advice, or explore our complete [Reviews Archive]({{ '/reviews/' | relative_url }}) for in-depth product evaluations.
 
 <style>
 .best-categories-grid {
