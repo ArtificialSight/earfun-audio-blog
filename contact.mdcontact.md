@@ -14,92 +14,107 @@ last_modified: 2025-09-14
 ---
 
 <div class="contact-container">
-<div class="contact-header">
-<h1 class="contact-title">Contact EarFun Audio Blog</h1>
-<p class="contact-subtitle">Professional partnerships, media inquiries, and collaboration opportunities</p>
-</div>
-<div class="contact-content">
-<div class="contact-main">
-<div class="contact-section">
-<h2>Media & Partnership Inquiries</h2>
-<p>For press samples, product reviews, partnership opportunities, and campaign collaborations:</p>
-<div class="contact-email">
-<a class="email-link" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;partnerships&#64;earfunaudioblog&#46;com">
-<i class="icon-email"></i>
-            &#112;&#97;&#114;&#116;&#110;&#101;&#114;&#115;&#104;&#105;&#112;&#115;&#64;&#101;&#97;&#114;&#102;&#117;&#110;&#97;&#117;&#100;&#105;&#111;&#98;&#108;&#111;&#103;&#46;&#99;&#111;&#109;
+  <div class="contact-header">
+    <h1 class="contact-title">Contact EarFun Audio Blog</h1>
+    <p class="contact-subtitle">Professional partnerships, media inquiries, and collaboration opportunities</p>
+  </div>
+
+  <div class="contact-content">
+    <div class="contact-main">
+      
+      <div class="contact-section">
+        <h2>Media & Partnership Inquiries</h2>
+        <p>For press samples, product reviews, partnership opportunities, and campaign collaborations:</p>
+        
+        <div class="contact-email">
+          <a href="mailto:partnerships@earfunaudioblog.com" class="email-link">
+            📧 partnerships@earfunaudioblog.com
           </a>
-</div>
-<p class="response-time">We typically respond within one business day.</p>
-</div>
-<div class="contact-section">
-<h2>General Inquiries</h2>
-<p>For general questions, feedback, or technical support:</p>
-<div class="contact-email">
-<a class="email-link" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;hello&#64;earfunaudioblog&#46;com">
-<i class="icon-email"></i>
-            &#104;&#101;&#108;&#108;&#111;&#64;&#101;&#97;&#114;&#102;&#117;&#110;&#97;&#117;&#100;&#105;&#111;&#98;&#108;&#111;&#103;&#46;&#99;&#111;&#109;
+          <div class="response-time">We typically respond within one business day.</div>
+        </div>
+      </div>
+      
+      <div class="contact-section">
+        <h2>General Inquiries</h2>
+        <p>For general questions, feedback, or technical support:</p>
+        
+        <div class="contact-email">
+          <a href="mailto:hello@earfunaudioblog.com" class="email-link">
+            📧 hello@earfunaudioblog.com
           </a>
-</div>
-</div>
-<div class="contact-section">
-<h2>What We Cover</h2>
-<ul class="coverage-list">
-<li>EarFun wireless earbuds and headphones</li>
-<li>Bluetooth speakers and audio accessories</li>
-<li>Audio technology guides and tutorials</li>
-<li>Product comparisons and buying guides</li>
-<li>Industry trends and innovations</li>
-</ul>
-</div>
-<div class="contact-section">
-<h2>Press Kit & Media Resources</h2>
-<p>Media professionals can access our press kit including:</p>
-<ul class="press-list">
-<li>High-resolution logos and brand assets</li>
-<li>Author bios and photos</li>
-<li>Site statistics and audience demographics</li>
-<li>Editorial calendar and upcoming content</li>
-</ul>
-<a class="press-kit-link" href="{{ '/press-kit/' | relative_url }}">Download Press Kit</a>
-</div>
-</div>
-<div class="contact-sidebar">
-<div class="contact-info-box">
-<h3>Quick Facts</h3>
-<ul class="quick-facts">
-<li>Focus: EarFun audio products</li>
-<li>Established: 2025</li>
-<li>Content: Reviews, guides, deals</li>
-<li>Audience: Audio enthusiasts</li>
-</ul>
-</div>
-<div class="social-links">
-<h3>Follow Us</h3>
-<div class="social-icons">
-<a aria-label="Twitter" class="social-link" href="#">
-<i class="icon-twitter"></i>
-</a>
-<a aria-label="Facebook" class="social-link" href="#">
-<i class="icon-facebook"></i>
-</a>
-<a aria-label="Instagram" class="social-link" href="#">
-<i class="icon-instagram"></i>
-</a>
-<a aria-label="YouTube" class="social-link" href="#">
-<i class="icon-youtube"></i>
-</a>
-</div>
-</div>
-<div class="newsletter-signup">
-<h3>Stay Updated</h3>
-<p>Get the latest reviews and deals delivered to your inbox.</p>
-<form action="#" class="newsletter-form" method="post">
-<input class="email-input" placeholder="Your email address" required type="email" />
-<button class="subscribe-btn" type="submit">Subscribe</button>
-</form>
-</div>
-</div>
-</div>
+        </div>
+      </div>
+      
+      <div class="contact-section">
+        <h2>What We Cover</h2>
+        <ul class="coverage-list">
+          <li>EarFun wireless earbuds and headphones</li>
+          <li>Bluetooth speakers and audio accessories</li>
+          <li>Audio technology guides and tutorials</li>
+          <li>Product comparisons and buying guides</li>
+          <li>Industry trends and innovations</li>
+        </ul>
+      </div>
+      
+      <div class="contact-section">
+        <h2>Press Kit & Media Resources</h2>
+        <p>Media professionals can access our press kit including:</p>
+        
+        <ul class="press-list">
+          <li>High-resolution logos and brand assets</li>
+          <li>Author bios and photos</li>
+          <li>Site statistics and audience demographics</li>
+          <li>Editorial calendar and upcoming content</li>
+        </ul>
+        
+        <a href="{{ '/press-kit/' | relative_url }}" class="press-kit-link">
+          📥 Download Press Kit
+        </a>
+      </div>
+      
+    </div>
+    
+    <div class="contact-sidebar">
+      
+      <div class="contact-info-box">
+        <h3>Quick Facts</h3>
+        <ul class="quick-facts">
+          <li><strong>Focus:</strong> EarFun audio products</li>
+          <li><strong>Established:</strong> 2025</li>
+          <li><strong>Content:</strong> Reviews, guides, deals</li>
+          <li><strong>Audience:</strong> Audio enthusiasts</li>
+        </ul>
+      </div>
+      
+      <div class="social-links">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" class="social-link" aria-label="Twitter">
+            🐦
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            📘
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            📷
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            📺
+          </a>
+        </div>
+      </div>
+      
+      <div class="newsletter-signup">
+        <h3>Stay Updated</h3>
+        <p>Get the latest reviews and deals delivered to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" class="email-input" required>
+          <button type="submit" class="subscribe-btn">Subscribe</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
 </div>
 
 <style>
@@ -177,21 +192,17 @@ last_modified: 2025-09-14
   margin-top: 1rem;
 }
 
-.coverage-list,
-.press-list,
-.quick-facts {
+.coverage-list, .press-list, .quick-facts {
   list-style: none;
   padding: 0;
 }
 
-.coverage-list li,
-.press-list li {
+.coverage-list li, .press-list li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #f0f0f0;
 }
 
-.coverage-list li:before,
-.press-list li:before {
+.coverage-list li:before, .press-list li:before {
   content: "✓";
   color: #28a745;
   font-weight: bold;
@@ -219,18 +230,14 @@ last_modified: 2025-09-14
   gap: 2rem;
 }
 
-.contact-info-box,
-.social-links,
-.newsletter-signup {
+.contact-info-box, .social-links, .newsletter-signup {
   background-color: #f8f9fa;
   padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid #e9ecef;
 }
 
-.contact-info-box h3,
-.social-links h3,
-.newsletter-signup h3 {
+.contact-info-box h3, .social-links h3, .newsletter-signup h3 {
   margin-top: 0;
   color: #1a1a1a;
   font-size: 1.2rem;
@@ -320,17 +327,17 @@ last_modified: 2025-09-14
   "mainEntity": {
     "@type": "Organization",
     "name": "EarFun Audio Blog",
-    "email": "partnerships&#64;earfunaudioblog&#46;com",
+    "email": "partnerships@earfunaudioblog.com",
     "contactPoint": [{
       "@type": "ContactPoint",
       "contactType": "Media Inquiries",
-      "email": "partnerships&#64;earfunaudioblog&#46;com",
+      "email": "partnerships@earfunaudioblog.com",
       "areaServed": "Worldwide",
       "availableLanguage": "English"
     }, {
-      "@type": "ContactPoint", 
+      "@type": "ContactPoint",
       "contactType": "General Support",
-      "email": "hello&#64;earfunaudioblog&#46;com",
+      "email": "hello@earfunaudioblog.com",
       "areaServed": "Worldwide",
       "availableLanguage": "English"
     }]
