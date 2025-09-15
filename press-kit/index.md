@@ -12,7 +12,7 @@ Welcome to the EarFun Audio Blog Press Kit. Here you'll find everything you need
 ## 📋 Quick Facts
 
 - **Focus**: Expert reviews and analysis of EarFun audio products
-- **Audience**: Audio enthusiasts, tech reviewers, and everyday consumers
+- **Audience**: Audio enthusiasts, tech reviewers, and everyday consumers  
 - **Content**: In-depth product reviews, buying guides, and comparison content
 - **Founded**: 2025
 - **Expertise**: Audio gear testing, sound quality analysis, and consumer guidance
@@ -21,9 +21,9 @@ Welcome to the EarFun Audio Blog Press Kit. Here you'll find everything you need
 
 ### Logo Downloads
 
-- **Primary Logo (SVG)**: <a href="{{ '/logo.svg' | relative_url }}" download>Download SVG</a>
-- **Primary Logo (PNG)**: <a href="{{ '/assets/images/logo.png' | relative_url }}" download>Download PNG</a>
-- **Logo Variations**: <a href="{{ '/assets/images/logo-variations.zip' | relative_url }}" download>Download All Variations</a>
+- **Primary Logo (SVG)**: [Download SVG]({{ '/assets/press/logo.svg' | relative_url }})
+- **Primary Logo (PNG)**: [Download PNG]({{ '/assets/press/logo.png' | relative_url }})
+- **Complete Media Kit**: [Download Media Kit PDF]({{ '/assets/press/media-kit.pdf' | relative_url }})
 
 ### Brand Colors
 
@@ -43,11 +43,16 @@ Welcome to the EarFun Audio Blog Press Kit. Here you'll find everything you need
 
 ### Comprehensive Press Package
 
-<a href="{{ '/assets/media/earfun-audio-blog-media-kit.pdf' | relative_url }}" class="btn btn-primary" download>
-  📥 Download Complete Media Kit (PDF)
-</a>
+The complete media kit includes:
 
-*The media kit includes detailed site statistics, audience demographics, review methodology, and high-resolution screenshots.*
+- High-resolution logos in multiple formats
+- Brand guidelines and usage instructions
+- Site statistics and audience demographics
+- Review methodology and editorial standards
+- High-resolution screenshots of the website
+- Product photography and lifestyle images
+
+**[📥 Download Complete Media Kit (PDF)]({{ '/assets/press/media-kit.pdf' | relative_url }})**
 
 ### Key Statistics
 
@@ -60,14 +65,14 @@ Welcome to the EarFun Audio Blog Press Kit. Here you'll find everything you need
 
 ### Website Screenshots
 
-- **Homepage Hero**: <a href="{{ '/assets/images/screenshots/homepage-hero.png' | relative_url }}" download>Download PNG</a>
-- **Review Layout**: <a href="{{ '/assets/images/screenshots/review-layout.png' | relative_url }}" download>Download PNG</a>
-- **Comparison Table**: <a href="{{ '/assets/images/screenshots/comparison-table.png' | relative_url }}" download>Download PNG</a>
+- **Homepage Hero**: Clean, modern design showcasing featured products
+- **Review Layout**: Detailed product analysis with ratings and comparisons
+- **Comparison Table**: Side-by-side product feature comparisons
 
 ### Product Images
 
-- **Product Gallery**: <a href="{{ '/assets/images/products/' | relative_url }}">Browse Product Images</a>
-- **Review Images**: High-quality product photography used in reviews
+- **Product Gallery**: High-quality product photography used in reviews
+- **Review Images**: Professional product shots with detailed specifications
 - **Lifestyle Shots**: Products in real-world usage scenarios
 
 ## 📞 Media Contact
@@ -104,8 +109,8 @@ Welcome to the EarFun Audio Blog Press Kit. Here you'll find everything you need
 
 ### Permission Requests
 
- For custom asset requests or special usage permissions, contact our press team at press@earfunaudioblog.com.
+For custom asset requests or special usage permissions, contact our press team at press@earfunaudioblog.com.
 
 ---
 
-*This press kit is updated regularly. For the latest version, visit <a href="{{ '/press-kit/' | relative_url }}">{{ site.url }}{{ '/press-kit/' | relative_url }}</a>*
+*This press kit is updated regularly. For the latest version, visit {{ site.url }}{{ '/press-kit/' | relative_url }}*
