@@ -1,0 +1,65 @@
+# EarFun Products Data - Centralized product information for DRY content management
+
+air_pro_4:
+  name: "EarFun Air Pro 4"
+  price: "79.99"
+  sale_price: "59.99"
+  savings: "20"
+  rating: "4.5"
+  image: "/assets/images/products/air-pro-4.jpg"
+  url: "https://amzn.to/earfun-air-pro-4"
+  features:
+    - "✓ Hybrid ANC Technology"
+    - "✓ 50-Hour Battery Life"
+    - "✓ LDAC Hi-Res Audio"
+  deal_text: "Limited Time - 25% OFF"
+  category: "earbuds"
+  badge: "HOT DEAL"
+
+tune_pro:
+  name: "EarFun Tune Pro"
+  price: "39.99"
+  sale_price: "29.99"
+  savings: "10"
+  rating: "4.3"
+  image: "/assets/images/products/tune-pro.jpg"
+  url: "https://amzn.to/earfun-tune-pro"
+  features:
+    - "✓ 40-Hour Battery"
+    - "✓ IPX7 Waterproof"
+    - "✓ Gaming Mode"
+  deal_text: "Budget Champion"
+  category: "earbuds"
+  badge: "BEST VALUE"
+
+wave_pro:
+  name: "EarFun Wave Pro"
+  price: "49.99"
+  sale_price: "39.99"
+  savings: "10"
+  rating: "4.4"
+  image: "/assets/images/products/wave-pro.jpg"
+  url: "https://amzn.to/earfun-wave-pro"
+  features:
+    - "✓ Hi-Res Audio Certified"
+    - "✓ 80-Hour Battery"
+    - "✓ Over-Ear Comfort"
+  deal_text: "Premium Pick"
+  category: "headphones"
+  badge: "PREMIUM"
+
+uboom_x:
+  name: "EarFun UBoom X"
+  price: "89.99"
+  sale_price: "69.99"
+  savings: "20"
+  rating: "4.2"
+  image: "/assets/images/products/uboom-x.jpg"
+  url: "https://amzn.to/earfun-uboom-x"
+  features:
+    - "✓ 360° Surround Sound"
+    - "✓ IPX7 Waterproof"
+    - "✓ 16-Hour Playtime"
+  deal_text: "Speaker Special"
+  category: "speakers"
+  badge: "SPEAKER"
