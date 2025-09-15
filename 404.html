@@ -17,7 +17,7 @@ description: Sorry, the page you're looking for doesn't exist. Browse our EarFun
     <div class="search-section">
       <h3>🔍 Try searching for what you need:</h3>
       <div class="search-box">
-        <input type="text" placeholder="Search EarFun reviews, guides, and deals..." id="search-input">
+        <input type="text" id="search-input" placeholder="Search EarFun reviews, guides, and deals..." />
         <button onclick="performSearch()">Search</button>
       </div>
     </div>
@@ -25,32 +25,32 @@ description: Sorry, the page you're looking for doesn't exist. Browse our EarFun
     <div class="quick-links">
       <h3>🚀 Popular Pages:</h3>
       <div class="link-grid">
-        <a href="/reviews/" class="quick-link">
+        <a href="{{ '/reviews/' | relative_url }}" class="quick-link">
           <strong>📝 Reviews</strong>
           <span>In-depth EarFun product reviews</span>
         </a>
         
-        <a href="/deals/" class="quick-link">
+        <a href="{{ '/deals/' | relative_url }}" class="quick-link">
           <strong>💰 Deals</strong>
           <span>Latest discounts and offers</span>
         </a>
         
-        <a href="/guides/" class="quick-link">
+        <a href="{{ '/guides/' | relative_url }}" class="quick-link">
           <strong>📚 Buying Guides</strong>
           <span>Expert advice for choosing earbuds</span>
         </a>
         
-        <a href="/" class="quick-link">
+        <a href="{{ '/' | relative_url }}" class="quick-link">
           <strong>🏠 Homepage</strong>
           <span>Return to main page</span>
         </a>
         
-        <a href="/best/" class="quick-link">
+        <a href="{{ '/best/' | relative_url }}" class="quick-link">
           <strong>⭐ Best Products</strong>
           <span>Top-rated EarFun earbuds</span>
         </a>
         
-        <a href="/contact/" class="quick-link">
+        <a href="{{ '/contact/' | relative_url }}" class="quick-link">
           <strong>📞 Contact Us</strong>
           <span>Get help and support</span>
         </a>
