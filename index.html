@@ -3,9 +3,7 @@ layout: default
 title: EarFun Audio - Premium Earbuds & Audio Gear Reviews
 description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion.
 keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
----
-
-<!-- Deal Alert Box -->
+---<!-- Deal Alert Box -->
 {% include deal-alert.html 
    title="🔥 Limited Time Deal Alert" 
    product="EarFun Air Pro 4" 
@@ -43,7 +41,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
       <p>Premium earbuds with excellent ANC, long battery life, and crisp audio quality. Perfect for commuting and travel.</p>
       <div class="card-meta">
         <span class="price">$79.99</span>
-        <a href="{{ '/reviews/earfun-air-pro-3/' | relative_url }}" class="read-review">Full Review</a>
+        <a class="read-review" href="{{ '/reviews/earfun-air-pro-3/' | relative_url }}">Full Review</a>
       </div>
     </div>
 
@@ -55,22 +53,21 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
       <p>Sports-focused earbuds with secure ear hooks, sweatproof design, and powerful bass for workout motivation.</p>
       <div class="card-meta">
         <span class="price">$69.99</span>
-        <a href="{{ '/reviews/earfun-free-pro-3/' | relative_url }}" class="read-review">Full Review</a>
+        <a class="read-review" href="{{ '/reviews/earfun-free-pro-3/' | relative_url }}">Full Review</a>
       </div>
     </div>
 
     <!-- UB Pro -->
     <div class="review-card">
-      <img src="{{ '/assets/earfun-ub-pro-review.jpg' | relative_url }}" alt="EarFun UB Pro speaker with 360-degree sound and waterproof design" class="review-image" />
+      <img src="{{ '/assets/earfun-ub-pro-speaker.jpg' | relative_url }}" alt="EarFun UB Pro speaker with 360-degree sound and waterproof design" class="review-image" />
       <h3>EarFun UB Pro</h3>
       <p class="rating">★★★★☆ 4.2/5</p>
       <p>Portable Bluetooth speaker with 360° sound, waterproof build, and impressive battery life for outdoor adventures.</p>
       <div class="card-meta">
         <span class="price">$89.99</span>
-        <a href="{{ '/reviews/earfun-ub-pro/' | relative_url }}" class="read-review">Full Review</a>
+        <a class="read-review" href="{{ '/reviews/earfun-ub-pro/' | relative_url }}">Full Review</a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -78,55 +75,31 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
 <section class="comparison" id="comparison">
   <h2>EarFun Product Comparison</h2>
   <table>
-    <caption>Comprehensive comparison of top EarFun audio products including key features, specifications, and pricing</caption>
+    <caption>Compare EarFun models</caption>
     <thead>
       <tr>
         <th scope="col">Product</th>
         <th scope="col">Type</th>
         <th scope="col">ANC</th>
-        <th scope="col">Battery Life</th>
+        <th scope="col">Battery</th>
         <th scope="col">Water Resistance</th>
         <th scope="col">Price</th>
         <th scope="col">Best For</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">Air Pro 3</th>
-        <td>True Wireless Earbuds</td>
-        <td>Yes (Hybrid ANC)</td>
-        <td>9h + 36h case</td>
-        <td>IPX5</td>
-        <td>$79.99</td>
-        <td>Commuting, Travel</td>
-      </tr>
-      <tr>
-        <th scope="row">Free Pro 3</th>
-        <td>Sports Earbuds</td>
-        <td>No</td>
-        <td>7h + 28h case</td>
-        <td>IPX7</td>
-        <td>$69.99</td>
-        <td>Workouts, Running</td>
-      </tr>
-      <tr>
-        <th scope="row">UB Pro</th>
-        <td>Bluetooth Speaker</td>
-        <td>N/A</td>
-        <td>16 hours</td>
-        <td>IPX7</td>
-        <td>$89.99</td>
-        <td>Outdoor Activities</td>
-      </tr>
-      <tr>
-        <th scope="row">Air Pro 4</th>
-        <td>True Wireless Earbuds</td>
-        <td>Yes (Advanced ANC)</td>
-        <td>10h + 40h case</td>
-        <td>IPX5</td>
-        <td>$99.99</td>
-        <td>Premium Experience</td>
-      </tr>
+      <!-- Use Liquid loop for one <tr> per product, referencing existing fields -->
+      {% for product in site.data.products.all %}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.type }}</td>
+          <td>{{ product.anc }}</td>
+          <td>{{ product.battery }}</td>
+          <td>{{ product.water_resistance }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.best_for }}</td>
+        </tr>
+      {% endfor %}
     </tbody>
   </table>
 </section>
