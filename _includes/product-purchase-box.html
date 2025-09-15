@@ -76,6 +76,13 @@
   <div class="affiliate-note">
     *This is an affiliate link. We may earn a commission at no extra cost to you.
   </div>
+  
+  <!-- Product Schema for purchase box -->
+  {% include product-schema.json 
+     name=include.product 
+     price=include.sale_price 
+     url=include.link 
+     description=include.subtitle %}
 </div>
 
 <!-- CSS Styles for the Component -->
