@@ -1,4 +1,71 @@
-<article class="review-card" role="article" aria-labelledby="card-title-{{ include.title | slugify }}">
+<article aria-labelledby="card-title-{{ include.title | slugify }}" class="review-card" role="article">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ include.title | strip_html | jsonify }}",
+    {% if include.image %}
+    "image": [
+      "{{ site.url }}{{ include.image | replace: '.jpg', '.jpg' | relative_url }}"
+      {% if include.image_webp %},"{{ site.url }}{{ include.image_webp | replace: '.webp', '.webp' | relative_url }}"{% endif %}
+      {% if include.image_avif %},"{{ site.url }}{{ include.image_avif | replace: '.avif', '.avif' | relative_url }}"{% endif %}
+    ],
+    {% endif %}
+    {% if include.tagline %}
+    "description": {{ include.tagline | strip_html | jsonify }},
+    {% endif %}
+    "brand": {
+      "@type": "Brand",
+      "name": "{{ include.brand | default: 'EarFun' }}"
+    },
+    {% if include.price %}
+    "offers": {
+      "@type": "Offer",
+      "price": "{{ include.price }}",
+      "priceCurrency": "USD",
+      "availability": "{{ include.availability | default: 'https://schema.org/InStock' }}",
+      {% if include.buy_link %}
+      "url": "{{ include.buy_link }}",
+      {% endif %}
+      "seller": {
+        "@type": "Organization",
+        "name": "{{ include.seller | default: 'Amazon' }}"
+      }
+    },
+    {% endif %}
+    {% if include.rating and include.score %}
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ include.score }}",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "{{ include.review_count | default: '1' }}"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ include.score }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{ include.reviewer | default: 'EarFun Audio Expert' }}"
+      },
+      "datePublished": "{{ include.date_published | default: site.time | date: '%Y-%m-%d' }}",
+      {% if include.updated %}
+      "dateModified": "{{ include.updated | date: '%Y-%m-%d' }}",
+      {% endif %}
+      "reviewBody": "{{ include.review_summary | default: include.tagline | strip_html | jsonify }}"
+    },
+    {% endif %}
+    "category": "{{ include.category | default: 'Audio Equipment' }}",
+    "url": "{{ site.url }}{{ include.url | relative_url }}"
+  }
+  </script>
+
   {% if include.image %}
     {% include responsive-product-image.html 
        jpg_base=include.image
