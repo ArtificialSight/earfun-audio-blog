@@ -6,12 +6,12 @@
          loading="lazy"
          width="300"
          height="200"
-         onerror="this.style.display='none'">
+         onerror="this.style.display='none'" />
   </div>
   {% endif %}
   
   <div class="review-card-content">
-    <h3 id="card-title-{{ include.title | slugify }}" class="review-card-title">
+    <h3 class="review-card-title" id="card-title-{{ include.title | slugify }}">
       <a href="{{ include.url | relative_url }}" 
          class="review-card-link"
          aria-label="Read review of {{ include.title | strip_html }}">
@@ -27,16 +27,16 @@
     <div class="review-card-rating" 
          role="img" 
          aria-label="Rating {{ include.rating }} out of 5 stars">
-      <span class="stars" aria-hidden="true">{{ include.rating }}</span>
+      <span aria-hidden="true" class="stars">{{ include.rating }}</span>
       {% if include.score %}
-      <span class="score" aria-label="Score {{ include.score }} out of 5">({{ include.score }}/5)</span>
+      <span aria-label="Score {{ include.score }} out of 5" class="score">({{ include.score }}/5)</span>
       {% endif %}
     </div>
     {% endif %}
     
     {% if include.price %}
     <div class="review-card-price">
-      <span class="price" aria-label="Price ${{ include.price }}">${{ include.price }}</span>
+      <span aria-label="Price ${{ include.price }}" class="price">${{ include.price }}</span>
       {% if include.badge %}
       <span class="badge badge-{{ include.badge | downcase | replace: ' ', '-' }}" 
             aria-label="{{ include.badge }}">{{ include.badge }}</span>
@@ -47,12 +47,12 @@
     <div class="review-card-meta">
       <span class="category">{{ include.category | default: "Review" }}</span>
       {% if include.updated %}
-      <span class="updated" aria-label="Updated {{ include.updated }}">Updated {{ include.updated }}</span>
+      <span aria-label="Updated {{ include.updated }}" class="updated">Updated {{ include.updated }}</span>
       {% endif %}
     </div>
     
     {% if include.features %}
-    <ul class="review-card-features" aria-label="Key features">
+    <ul aria-label="Key features" class="review-card-features">
       {% for feature in include.features %}
       <li>{{ feature }}</li>
       {% endfor %}
@@ -63,7 +63,7 @@
       <a href="{{ include.url | relative_url }}" 
          class="btn btn-primary btn-read-review"
          aria-label="Read full review of {{ include.title | strip_html }}">
-        <span class="btn-icon" aria-hidden="true">📖</span>
+        <span aria-hidden="true" class="btn-icon">📖</span>
         Read Full Review
       </a>
       
@@ -73,12 +73,21 @@
          target="_blank" 
          rel="nofollow sponsored noopener"
          aria-label="Buy {{ include.title | strip_html }} now">
-        <span class="btn-icon" aria-hidden="true">🛒</span>
+        <span aria-hidden="true" class="btn-icon">🛒</span>
         Buy Now
       </a>
       {% endif %}
     </div>
   </div>
+  
+  <!-- Product Schema for each review card -->
+  {% include product-schema.json 
+     name=include.title 
+     image=include.image 
+     description=include.tagline 
+     rating=include.score 
+     price=include.price 
+     url=include.url %}
 </article>
 
 <!-- CSS for Review Card Component -->
