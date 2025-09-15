@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   
   <!-- Skip Link Target -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -11,13 +11,13 @@
   {% seo %}
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}"/>
+  <link href="{{ '/assets/images/favicon.ico' | relative_url }}" rel="icon" type="image/x-icon"/>
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"/>
+  <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet"/>
   {% if page.extra_css %}
     {% for css in page.extra_css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}"/>
+      <link href="{{ css | relative_url }}" rel="stylesheet"/>
     {% endfor %}
   {% endif %}
   
@@ -65,14 +65,14 @@
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container">
-      <nav class="main-nav" role="navigation" aria-label="Primary">
+      <nav aria-label="Primary" class="main-nav" role="navigation">
         <div class="nav-brand">
           <a class="site-logo" href="{{ '/' | relative_url }}">
-            <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" width="150" height="50"/>
+            <img alt="{{ site.title }}" height="50" width="150" src="{{ '/assets/images/logo.png' | relative_url }}"/>
           </a>
         </div>
         
-        <button class="mobile-menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+        <button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-btn">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -92,6 +92,9 @@
     </div>
   </header>
   
+  <!-- Breadcrumb Navigation -->
+  {% include breadcrumb-nav.html %}
+  
   <!-- Main Content -->
   <main class="site-main" id="main-content" role="main">
     <div class="container">
@@ -105,7 +108,7 @@
         <!-- Product Reviews Header -->
         {% if page.layout == 'review' or page.product_review %}
           <section class="product-reviews-header">
-            <h1>Product Reviews</h1>
+            <h2>Product Reviews</h2>
           </section>
         {% endif %}
       {% endif %}
@@ -127,7 +130,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
-        <nav class="footer-nav" role="navigation" aria-label="Footer">
+        <nav aria-label="Footer" class="footer-nav" role="navigation">
           <div class="footer-links">
             <h3>Quick Links</h3>
             <ul>
@@ -142,8 +145,8 @@
         
         <div class="footer-contact">
           <h3>Contact</h3>
-          <p>Email: <a href="mailto:hello[at]earfunaudioblog[dot]com">{{ site.contact.email | replace: '@', '[at]' | replace: '.', '[dot]' }}</a></p>
-          <p>Partnerships: <a href="mailto:partnerships[at]earfunaudioblog[dot]com">{{ site.contact.partnerships | replace: '@', '[at]' | replace: '.', '[dot]' }}</a></p>
+          <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email | replace: '@', '[at]' | replace: '.', '[dot]' }}</a></p>
+          <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships | replace: '@', '[at]' | replace: '.', '[dot]' }}</a></p>
         </div>
         
         <div class="footer-social">
@@ -151,7 +154,7 @@
           <div class="social-links">
             {% if site.social.links %}
               {% for link in site.social.links %}
-                <a href="{{ link }}" target="_blank" rel="noopener" aria-label="Social link">🔗</a>
+                <a aria-label="Social link" href="{{ link }}" rel="noopener" target="_blank">🔗</a>
               {% endfor %}
             {% endif %}
           </div>
@@ -159,8 +162,8 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
-        <nav class="footer-legal" role="navigation" aria-label="Legal">
+        <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
+        <nav aria-label="Legal" class="footer-legal" role="navigation">
           <ul>
             <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
             <li><a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a></li>
