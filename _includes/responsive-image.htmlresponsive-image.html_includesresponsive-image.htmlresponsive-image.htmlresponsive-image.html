@@ -1,0 +1,65 @@
+<!-- Responsive Image Component
+     Usage: {% include responsive-image.html 
+              src="earfun-air-pro-3" 
+              alt="EarFun Air Pro 3 wireless earbuds with premium design" 
+              class="product-image" 
+              sizes="(max-width: 480px) 400px, (max-width: 768px) 800px, 1200px"
+              loading="lazy" %}
+-->
+
+{% assign base_path = '/assets/' | relative_url %}
+{% assign image_name = include.src | default: 'placeholder' %}
+{% assign alt_text = include.alt | default: 'Product image' %}
+{% assign css_class = include.class | default: '' %}
+{% assign loading_type = include.loading | default: 'lazy' %}
+{% assign sizes_attr = include.sizes | default: '(max-width: 480px) 400px, (max-width: 768px) 800px, 1200px' %}
+{% assign width = include.width | default: '1200' %}
+{% assign height = include.height | default: '800' %}
+{% assign decoding = include.decoding | default: 'async' %}
+
+<!-- Generate WebP and fallback image paths -->
+{% capture webp_400 %}{{ base_path }}{{ image_name }}-400w.webp{% endcapture %}
+{% capture webp_800 %}{{ base_path }}{{ image_name }}-800w.webp{% endcapture %}
+{% capture webp_1200 %}{{ base_path }}{{ image_name }}-1200w.webp{% endcapture %}
+
+{% capture jpg_400 %}{{ base_path }}{{ image_name }}-400w.jpg{% endcapture %}
+{% capture jpg_800 %}{{ base_path }}{{ image_name }}-800w.jpg{% endcapture %}
+{% capture jpg_1200 %}{{ base_path }}{{ image_name }}-1200w.jpg{% endcapture %}
+
+<!-- Check for original file extension -->
+{% assign original_ext = 'jpg' %}
+{% if image_name contains '.png' %}
+  {% assign original_ext = 'png' %}
+  {% capture fallback_400 %}{{ base_path }}{{ image_name }}-400w.png{% endcapture %}
+  {% capture fallback_800 %}{{ base_path }}{{ image_name }}-800w.png{% endcapture %}
+  {% capture fallback_1200 %}{{ base_path }}{{ image_name }}-1200w.png{% endcapture %}
+{% else %}
+  {% capture fallback_400 %}{{ jpg_400 }}{% endcapture %}
+  {% capture fallback_800 %}{{ jpg_800 }}{% endcapture %}
+  {% capture fallback_1200 %}{{ jpg_1200 }}{% endcapture %}
+{% endif %}
+
+<picture{% if css_class != '' %} class="{{ css_class }}-picture"{% endif %}>
+  <!-- WebP sources for modern browsers -->
+  <source 
+    type="image/webp"
+    srcset="{{ webp_400 }} 400w, {{ webp_800 }} 800w, {{ webp_1200 }} 1200w"
+    sizes="{{ sizes_attr }}">
+  
+  <!-- Fallback for browsers that don't support WebP -->
+  <source 
+    type="image/{{ original_ext }}"
+    srcset="{{ fallback_400 }} 400w, {{ fallback_800 }} 800w, {{ fallback_1200 }} 1200w"
+    sizes="{{ sizes_attr }}">
+  
+  <!-- Fallback img tag -->
+  <img 
+    src="{{ fallback_800 }}"
+    alt="{{ alt_text }}"
+    width="{{ width }}"
+    height="{{ height }}"
+    loading="{{ loading_type }}"
+    decoding="{{ decoding }}"
+    {% if css_class != '' %}class="{{ css_class }}"{% endif %}
+    style="max-width: 100%; height: auto;">
+</picture>
