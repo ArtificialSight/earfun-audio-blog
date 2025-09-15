@@ -3,20 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   
-  <!-- SEO Meta Tags -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/og-default.jpg' | absolute_url }}{% endif %}">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/og-default.jpg' | absolute_url }}{% endif %}">
+  <!-- Jekyll SEO Tag - handles all meta tags, Open Graph, Twitter Cards, etc. -->
+  {% seo %}
   
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
@@ -59,10 +48,10 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <nav aria-label="Main navigation" class="main-nav" role="navigation">
         <div class="nav-brand">
-          <a href="{{ '/' | relative_url }}" class="site-logo">
-            <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="{{ site.title }}" width="150" height="50">
+          <a class="site-logo" href="{{ '/' | relative_url }}">
+            <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" width="150" height="50">
           </a>
         </div>
         
@@ -74,12 +63,12 @@
         
         <div class="nav-links" id="nav-links">
           <ul class="nav-menu">
-            <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
-            <li><a href="{{ '/reviews/' | relative_url }}"{% if page.url contains '/reviews/' %} class="active"{% endif %}>Reviews</a></li>
-            <li><a href="{{ '/guides/' | relative_url }}"{% if page.url contains '/guides/' %} class="active"{% endif %}>Guides</a></li>
-            <li><a href="{{ '/brands/' | relative_url }}"{% if page.url contains '/brands/' %} class="active"{% endif %}>Brands</a></li>
-            <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="active"{% endif %}>About</a></li>
-            <li><a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} class="active"{% endif %}>Contact</a></li>
+            <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+            <li><a href="{{ '/reviews/' | relative_url }}" {% if page.url contains '/reviews/' %}class="active"{% endif %}>Reviews</a></li>
+            <li><a href="{{ '/guides/' | relative_url }}" {% if page.url contains '/guides/' %}class="active"{% endif %}>Guides</a></li>
+            <li><a href="{{ '/brands/' | relative_url }}" {% if page.url contains '/brands/' %}class="active"{% endif %}>Brands</a></li>
+            <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -99,7 +88,7 @@
         <!-- Product Reviews Header -->
         {% if page.layout == 'review' or page.product_review %}
           <section class="product-reviews-header">
-            <h2>Product Reviews</h2>
+            <h1>Product Reviews</h1>
           </section>
         {% endif %}
       {% endif %}
@@ -122,7 +111,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-links">
-          <h3>Quick Links</h3>
+          <h4>Quick Links</h4>
           <ul>
             <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
             <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
@@ -134,13 +123,13 @@
         </div>
         
         <div class="footer-contact">
-          <h3>Contact</h3>
+          <h4>Contact</h4>
           <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
           <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships }}</a></p>
         </div>
         
         <div class="footer-social">
-          <h3>Follow Us</h3>
+          <h4>Follow Us</h4>
           <div class="social-links">
             {% if site.social.links %}
               {% for link in site.social.links %}
@@ -152,7 +141,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
+        <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
         <div class="footer-legal">
           <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
           <a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a>
