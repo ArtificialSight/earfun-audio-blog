@@ -19,7 +19,8 @@
         <article class="product-card" role="listitem">
           {% if image and image != '' %}
             <div class="product-image">
-              <img src="{{ image | relative_url }}" 
+              <img 
+                   src="{{ image | relative_url }}" 
                    alt="{{ name }}" 
                    loading="lazy"
                    width="150"
@@ -74,8 +75,8 @@
     <p class="browse-more">
       <span aria-hidden="true">📂</span>
       Looking for more options? Browse our 
-      <a href="/reviews/" class="browse-link">complete reviews</a> or 
-      <a href="/best/" class="browse-link">best-of lists</a>.
+      <a href="{{ '/reviews/' | relative_url }}" class="browse-link">complete reviews</a> or 
+      <a href="{{ '/best/' | relative_url }}" class="browse-link">best-of lists</a>.
     </p>
   </div>
 </div>
