@@ -1,0 +1,42 @@
+<!-- Breadcrumb Navigation Component -->
+{% if site.features.breadcrumbs and page.url != '/' %}
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="{{ '/' | relative_url }}" class="breadcrumb-link">Home</a>
+    </li>
+    
+    {% assign breadcrumb_parts = page.url | split: '/' %}
+    {% assign breadcrumb_url = '' %}
+    
+    {% for part in breadcrumb_parts %}
+      {% unless part == '' %}
+        {% assign breadcrumb_url = breadcrumb_url | append: '/' | append: part %}
+        {% assign is_last = forloop.last %}
+        
+        <li class="breadcrumb-item{% if is_last %} breadcrumb-current{% endif %}">
+          <span class="breadcrumb-separator" aria-hidden="true">›</span>
+          
+          {% if is_last %}
+            <span class="breadcrumb-current" aria-current="page">{{ part | replace: '-', ' ' | replace: '_', ' ' | capitalize }}</span>
+          {% else %}
+            {% comment %} Handle special section names with proper baseurl-aware links {% endcomment %}
+            {% case part %}
+              {% when 'guides' %}
+                <a href="{{ '/guides/' | relative_url }}" class="breadcrumb-link">Guides</a>
+              {% when 'reviews' %}
+                <a href="{{ '/reviews/' | relative_url }}" class="breadcrumb-link">Reviews</a>
+              {% when 'best' %}
+                <a href="{{ '/best/' | relative_url }}" class="breadcrumb-link">Best</a>
+              {% when 'deals' %}
+                <a href="{{ '/deals/' | relative_url }}" class="breadcrumb-link">Deals</a>
+              {% else %}
+                <a href="{{ breadcrumb_url | relative_url }}" class="breadcrumb-link">{{ part | replace: '-', ' ' | replace: '_', ' ' | capitalize }}</a>
+            {% endcase %}
+          {% endif %}
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}
