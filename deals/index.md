@@ -9,17 +9,19 @@ disclaimer: "Prices change frequently—check final price at retailer."
 
 # 🔥 Latest EarFun Deals
 
-<div class="deal-disclaimer">{{ page.disclaimer }}</div>
-<div class="last-updated">Last updated: {{ page.last_updated | date: "%B %d, %Y" }}</div>
+{{ page.disclaimer }}
+
+Last updated: {{ page.last_updated | date: "%B %d, %Y" }}
 
 ## Current Hot Deals
 
 {% assign air_pro_4 = site.data.products.air_pro_4 %}
+
 ### {{ air_pro_4.name }}
 
-**Price:** ${{ air_pro_4.price }}  
-**Sale Price:** ${{ air_pro_4.sale_price }}  
-**Retailer:** {{ air_pro_4.retailer }}  
+**Price:** ${{ air_pro_4.price }}
+**Sale Price:** ${{ air_pro_4.sale_price }}
+**Retailer:** {{ air_pro_4.retailer }}
 **Deal Ends:** {{ air_pro_4.deal_end }}
 
 **Key Features:**
