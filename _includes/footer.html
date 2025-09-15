@@ -17,8 +17,8 @@
       
       <div class="footer-contact">
         <h3>Contact</h3>
-        <p>Email: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
-        <p>Partnerships: <a href="mailto:{{ site.contact.partnerships }}">{{ site.contact.partnerships }}</a></p>
+        <p>Email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;{{ site.contact.email }}">{{ site.contact.email | replace: '@', '&#64;' | replace: '.', '&#46;' }}</a></p>
+        <p>Partnerships: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;{{ site.contact.partnerships }}">{{ site.contact.partnerships | replace: '@', '&#64;' | replace: '.', '&#46;' }}</a></p>
       </div>
       
       <div class="footer-social">
@@ -34,14 +34,8 @@
     </div>
     
     <div class="footer-bottom">
-      <p>© {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
-      <nav aria-label="Legal" class="footer-legal" role="navigation">
-        <ul>
-          <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
-          <li><a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a></li>
-          <li><a href="{{ '/for-brands/' | relative_url }}">For Brands</a></li>
-        </ul>
-      </nav>
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | default: "EarFun Audio Blog" }}. All rights reserved.</p>
+      <p><small>Affiliate links may earn commission. <a href="{{ '/disclosure/' | relative_url }}">Disclosure</a></small></p>
     </div>
   </div>
 </footer>
