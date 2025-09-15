@@ -22,22 +22,22 @@ last_modified: 2025-09-14
 <div class="contact-main">
 <div class="contact-section">
 <h2>Media & Partnership Inquiries</h2>
-For press samples, product reviews, partnership opportunities, and campaign collaborations:
+<p>For press samples, product reviews, partnership opportunities, and campaign collaborations:</p>
 <div class="contact-email">
-<a class="email-link" href="mailto:partnerships@earfunaudioblog.com">
+<a class="email-link" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;partnerships&#64;earfunaudioblog&#46;com">
 <i class="icon-email"></i>
-            partnerships@earfunaudioblog.com
+            &#112;&#97;&#114;&#116;&#110;&#101;&#114;&#115;&#104;&#105;&#112;&#115;&#64;&#101;&#97;&#114;&#102;&#117;&#110;&#97;&#117;&#100;&#105;&#111;&#98;&#108;&#111;&#103;&#46;&#99;&#111;&#109;
           </a>
 </div>
 <p class="response-time">We typically respond within one business day.</p>
 </div>
 <div class="contact-section">
 <h2>General Inquiries</h2>
-For general questions, feedback, or technical support:
+<p>For general questions, feedback, or technical support:</p>
 <div class="contact-email">
-<a class="email-link" href="mailto:hello@earfunaudioblog.com">
+<a class="email-link" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;hello&#64;earfunaudioblog&#46;com">
 <i class="icon-email"></i>
-            hello@earfunaudioblog.com
+            &#104;&#101;&#108;&#108;&#111;&#64;&#101;&#97;&#114;&#102;&#117;&#110;&#97;&#117;&#100;&#105;&#111;&#98;&#108;&#111;&#103;&#46;&#99;&#111;&#109;
           </a>
 </div>
 </div>
@@ -53,7 +53,7 @@ For general questions, feedback, or technical support:
 </div>
 <div class="contact-section">
 <h2>Press Kit & Media Resources</h2>
-Media professionals can access our press kit including:
+<p>Media professionals can access our press kit including:</p>
 <ul class="press-list">
 <li>High-resolution logos and brand assets</li>
 <li>Author bios and photos</li>
@@ -94,7 +94,7 @@ Media professionals can access our press kit including:
 <h3>Stay Updated</h3>
 <p>Get the latest reviews and deals delivered to your inbox.</p>
 <form action="#" class="newsletter-form" method="post">
-<input class="email-input" placeholder="Your email address" required="" type="email"/>
+<input class="email-input" placeholder="Your email address" required type="email" />
 <button class="subscribe-btn" type="submit">Subscribe</button>
 </form>
 </div>
@@ -320,17 +320,17 @@ Media professionals can access our press kit including:
   "mainEntity": {
     "@type": "Organization",
     "name": "EarFun Audio Blog",
-    "email": "partnerships@earfunaudioblog.com",
+    "email": "partnerships&#64;earfunaudioblog&#46;com",
     "contactPoint": [{
       "@type": "ContactPoint",
       "contactType": "Media Inquiries",
-      "email": "partnerships@earfunaudioblog.com",
+      "email": "partnerships&#64;earfunaudioblog&#46;com",
       "areaServed": "Worldwide",
       "availableLanguage": "English"
     }, {
       "@type": "ContactPoint", 
       "contactType": "General Support",
-      "email": "hello@earfunaudioblog.com",
+      "email": "hello&#64;earfunaudioblog&#46;com",
       "areaServed": "Worldwide",
       "availableLanguage": "English"
     }]
