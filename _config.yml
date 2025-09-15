@@ -49,15 +49,12 @@ social:
     - "https://facebook.com/earfunaudioblog"
     - "https://instagram.com/earfunaudioblog"
     - "https://youtube.com/@earfunaudioblog"
-
 twitter:
   username: earfunaudioblog
   card: summary_large_image
-
 facebook:
   app_id: 1234567890
   publisher: https://facebook.com/earfunaudioblog
-
 logo: "/assets/images/logo.png"
 
 # Google Analytics
@@ -137,8 +134,8 @@ defaults:
       schema_type: "HowTo"
 
 # Pagination
-paginate: 12
-paginate_path: "/page:num/"
+paginate: 10
+paginate_path: "/reviews/page:num/"
 
 # Content Processing
 excerpt_separator: "<!--more-->"
