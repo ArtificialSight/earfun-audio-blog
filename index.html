@@ -4,7 +4,6 @@ title: EarFun Audio - Premium Earbuds & Audio Gear Reviews
 description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion.
 keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
 ---
-
 <!-- Deal Alert Box -->
 {% include deal-alert.html 
    title="🔥 Limited Time Deal Alert" 
@@ -37,6 +36,40 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
       <a class="cta-btn secondary" href="{{ '/best/' | relative_url }}">Best Products</a>
       <a class="cta-btn deals" href="{{ '/deals/' | relative_url }}">🔥 Hot Deals</a>
     </div>
+  </div>
+</section>
+
+<!-- Product Comparison Table -->
+<section class="product-comparison">
+  <div class="container">
+    <h2>Compare EarFun Models</h2>
+    <table>
+      <caption>Compare EarFun models</caption>
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Product Type</th>
+          <th scope="col">ANC</th>
+          <th scope="col">Battery Life</th>
+          <th scope="col">Water Resistance</th>
+          <th scope="col">Price</th>
+          <th scope="col">Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in site.data.products.all %}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.type }}</td>
+          <td>{{ product.anc }}</td>
+          <td>{{ product.battery }}</td>
+          <td>{{ product.water_resistance }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.best_for }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -133,7 +166,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
   <div class="newsletter-content">
     <h2>Stay Updated with Latest Reviews</h2>
     <p>Get notified about new EarFun product reviews, exclusive deals, and audio tech insights.</p>
-    <form action="#" class="newsletter-form" method="post">
+    <form class="newsletter-form" method="post" action="#">
       <input type="email" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
