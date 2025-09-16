@@ -1,41 +1,18 @@
 ---
 layout: default
-title: EarFun Audio - Premium Earbuds & Audio Gear Reviews
-description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion.
-keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
+title: EarFun Audio Blog - Expert Reviews & Guides
+description: Comprehensive reviews, guides, and comparisons of EarFun audio products. Expert testing and honest recommendations for earbuds, headphones, and speakers.
+keywords: EarFun reviews, earbuds comparison, audio gear guides, headphone reviews
+canonical: https://earfunaudioblog.com/
+schema_type: WebSite
 ---
-<!-- Deal Alert Box -->
-{% include deal-alert.html 
-   title="🔥 Limited Time Deal Alert" 
-   product="EarFun Air Pro 4" 
-   original_price="$79.99" 
-   sale_price="$59.99" 
-   savings="$20 OFF" 
-   link="https://amzn.to/earfun-air-pro-4" 
-   urgency="Ends in 24 hours!" %}
 
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <div class="kicker">Premium Audio Reviews</div>
-    <h1>Discover the Best EarFun Audio Products</h1>
-    <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
-    
-    <!-- Task 4: Responsive Hero Image with picture element -->
-    {% include responsive-hero-image.html 
-       jpg_base="{{ '/assets/hero-earfun-products' | relative_url }}"
-       alt="Collection of premium EarFun audio products including earbuds and speakers"
-       width="1200"
-       height="675"
-       loading="eager"
-       priority=true
-       class="hero-16-9" %}
-    
-    <div class="cta-buttons">
-      <a class="cta-btn primary" href="{{ '/reviews/' | relative_url }}">View Reviews</a>
-      <a class="cta-btn secondary" href="{{ '/best/' | relative_url }}">Best Products</a>
-      <a class="cta-btn deals" href="{{ '/deals/' | relative_url }}">🔥 Hot Deals</a>
-    </div>
+    <h1>EarFun Audio Expert Reviews</h1>
+    <p>Comprehensive testing and honest reviews of EarFun earbuds, headphones, and audio gear</p>
+    <a href="#products" class="cta-btn">View Latest Reviews</a>
   </div>
 </section>
 
@@ -48,36 +25,60 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
       <thead>
         <tr>
           <th scope="col">Product</th>
-          <th scope="col">Product Type</th>
+          <th scope="col">Price</th>
           <th scope="col">ANC</th>
           <th scope="col">Battery Life</th>
-          <th scope="col">Water Resistance</th>
-          <th scope="col">Price</th>
           <th scope="col">Best For</th>
+          <th scope="col">Rating</th>
         </tr>
       </thead>
       <tbody>
-        {% for product in site.data.products.all %}
         <tr>
-          <td>{{ product.name }}</td>
-          <td>{{ product.type }}</td>
-          <td>{{ product.anc }}</td>
-          <td>{{ product.battery }}</td>
-          <td>{{ product.water_resistance }}</td>
-          <td>{{ product.price }}</td>
-          <td>{{ product.best_for }}</td>
+          <th scope="row">Air Pro 3</th>
+          <td>$79.99</td>
+          <td>✅ Yes</td>
+          <td>45 hours</td>
+          <td>Premium Audio</td>
+          <td>4.5/5</td>
         </tr>
-        {% endfor %}
+        <tr>
+          <th scope="row">Free Pro 3</th>
+          <td>$59.99</td>
+          <td>❌ No</td>
+          <td>32 hours</td>
+          <td>Sports & Fitness</td>
+          <td>4.2/5</td>
+        </tr>
+        <tr>
+          <th scope="row">Air S</th>
+          <td>$39.99</td>
+          <td>❌ No</td>
+          <td>30 hours</td>
+          <td>Budget Friendly</td>
+          <td>4.0/5</td>
+        </tr>
       </tbody>
     </table>
   </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" style="margin-top:2em;">
+  <h2>Frequently Asked Questions</h2>
+  <dl>
+    <dt>Which EarFun earbuds are best for working out?</dt>
+    <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
+    <dt>Do EarFun earbuds work well for phone calls?</dt>
+    <dd>Yes, most EarFun models feature clear call quality with noise reduction microphones.</dd>
+    <dt>How long do EarFun earbuds typically last?</dt>
+    <dd>Battery life varies by model, ranging from 6-11 hours per charge, with up to 45 hours total with the case.</dd>
+  </dl>
 </section>
 
 <!-- Featured Product Review Cards -->
 <section class="products" id="products">
   <h2>Top EarFun Product Reviews</h2>
   <div class="product-grid">
-    
     {% for product in site.data.products limit:6 %}
     <article class="product-card">
       <div class="product-image">
@@ -89,7 +90,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
            height="300"
            loading="lazy" %}
         {% if product.badge %}
-        <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
+          <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
         {% endif %}
       </div>
       <div class="product-content">
@@ -112,7 +113,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
         </div>
       </div>
     </article>
-    
+
     <!-- Task 6: Product JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -157,7 +158,6 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
     }
     </script>
     {% endfor %}
-    
   </div>
 </section>
 

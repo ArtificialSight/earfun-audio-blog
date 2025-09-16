@@ -13,18 +13,21 @@ We produce high-quality, original editorial around audio gear—especially earbu
 ## What We Offer
 
 ### Comprehensive Coverage
+
 - Hands-on reviews with detailed testing
 - A/B comparisons and competitive analysis
 - Buying guides and category roundups
 - Deal alerts and promotional coverage
 
 ### Compliance & Ethics
+
 - Full FTC disclosure compliance
 - No PPC trademark bidding
 - No coupon scraping or spam tactics
 - Transparent review methodology
 
 ### Speed & Flexibility
+
 - Time-sensitive promos published in hours
 - Flexible content formats and lengths
 - Social media amplification
@@ -34,8 +37,8 @@ We produce high-quality, original editorial around audio gear—especially earbu
 
 Let's discuss how we can help showcase your audio products to engaged readers who trust our recommendations.
 
-<a href="{{ '/contact/' | relative_url }}" class="btn">Contact Us</a>
+<a href="{{ '/contact/' | relative_url }}" class="btn cta-btn">Contact Us</a>
 
 ---
 
-*Professional audio gear review and promotional content services for brands worldwide.*
+Professional audio gear review and promotional content services for brands worldwide.

@@ -35,7 +35,7 @@ last_modified: 2025-09-14
       </div>
       
       <div class="contact-section">
-        <h2>General Inquiries</h2>
+        <h2>General Support & Questions</h2>
         <p>For general questions, feedback, or technical support:</p>
         
         <div class="contact-email">
@@ -46,73 +46,51 @@ last_modified: 2025-09-14
       </div>
       
       <div class="contact-section">
-        <h2>What We Cover</h2>
-        <ul class="coverage-list">
-          <li>EarFun wireless earbuds and headphones</li>
-          <li>Bluetooth speakers and audio accessories</li>
-          <li>Audio technology guides and tutorials</li>
-          <li>Product comparisons and buying guides</li>
-          <li>Industry trends and innovations</li>
-        </ul>
+        <h2>Collaboration Guidelines</h2>
+        <div class="guidelines">
+          <h3>What We Look For:</h3>
+          <ul>
+            <li>Audio equipment and technology products</li>
+            <li>Consumer electronics related to audio</li>
+            <li>Innovative audio technology solutions</li>
+            <li>Products that align with our audience interests</li>
+          </ul>
+          
+          <h3>Review Process:</h3>
+          <ul>
+            <li>Honest, unbiased reviews based on thorough testing</li>
+            <li>Professional photography and videography</li>
+            <li>Comprehensive feature analysis</li>
+            <li>Value assessment for our readers</li>
+          </ul>
+          
+          <h3>Content Formats:</h3>
+          <ul>
+            <li>Detailed written reviews</li>
+            <li>Video reviews and unboxings</li>
+            <li>Comparison articles</li>
+            <li>Buying guides and recommendations</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="contact-section">
-        <h2>Press Kit & Media Resources</h2>
-        <p>Media professionals can access our press kit including:</p>
-        
-        <ul class="press-list">
-          <li>High-resolution logos and brand assets</li>
-          <li>Author bios and photos</li>
-          <li>Site statistics and audience demographics</li>
-          <li>Editorial calendar and upcoming content</li>
-        </ul>
-        
-        <a href="{{ '/press-kit/' | relative_url }}" class="press-kit-link">
-          📥 Download Press Kit
-        </a>
-      </div>
-      
     </div>
     
     <div class="contact-sidebar">
-      
-      <div class="contact-info-box">
+      <div class="contact-card">
         <h3>Quick Facts</h3>
         <ul class="quick-facts">
-          <li><strong>Focus:</strong> EarFun audio products</li>
-          <li><strong>Established:</strong> 2025</li>
-          <li><strong>Content:</strong> Reviews, guides, deals</li>
-          <li><strong>Audience:</strong> Audio enthusiasts</li>
+          <li><strong>Monthly Readers:</strong> 100K+</li>
+          <li><strong>Review Time:</strong> 14-21 days</li>
+          <li><strong>Content Delivery:</strong> 30 days</li>
+          <li><strong>Focus:</strong> Audio Equipment</li>
         </ul>
       </div>
       
-      <div class="social-links">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#" class="social-link" aria-label="Twitter">
-            🐦
-          </a>
-          <a href="#" class="social-link" aria-label="Facebook">
-            📘
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            📷
-          </a>
-          <a href="#" class="social-link" aria-label="YouTube">
-            📺
-          </a>
-        </div>
+      <div class="contact-card">
+        <h3>Recent Partnerships</h3>
+        <p>We've worked with leading audio brands to deliver authentic, valuable content for our readers.</p>
+        <a href="{{ '/reviews/' | relative_url }}" class="cta-link">View Our Reviews</a>
       </div>
-      
-      <div class="newsletter-signup">
-        <h3>Stay Updated</h3>
-        <p>Get the latest reviews and deals delivered to your inbox.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" class="email-input" required>
-          <button type="submit" class="subscribe-btn">Subscribe</button>
-        </form>
-      </div>
-      
     </div>
   </div>
 </div>
@@ -120,187 +98,162 @@ last_modified: 2025-09-14
 <style>
 .contact-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .contact-header {
   text-align: center;
   margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
 }
 
 .contact-title {
   font-size: 2.5rem;
-  color: #1a1a1a;
+  color: #2c3e50;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .contact-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: #6c757d;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .contact-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
+  align-items: start;
 }
 
 .contact-section {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #eee;
-}
-
-.contact-section:last-child {
-  border-bottom: none;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .contact-section h2 {
-  color: #1a1a1a;
-  font-size: 1.5rem;
+  color: #2c3e50;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
 }
 
 .contact-email {
-  margin: 1.5rem 0;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+  margin: 1rem 0;
 }
 
 .email-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   font-size: 1.1rem;
+  font-weight: 600;
   color: #007bff;
   text-decoration: none;
-  padding: 0.75rem 1rem;
-  border: 2px solid #007bff;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .email-link:hover {
-  background-color: #007bff;
-  color: white;
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 .response-time {
+  font-size: 0.9rem;
+  color: #6c757d;
   font-style: italic;
-  color: #666;
+}
+
+.guidelines {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
   margin-top: 1rem;
 }
 
-.coverage-list, .press-list, .quick-facts {
-  list-style: none;
-  padding: 0;
+.guidelines h3 {
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
 }
 
-.coverage-list li, .press-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f0f0f0;
+.guidelines ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
 }
 
-.coverage-list li:before, .press-list li:before {
-  content: "✓";
-  color: #28a745;
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-
-.press-kit-link {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #28a745;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.press-kit-link:hover {
-  background-color: #218838;
+.guidelines li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 .contact-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.contact-info-box, .social-links, .newsletter-signup {
-  background-color: #f8f9fa;
+.contact-card {
+  background: white;
   padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-top: 4px solid #28a745;
 }
 
-.contact-info-box h3, .social-links h3, .newsletter-signup h3 {
-  margin-top: 0;
-  color: #1a1a1a;
+.contact-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+
+.quick-facts {
+  list-style: none;
+  padding: 0;
 }
 
 .quick-facts li {
   padding: 0.5rem 0;
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.95rem;
 }
 
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+.quick-facts li:last-child {
+  border-bottom: none;
 }
 
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #007bff;
+.cta-link {
+  display: inline-block;
+  background: #007bff;
   color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.social-link:hover {
-  background-color: #0056b3;
-}
-
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  font-weight: 600;
   margin-top: 1rem;
+  transition: background-color 0.2s ease;
 }
 
-.email-input {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.subscribe-btn {
-  padding: 0.75rem;
-  background-color: #007bff;
+.cta-link:hover {
+  background: #0056b3;
   color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.subscribe-btn:hover {
-  background-color: #0056b3;
-}
-
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;

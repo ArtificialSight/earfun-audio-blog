@@ -1,12 +1,136 @@
+<!-- FAQ Accordion Component - Enhanced with Accessibility & SEO -->
+<style>
+  .faq-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+  }
+
+  .faq-accordion {
+    max-width: 100%;
+  }
+
+  .faq-accordion h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background: white;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    list-style: none;
+  }
+
+  .faq-question:hover {
+    background-color: #f8f9fa;
+  }
+
+  .faq-question::marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .faq-answer p {
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-cta {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 1rem;
+    }
+
+    .faq-question {
+      padding: 0.875rem 1rem;
+    }
+
+    .faq-question h4 {
+      font-size: 1rem;
+    }
+
+    .faq-content {
+      padding: 1rem;
+    }
+  }
+
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item,
+    .faq-icon {
+      transition: none;
+    }
+  }
+
+  /* Focus styles for accessibility */
+  .faq-question:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+  }
+</style>
+
 <!-- FAQ Accordion Component - Simple, accessible details/summary accordion -->
 {% if include.questions and include.questions.size > 0 %}
-<div class="faq-accordion">
-  <h2>{{ include.title | default: "Frequently Asked Questions" }}</h2>
-  {% for item in include.questions %}
-  <details class="faq-item">
-    <summary class="faq-question">{{ item.question }}</summary>
-    <div class="faq-answer">{{ item.answer }}</div>
-  </details>
-  {% endfor %}
-</div>
+  <div class="faq-accordion">
+    <h2>{{ include.title | default: "Frequently Asked Questions" }}</h2>
+    {% for item in include.questions %}
+      <details class="faq-item">
+        <summary class="faq-question">{{ item.question }}</summary>
+        <div class="faq-answer">{{ item.answer }}</div>
+      </details>
+    {% endfor %}
+  </div>
 {% endif %}

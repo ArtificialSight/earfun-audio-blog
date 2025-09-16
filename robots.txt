@@ -1,4 +1,24 @@
+# robots.txt for EarFun Audio Blog
+# Allow all search engines to crawl the entire site
+
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://artificialsight.github.io/earfun-audio-blog/sitemap.xml
+
+# Crawl-delay to be respectful to server resources
+Crawl-delay: 1
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to admin/private areas (if any)
+# Currently no restricted areas
