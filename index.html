@@ -82,13 +82,10 @@ schema_type: WebSite
     {% for product in site.data.products limit:6 %}
     <article class="product-card">
       <div class="product-image">
-        <!-- Task 4: Responsive Product Images -->
-        {% include responsive-product-image.html 
-           jpg_base="{{ product.image | relative_url }}"
-           alt="{{ product.name }}"
-           width="400"
-           height="300"
-           loading="lazy" %}
+        <!-- Fixed responsive product image include -->
+        {% if product.image %}
+          <img src="{{ product.image | relative_url }}" alt="{{ product.name }}" width="400" height="300" loading="lazy">
+        {% endif %}
         {% if product.badge %}
           <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
         {% endif %}
@@ -113,8 +110,8 @@ schema_type: WebSite
         </div>
       </div>
     </article>
-
-    <!-- Task 6: Product JSON-LD Structured Data -->
+    
+    <!-- Product JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
@@ -166,7 +163,7 @@ schema_type: WebSite
   <div class="newsletter-content">
     <h2>Stay Updated with Latest Reviews</h2>
     <p>Get notified about new EarFun product reviews, exclusive deals, and audio tech insights.</p>
-    <form class="newsletter-form" method="post" action="#">
+    <form class="newsletter-form" action="#" method="post">
       <input type="email" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
@@ -181,13 +178,7 @@ schema_type: WebSite
     <article class="post-card">
       <div class="post-image">
         {% if post.image %}
-        <!-- Task 4: Responsive Post Images -->
-        {% include responsive-product-image.html 
-           jpg_base="{{ post.image | relative_url }}"
-           alt="{{ post.title }}"
-           width="400"
-           height="225"
-           loading="lazy" %}
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" width="400" height="225" loading="lazy">
         {% endif %}
       </div>
       <div class="post-content">
@@ -201,7 +192,7 @@ schema_type: WebSite
   </div>
 </section>
 
-<!-- Task 8: FAQPage JSON-LD for Homepage -->
+<!-- FAQPage JSON-LD for Homepage -->
 {% if site.data.homepage_faq %}
 <script type="application/ld+json">
 {
