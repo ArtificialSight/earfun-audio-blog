@@ -1,0 +1,236 @@
+<!-- Responsive Product Image Component -->
+<!-- Optimized for product displays in reviews, comparisons, and cards -->
+
+<figure class="responsive-product-image{% if include.class %} {{ include.class }}{% endif %}">
+  <picture>
+    <!-- AVIF sources for modern browsers (best compression) -->
+    {% if include.avif_base %}
+      <source 
+        srcset="{{ include.avif_base }}-200.avif 200w,
+                {{ include.avif_base }}-300.avif 300w,
+                {{ include.avif_base }}-400.avif 400w,
+                {{ include.avif_base }}-600.avif 600w,
+                {{ include.avif_base }}-800.avif 800w"
+        sizes="{{ include.sizes | default: '(max-width: 480px) 200px, (max-width: 768px) 300px, 400px' }}"
+        type="image/avif">
+    {% endif %}
+    
+    <!-- WebP sources for modern browsers (good compression) -->
+    {% if include.webp_base %}
+      <source 
+        srcset="{{ include.webp_base }}-200.webp 200w,
+                {{ include.webp_base }}-300.webp 300w,
+                {{ include.webp_base }}-400.webp 400w,
+                {{ include.webp_base }}-600.webp 600w,
+                {{ include.webp_base }}-800.webp 800w"
+        sizes="{{ include.sizes | default: '(max-width: 480px) 200px, (max-width: 768px) 300px, 400px' }}"
+        type="image/webp">
+    {% endif %}
+    
+    <!-- JPG fallback for all browsers -->
+    <img 
+      src="{{ include.src | default: include.jpg_base | append: '-400.jpg' }}"
+      srcset="{{ include.jpg_base }}-200.jpg 200w,
+              {{ include.jpg_base }}-300.jpg 300w,
+              {{ include.jpg_base }}-400.jpg 400w,
+              {{ include.jpg_base }}-600.jpg 600w,
+              {{ include.jpg_base }}-800.jpg 800w"
+      sizes="{{ include.sizes | default: '(max-width: 480px) 200px, (max-width: 768px) 300px, 400px' }}"
+      alt="{{ include.alt | strip_html }}"
+      loading="{{ include.loading | default: 'lazy' }}"
+      decoding="{{ include.decoding | default: 'async' }}"
+      width="{{ include.width | default: '400' }}"
+      height="{{ include.height | default: '400' }}"
+      class="product-image"
+      {% if include.priority %}fetchpriority="high"{% endif %}
+      onerror="this.parentElement.parentElement.style.display='none'">
+  </picture>
+  
+  {% if include.caption %}
+    <figcaption class="product-caption">{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>
+
+<!-- CSS for responsive product image -->
+<style>
+.responsive-product-image {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.responsive-product-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: linear-gradient(135deg, #f5f5f5 25%, #e8e8e8 50%, #f5f5f5 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.product-image[src] {
+  background: none;
+  animation: none;
+}
+
+.product-caption {
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+  margin: 0;
+}
+
+/* Size variants */
+.product-small .product-image {
+  max-width: 200px;
+}
+
+.product-medium .product-image {
+  max-width: 300px;
+}
+
+.product-large .product-image {
+  max-width: 500px;
+}
+
+/* Aspect ratio variants */
+.product-square .product-image {
+  aspect-ratio: 1 / 1;
+}
+
+.product-landscape .product-image {
+  aspect-ratio: 4 / 3;
+}
+
+.product-portrait .product-image {
+  aspect-ratio: 3 / 4;
+}
+
+/* Layout variants */
+.product-float-left {
+  float: left;
+  margin: 0 20px 20px 0;
+  max-width: 300px;
+}
+
+.product-float-right {
+  float: right;
+  margin: 0 0 20px 20px;
+  max-width: 300px;
+}
+
+.product-center {
+  margin: 20px auto;
+  display: block;
+}
+
+/* Badge overlay support */
+.responsive-product-image .product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ff6b35;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.responsive-product-image .product-badge.sale {
+  background: #e74c3c;
+}
+
+.responsive-product-image .product-badge.new {
+  background: #2ecc71;
+}
+
+.responsive-product-image .product-badge.bestseller {
+  background: #f39c12;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .responsive-product-image {
+    background: #2d2d2d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product-caption {
+    background: #333;
+    color: #ccc;
+    border-top-color: #444;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .responsive-product-image {
+    transition: none;
+  }
+  
+  .responsive-product-image:hover {
+    transform: none;
+  }
+  
+  .product-image {
+    animation: none;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .product-float-left,
+  .product-float-right {
+    float: none;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .responsive-product-image {
+    margin: 16px 0;
+  }
+  
+  .product-caption {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .responsive-product-image {
+    border: 2px solid #000;
+  }
+  
+  .product-image {
+    filter: contrast(1.2);
+  }
+}
+</style>

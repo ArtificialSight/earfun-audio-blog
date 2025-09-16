@@ -1,47 +1,47 @@
 ---
-layout: default
+layout: page
 title: Best EarFun Products - Expert Recommendations
-description: Discover the best EarFun earbuds, headphones, and speakers. Expert reviews and rankings to help you find your perfect audio device.
-keywords: best EarFun products, top earbuds, best wireless headphones, EarFun reviews
+description: Discover our top-rated EarFun audio products based on comprehensive testing and review. Find the best earbuds and headphones for your needs.
 permalink: /best/
+seo:
+  type: WebPage
+  name: Best EarFun Products
+  description: Expert recommendations for the best EarFun audio products
 ---
 
-# Best EarFun Products - Expert Recommendations
+# Best EarFun Products
 
-Discover our top-rated EarFun products across all categories. Each recommendation is based on thorough testing, real-world usage, and value analysis.
+Our expert recommendations based on comprehensive testing and review.
 
-## Featured Categories
+## Top Picks by Category
 
-### Best EarFun Earbuds
-Our comprehensive guide to the top EarFun earbuds for every budget and use case.
+### Overall Best
+**EarFun Air Pro 3**
+- Industry-leading ANC performance
+- Exceptional 11-hour battery life
+- Crystal-clear call quality
+- Comfortable fit for all-day wear
+- IPX5 water resistance
 
-[View Best Earbuds Guide]({{ '/best/earfun-earbuds/' | relative_url }})
-
-### Best EarFun Headphones & Speakers
-Top-rated over-ear headphones and Bluetooth speakers from EarFun's lineup.
-
-[View Headphones & Speakers Guide]({{ '/best/earfun-headphones-and-speakers/' | relative_url }})
-
-## Quick Recommendations
-
-### Overall Best Value
-**EarFun Air Pro 3** - Perfect balance of features, sound quality, and price
-- Advanced ANC technology
-- 11-hour battery life
-- Premium build quality
-- $79 MSRP
+{% include affiliate-button.html 
+  link="https://amazon.com/earfun-air-pro-3" 
+  product="EarFun Air Pro 3" 
+  price="79.99" 
+  deal-text="Limited time: 25% off with code SAVE25" %}
 
 [Read Full Review]({{ '/reviews/earfun-air-pro-3/' | relative_url }})
 
 ### Best Budget Option
-**EarFun Free Pro 3** - Exceptional value under $50
+**EarFun Free Pro 3**
+- Exceptional value under $50
 - Good sound quality
 - Reliable connectivity
 - Comfortable fit
 - IPX5 water resistance
 
 ### Best for Audiophiles
-**EarFun Wave Pro** - Hi-Res audio certified headphones
+**EarFun Wave Pro**
+- Hi-Res audio certified headphones
 - Planar magnetic drivers
 - Premium materials
 - Studio-quality sound
@@ -56,6 +56,12 @@ Our ranking methodology considers:
 - **Build Quality** (25%) - Materials, durability, design
 - **Features** (20%) - ANC, battery life, connectivity
 - **Value** (15%) - Price-to-performance ratio
+
+## All Best Products
+
+{% for p in site.tags.best %}
+- [{{ p.title }}]({{ p.url | relative_url }}){% if p.excerpt %} - {{ p.excerpt | strip_html | truncatewords: 20 }}{% endif %}
+{% endfor %}
 
 ## Browse All Reviews
 

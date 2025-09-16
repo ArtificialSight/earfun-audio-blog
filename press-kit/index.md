@@ -1,190 +1,126 @@
 ---
-layout: default
-title: Press Kit | EarFun Audio Blog - Media Resources & Brand Assets
-description: Official press kit for EarFun Audio Blog including brand assets, logos, media statistics, author bios, and resources for journalists and content creators.
+layout: page
+title: Press Kit
 permalink: /press-kit/
-schema_type: WebPage
+description: Download EarFun Audio Blog press materials, logos, media kit, and brand assets for journalists and content creators.
 canonical: https://earfunaudioblog.com/press-kit/
+schema_type: WebPage
 meta:
-  robots: index, follow
-  author: EarFun Audio Blog
-  og_type: website
-  twitter_card: summary
-last_modified: 2025-09-15
+  robots: "index, follow"
+  og_type: "website"
 ---
 
-# EarFun Audio Blog Press Kit
+<div class="press-kit-container">
+  <div class="press-kit-header">
+    <h1>EarFun Audio Blog Press Kit</h1>
+    <p>Official media resources and brand assets for journalists, content creators, and media partners</p>
+  </div>
 
-Welcome to the official press kit for EarFun Audio Blog. Here you'll find everything you need for media coverage, partnerships, and collaborative content creation.
+  <div class="press-kit-content">
+    <section class="quick-facts">
+      <h2>Quick Facts</h2>
+      <div class="facts-grid">
+        <div class="fact-item">
+          <strong>Founded:</strong> 2025
+        </div>
+        <div class="fact-item">
+          <strong>Focus:</strong> EarFun Audio Product Reviews
+        </div>
+        <div class="fact-item">
+          <strong>Monthly Readers:</strong> 100,000+
+        </div>
+        <div class="fact-item">
+          <strong>Expertise:</strong> Wireless Audio Technology
+        </div>
+      </div>
+    </section>
 
-## About EarFun Audio Blog
+    <section class="brand-assets">
+      <h2>Brand Assets</h2>
+      <div class="assets-grid">
+        <div class="asset-category">
+          <h3>Logos</h3>
+          <div class="logo-downloads">
+            <a href="/assets/press/logo-high-res.png" class="download-btn" download>High-Res PNG</a>
+            <a href="/assets/press/logo-vector.svg" class="download-btn" download>Vector SVG</a>
+            <a href="/assets/press/logo-white.png" class="download-btn" download>White Version</a>
+          </div>
+        </div>
+        
+        <div class="asset-category">
+          <h3>Screenshots</h3>
+          <div class="screenshot-downloads">
+            <a href="/assets/press/homepage-screenshot.png" class="download-btn" download>Homepage</a>
+            <a href="/assets/press/review-page-screenshot.png" class="download-btn" download>Review Page</a>
+            <a href="/assets/press/mobile-screenshot.png" class="download-btn" download>Mobile View</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="brand-guidelines">
+        <h3>Brand Guidelines</h3>
+        <div class="color-palette">
+          <div class="color-item">
+            <div class="color-swatch" style="background-color: #2c3e50;"></div>
+            <span>Primary: #2c3e50</span>
+          </div>
+          <div class="color-item">
+            <div class="color-swatch" style="background-color: #007bff;"></div>
+            <span>Accent: #007bff</span>
+          </div>
+          <div class="color-item">
+            <div class="color-swatch" style="background-color: #f8f9fa;"></div>
+            <span>Background: #f8f9fa</span>
+          </div>
+        </div>
+        
+        <div class="typography">
+          <h4>Typography</h4>
+          <p><strong>Primary Font:</strong> System fonts (San Francisco, Segoe UI, Roboto)</p>
+          <p><strong>Usage:</strong> Clean, modern sans-serif for maximum readability</p>
+        </div>
+      </div>
+    </section>
 
-EarFun Audio Blog is a specialized audio review platform focused exclusively on EarFun's ecosystem of wireless earbuds, headphones, and Bluetooth speakers. We provide in-depth reviews, buying guides, and industry insights for audio enthusiasts and consumers looking to make informed purchasing decisions.
+    <section class="media-contact">
+      <h2>Media Contact</h2>
+      <div class="contact-info">
+        <p><strong>Press Inquiries:</strong> <a href="mailto:partnerships@earfunaudioblog.com">partnerships@earfunaudioblog.com</a></p>
+        <p><strong>Response Time:</strong> Typically within 24 hours</p>
+        <p><strong>Media Relations:</strong> Available for interviews, product commentary, and industry insights</p>
+      </div>
+    </section>
 
-### Key Facts
-- **Established:** 2025
-- **Focus:** EarFun audio products and accessories
-- **Content Types:** Reviews, comparisons, buying guides, deals
-- **Target Audience:** Audio enthusiasts, tech consumers, deal hunters
-- **Content Approach:** Data-driven, user-focused, comprehensive
-
-## Brand Assets
-
-### Logo Usage
-Our brand assets are available for media use with proper attribution. Please ensure the EarFun Audio Blog logo maintains its integrity and is used in appropriate contexts.
-
-**Logo Guidelines:**
-- Maintain minimum clear space around the logo
-- Do not alter colors, proportions, or typography
-- Use high-contrast backgrounds for optimal visibility
-- Include proper attribution when using our brand assets
-
-### Color Palette
-- **Primary Blue:** #007bff
-- **Success Green:** #28a745
-- **Text Dark:** #1a1a1a
-- **Text Light:** #666666
-- **Background Light:** #f8f9fa
-
-## Editorial Information
-
-### Content Categories
-1. **Product Reviews** - Comprehensive evaluations of EarFun devices
-2. **Comparison Guides** - Head-to-head product comparisons
-3. **Buying Guides** - Category-specific purchasing advice
-4. **Deal Alerts** - Time-sensitive offers and discounts
-5. **Technical Guides** - Audio technology explanations
-6. **Industry News** - EarFun and audio industry updates
-
-### Review Methodology
-Our review process includes:
-- Hands-on testing for minimum 2 weeks
-- Audio quality assessment across multiple genres
-- Build quality and durability evaluation
-- Battery life and connectivity testing
-- Value proposition analysis
-- User experience documentation
-
-## Media Statistics
-
-### Content Performance
-- **Average Review Word Count:** 2,500+ words
-- **Content Publishing Schedule:** 3-5 articles per week
-- **Review Depth:** Technical specs, user experience, comparisons
-- **Photography:** High-resolution product images and lifestyle shots
-
-### Audience Demographics
-- **Primary Age Range:** 25-45 years
-- **Gender Split:** 60% male, 40% female
-- **Interest Areas:** Audio technology, consumer electronics, deals
-- **Geographic Focus:** Global English-speaking audience
-
-## Author Information
-
-### Editorial Team
-Our content is created by audio enthusiasts with backgrounds in:
-- Consumer electronics journalism
-- Audio engineering and acoustics
-- Product testing and evaluation
-- Digital content creation
-
-**Editorial Standards:**
-- Unbiased, honest product assessments
-- Transparent affiliate relationship disclosure
-- Fact-based technical analysis
-- User-focused recommendations
-
-## Partnership Opportunities
-
-### We Work With
-- **Retailers:** Product launch coverage, exclusive deals
-- **Media Outlets:** Content syndication, expert commentary
-- **Brands:** Product sampling, sponsored content (clearly disclosed)
-- **Industry Events:** Coverage, speaker opportunities
-
-### Content Collaboration
-- Guest posting opportunities
-- Expert interviews and quotes
-- Product launch exclusives
-- Industry trend analysis
-- Comparison studies
-
-## Press Release Distribution
-
-We welcome press releases related to:
-- EarFun product launches and updates
-- Audio industry trends and innovations
-- Retail partnerships and exclusive deals
-- Technology advancements in wireless audio
-- Consumer electronics trade shows and events
-
-## Contact Information
-
-### Media Inquiries
-**Email:** partnerships@earfunaudioblog.com  
-**Response Time:** Within 24 hours on business days
-
-### Coverage Requests
-For product review requests, please include:
-- Product specifications and features
-- High-resolution product images
-- Pricing and availability information
-- Key differentiators and selling points
-- Target launch/review timeline
-
-### Interview Availability
-Our editorial team is available for:
-- Podcast interviews
-- Video content collaboration
-- Expert commentary
-- Industry panel discussions
-- Trade show appearances
-
-## Usage Guidelines
-
-### Attribution Requirements
-When referencing EarFun Audio Blog content:
-- Include proper byline attribution
-- Link back to original articles when possible
-- Maintain context and accuracy in excerpts
-- Respect our editorial voice and perspective
-
-### Image Usage
-- Product images may be used with attribution
-- Screenshots require permission for commercial use
-- Logo usage must follow brand guidelines
-- High-resolution versions available upon request
-
-## Download Resources
-
-### Available Materials
-- Brand style guide (PDF)
-- High-resolution logos (PNG, SVG)
-- Product photography archive
-- Editorial calendar and content themes
-- Traffic and engagement statistics
-- Author headshots and bios
-
-*To access downloadable press kit materials, please contact our media team at partnerships@earfunaudioblog.com*
-
----
-
-## Quick Reference
-
-**Website:** [earfunaudioblog.com](https://earfunaudioblog.com)  
-**Contact:** partnerships@earfunaudioblog.com  
-**Focus:** EarFun audio product reviews and guides  
-**Audience:** Audio enthusiasts and tech consumers  
-**Founded:** 2025  
-
-*Last Updated: September 2025*
+    <section class="content-examples">
+      <h2>Content Examples</h2>
+      <div class="examples-grid">
+        <div class="example-item">
+          <h3>Product Reviews</h3>
+          <p>In-depth technical analysis and real-world testing of EarFun audio products</p>
+          <a href="{{ '/reviews/' | relative_url }}" class="view-link">View Reviews</a>
+        </div>
+        <div class="example-item">
+          <h3>Buying Guides</h3>
+          <p>Expert recommendations and comparison guides for different use cases</p>
+          <a href="{{ '/guides/' | relative_url }}" class="view-link">View Guides</a>
+        </div>
+        <div class="example-item">
+          <h3>Best Products</h3>
+          <p>Curated lists of top-performing EarFun products by category</p>
+          <a href="{{ '/best/' | relative_url }}" class="view-link">View Best Lists</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
 
 <style>
 .press-kit-container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: #f8f9fa;
+  border-radius: 12px;
 }
 
 .press-kit-header {
@@ -196,122 +132,96 @@ When referencing EarFun Audio Blog content:
 
 .press-kit-header h1 {
   font-size: 2.5rem;
-  color: #1a1a1a;
+  color: #2c3e50;
   margin-bottom: 1rem;
 }
 
-.press-kit-section {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.press-kit-section:last-child {
-  border-bottom: none;
-}
-
-.press-kit-section h2 {
-  color: #007bff;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #007bff;
-}
-
-.press-kit-section h3 {
-  color: #1a1a1a;
-  font-size: 1.3rem;
-  margin: 1.5rem 0 1rem 0;
-}
-
-.fact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.fact-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
+.press-kit-content section {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.fact-item {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
   border-left: 4px solid #007bff;
 }
 
-.fact-card h4 {
-  color: #1a1a1a;
-  margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
+.assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
-.fact-card p {
-  margin: 0;
-  color: #666;
+.download-btn {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.download-btn:hover {
+  background: #0056b3;
+  color: white;
 }
 
 .color-palette {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
   margin: 1rem 0;
+  flex-wrap: wrap;
 }
 
-.color-swatch {
+.color-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  border: 1px solid #ddd;
+}
+
+.color-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 2px solid #ddd;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.example-item {
+  padding: 1.5rem;
+  background: #f8f9fa;
   border-radius: 6px;
 }
 
-.color-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-}
-
-.contact-highlight {
-  background: #e3f2fd;
-  padding: 2rem;
-  border-radius: 12px;
-  margin: 2rem 0;
-  text-align: center;
-  border-left: 5px solid #007bff;
-}
-
-.contact-highlight h3 {
+.view-link {
   color: #007bff;
-  margin-top: 0;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.stat-number {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #007bff;
-  display: block;
-}
-
-.stat-label {
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+.view-link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {

@@ -1,18 +1,87 @@
-<article class="review-card" role="article" aria-labelledby="card-title-{{ include.title | slugify }}">
+<article aria-labelledby="card-title-{{ include.title | slugify }}" class="review-card" role="article">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ include.title | strip_html | jsonify }}",
+    {% if include.image %}
+    "image": [
+      "{{ site.url }}{{ include.image | replace: '.jpg', '.jpg' | absolute_url }}"
+      {% if include.image_webp %},"{{ site.url }}{{ include.image_webp | replace: '.webp', '.webp' | absolute_url }}"{% endif %}
+      {% if include.image_avif %},"{{ site.url }}{{ include.image_avif | replace: '.avif', '.avif' | absolute_url }}"{% endif %}
+    ],
+    {% endif %}
+    {% if include.tagline %}
+    "description": {{ include.tagline | strip_html | jsonify }},
+    {% endif %}
+    "brand": {
+      "@type": "Brand",
+      "name": "{{ include.brand | default: 'EarFun' }}"
+    },
+    {% if include.price %}
+    "offers": {
+      "@type": "Offer",
+      "price": "{{ include.price }}",
+      "priceCurrency": "USD",
+      "availability": "{{ include.availability | default: 'https://schema.org/InStock' }}",
+      {% if include.buy_link %}
+      "url": "{{ include.buy_link }}",
+      {% endif %}
+      "seller": {
+        "@type": "Organization",
+        "name": "{{ include.seller | default: 'Amazon' }}"
+      }
+    },
+    {% endif %}
+    {% if include.rating and include.score %}
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ include.score }}",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "{{ include.review_count | default: '1' }}"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ include.score }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{ include.reviewer | default: 'EarFun Audio Expert' }}"
+      },
+      "datePublished": "{{ include.date_published | default: site.time | date: '%Y-%m-%d' }}",
+      {% if include.updated %}
+      "dateModified": "{{ include.updated | date: '%Y-%m-%d' }}",
+      {% endif %}
+      "reviewBody": "{{ include.review_summary | default: include.tagline | strip_html | jsonify }}"
+    },
+    {% endif %}
+    "category": "{{ include.category | default: 'Audio Equipment' }}",
+    "url": "{{ site.url }}{{ include.url | absolute_url }}"
+  }
+  </script>
   {% if include.image %}
-  <div class="review-card-image">
-    <img src="{{ include.image | relative_url }}" 
-         alt="{{ include.title | strip_html }}"
-         loading="lazy"
-         width="300"
-         height="200"
-         onerror="this.style.display='none'">
-  </div>
+    {% include responsive-product-image.html 
+       jpg_base=include.image
+       webp_base=include.image_webp
+       avif_base=include.image_avif
+       alt=include.title
+       loading="lazy"
+       width="300"
+       height="200"
+       class="product-small product-square"
+       sizes="(max-width: 768px) 100vw, 300px"
+    %}
   {% endif %}
   
   <div class="review-card-content">
-    <h3 id="card-title-{{ include.title | slugify }}" class="review-card-title">
-      <a href="{{ include.url | relative_url }}" 
+    <h3 class="review-card-title" id="card-title-{{ include.title | slugify }}">
+      <a href="{{ include.url | relative_url }}"
          class="review-card-link"
          aria-label="Read review of {{ include.title | strip_html }}">
         {{ include.title }}
@@ -24,21 +93,21 @@
     {% endif %}
     
     {% if include.rating %}
-    <div class="review-card-rating" 
+    <div class="review-card-rating"
          role="img" 
          aria-label="Rating {{ include.rating }} out of 5 stars">
-      <span class="stars" aria-hidden="true">{{ include.rating }}</span>
+      <span aria-hidden="true" class="stars">{{ include.rating }}</span>
       {% if include.score %}
-      <span class="score" aria-label="Score {{ include.score }} out of 5">({{ include.score }}/5)</span>
+      <span aria-label="Score {{ include.score }} out of 5" class="score">({{ include.score }}/5)</span>
       {% endif %}
     </div>
     {% endif %}
     
     {% if include.price %}
     <div class="review-card-price">
-      <span class="price" aria-label="Price ${{ include.price }}">${{ include.price }}</span>
+      <span aria-label="Price ${{ include.price }}" class="price">${{ include.price }}</span>
       {% if include.badge %}
-      <span class="badge badge-{{ include.badge | downcase | replace: ' ', '-' }}" 
+      <span class="badge badge-{{ include.badge | downcase | replace: ' ', '-' }}"
             aria-label="{{ include.badge }}">{{ include.badge }}</span>
       {% endif %}
     </div>
@@ -47,12 +116,12 @@
     <div class="review-card-meta">
       <span class="category">{{ include.category | default: "Review" }}</span>
       {% if include.updated %}
-      <span class="updated" aria-label="Updated {{ include.updated }}">Updated {{ include.updated }}</span>
+      <span aria-label="Updated {{ include.updated }}" class="updated">Updated {{ include.updated }}</span>
       {% endif %}
     </div>
     
     {% if include.features %}
-    <ul class="review-card-features" aria-label="Key features">
+    <ul aria-label="Key features" class="review-card-features">
       {% for feature in include.features %}
       <li>{{ feature }}</li>
       {% endfor %}
@@ -60,288 +129,23 @@
     {% endif %}
     
     <div class="review-card-actions">
-      <a href="{{ include.url | relative_url }}" 
+      <a href="{{ include.url | relative_url }}"
          class="btn btn-primary btn-read-review"
          aria-label="Read full review of {{ include.title | strip_html }}">
-        <span class="btn-icon" aria-hidden="true">📖</span>
+        <span aria-hidden="true" class="btn-icon">📖</span>
         Read Full Review
       </a>
       
       {% if include.buy_link %}
-      <a href="{{ include.buy_link }}" 
+      <a href="{{ include.buy_link }}"
          class="btn btn-secondary btn-buy-now" 
          target="_blank" 
          rel="nofollow sponsored noopener"
          aria-label="Buy {{ include.title | strip_html }} now">
-        <span class="btn-icon" aria-hidden="true">🛒</span>
+        <span aria-hidden="true" class="btn-icon">🛒</span>
         Buy Now
       </a>
       {% endif %}
     </div>
   </div>
 </article>
-
-<!-- CSS for Review Card Component -->
-<style>
-.review-card {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border: 1px solid #e1e5e9;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 100%;
-  max-width: 400px;
-}
-
-.review-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.review-card:focus-within {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
-
-.review-card-image {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  overflow: hidden;
-  background-color: #f8f9fa;
-}
-
-.review-card-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.review-card:hover .review-card-image img {
-  transform: scale(1.05);
-}
-
-.review-card-content {
-  padding: 1.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.review-card-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.review-card-link {
-  color: #2c3e50;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.review-card-link:hover,
-.review-card-link:focus {
-  color: #007bff;
-  text-decoration: underline;
-}
-
-.review-card-tagline {
-  margin: 0 0 1rem 0;
-  color: #6c757d;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.review-card-rating {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.stars {
-  color: #ffc107;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.score {
-  color: #6c757d;
-  font-size: 0.9rem;
-}
-
-.review-card-price {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.price {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #28a745;
-}
-
-.badge {
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.badge-sale { background: #dc3545; color: white; }
-.badge-new { background: #007bff; color: white; }
-.badge-bestseller { background: #28a745; color: white; }
-.badge-limited { background: #fd7e14; color: white; }
-
-.review-card-meta {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.85rem;
-  color: #6c757d;
-}
-
-.category {
-  padding: 0.25rem 0.5rem;
-  background: #e9ecef;
-  border-radius: 12px;
-  font-weight: 500;
-}
-
-.review-card-features {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  list-style: none;
-}
-
-.review-card-features li {
-  padding: 0.25rem 0;
-  color: #495057;
-  font-size: 0.9rem;
-  position: relative;
-  padding-left: 1rem;
-}
-
-.review-card-features li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #28a745;
-  font-weight: bold;
-}
-
-.review-card-actions {
-  margin-top: auto;
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  flex: 1;
-  justify-content: center;
-  min-width: 120px;
-}
-
-.btn-primary {
-  background: #007bff;
-  color: white;
-  border: 2px solid #007bff;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background: #0056b3;
-  border-color: #0056b3;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0,123,255,0.3);
-}
-
-.btn-secondary {
-  background: #28a745;
-  color: white;
-  border: 2px solid #28a745;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background: #1e7e34;
-  border-color: #1e7e34;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(40,167,69,0.3);
-}
-
-.btn:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
-
-.btn-icon {
-  font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .review-card {
-    max-width: 100%;
-  }
-  
-  .review-card-content {
-    padding: 1rem;
-  }
-  
-  .review-card-title {
-    font-size: 1.1rem;
-  }
-  
-  .review-card-actions {
-    flex-direction: column;
-  }
-  
-  .btn {
-    flex: none;
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .review-card,
-  .review-card-image img,
-  .btn {
-    transition: none;
-  }
-  
-  .review-card:hover {
-    transform: none;
-  }
-  
-  .review-card:hover .review-card-image img {
-    transform: none;
-  }
-}
-</style>

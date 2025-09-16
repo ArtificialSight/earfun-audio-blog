@@ -1,151 +1,67 @@
 ---
 layout: default
-title: Latest EarFun Deals
+title: "Latest EarFun Deals"
 permalink: /deals/
-description: Hand-picked EarFun discounts and price drops from official store and retailers.
+description: "Hand-picked EarFun discounts and price drops from official store and retailers."
+last_updated: 2025-09-15
+disclaimer: "Prices change frequently—check final price at retailer."
 ---
 
 # 🔥 Latest EarFun Deals
 
-> Prices update frequently. Always check final price at retailer.
+{{ page.disclaimer }}
+
+Last updated: {{ page.last_updated | date: "%B %d, %Y" }}
 
 ## Current Hot Deals
 
-<div class="deals-grid">
-  <!-- Air Pro 4 Deal -->
-  <div class="deal-card featured">
-    <div class="deal-badge">🔥 HOT DEAL</div>
-    <h3>EarFun Air Pro 4</h3>
-    <div class="price-section">
-      <span class="old-price">$79.99</span>
-      <span class="new-price">$59.99</span>
-      <span class="savings">Save $20</span>
-    </div>
-    <ul class="deal-features">
-      <li>✓ Hybrid ANC Technology</li>
-      <li>✓ 50-Hour Battery Life</li>
-      <li>✓ LDAC Hi-Res Audio</li>
-    </ul>
-    {% include affiliate-button.html 
-       product="EarFun Air Pro 4" 
-       price="59.99" 
-       link="https://amzn.to/earfun-air-pro-4" 
-       deal-text="Limited Time - 25% OFF" 
-       savings="$20" %}
-  </div>
+{% assign air_pro_4 = site.data.products.air_pro_4 %}
 
-  <!-- Tune Pro Deal -->
-  <div class="deal-card">
-    <div class="deal-badge">💰 BEST VALUE</div>
-    <h3>EarFun Tune Pro</h3>
-    <div class="price-section">
-      <span class="old-price">$39.99</span>
-      <span class="new-price">$29.99</span>
-      <span class="savings">Save $10</span>
-    </div>
-    <ul class="deal-features">
-      <li>✓ 40-Hour Battery</li>
-      <li>✓ IPX7 Waterproof</li>
-      <li>✓ Gaming Mode</li>
-    </ul>
-    {% include affiliate-button.html 
-       product="EarFun Tune Pro" 
-       price="29.99" 
-       link="https://amzn.to/earfun-tune-pro" 
-       deal-text="Budget Champion" %}
-  </div>
+### {{ air_pro_4.name }}
 
-  <!-- Wave Pro Deal -->
-  <div class="deal-card">
-    <div class="deal-badge">🎧 PREMIUM</div>
-    <h3>EarFun Wave Pro</h3>
-    <div class="price-section">
-      <span class="old-price">$49.99</span>
-      <span class="new-price">$39.99</span>
-      <span class="savings">Save $10</span>
-    </div>
-    <ul class="deal-features">
-      <li>✓ Hi-Res Audio Certified</li>
-      <li>✓ 80-Hour Battery</li>
-      <li>✓ Over-Ear Comfort</li>
-    </ul>
-    {% include affiliate-button.html 
-       product="EarFun Wave Pro" 
-       price="39.99" 
-       link="https://amzn.to/earfun-wave-pro" 
-       deal-text="Premium Pick" %}
-  </div>
+**Price:** ${{ air_pro_4.price }}
+**Sale Price:** ${{ air_pro_4.sale_price }}
+**Retailer:** {{ air_pro_4.retailer }}
+**Deal Ends:** {{ air_pro_4.deal_end }}
 
-  <!-- UBoom X Deal -->
-  <div class="deal-card">
-    <div class="deal-badge">📱 SPEAKER</div>
-    <h3>EarFun UBoom X</h3>
-    <div class="price-section">
-      <span class="old-price">$89.99</span>
-      <span class="new-price">$69.99</span>
-      <span class="savings">Save $20</span>
-    </div>
-    <ul class="deal-features">
-      <li>✓ 360° Surround Sound</li>
-      <li>✓ IPX7 Waterproof</li>
-      <li>✓ 16-Hour Playtime</li>
-    </ul>
-    {% include affiliate-button.html 
-       product="EarFun UBoom X" 
-       price="69.99" 
-       link="https://amzn.to/earfun-uboom-x" 
-       deal-text="Speaker Special" %}
-  </div>
-</div>
+**Key Features:**
+{% for feature in air_pro_4.features %}
+* {{ feature }}
+{% endfor %}
 
-## Where to Find More Deals
+{% include affiliate-button.html text="Get this deal on Amazon" link=air_pro_4.link price=air_pro_4.sale_price deal_end=air_pro_4.deal_end %}
 
-<div class="retailer-links">
-  <div class="retailer-card">
-    <h3>🛒 Amazon</h3>
-    <p>Prime shipping, frequent lightning deals</p>
-    <a href="https://www.amazon.com/stores/EarFun/page/2E1CAEEB-E452-4379-8019-38EC098B402F" target="_blank" rel="noopener" class="retailer-btn">Shop Amazon</a>
-  </div>
-  
-  <div class="retailer-card">
-    <h3>🏪 EarFun Official</h3>
-    <p>Direct from manufacturer, exclusive bundles</p>
-    <a href="https://www.myearfun.com/collections/earbuds" target="_blank" rel="noopener" class="retailer-btn">Official Store</a>
-  </div>
-  
-  <div class="retailer-card">
-    <h3>🔵 Best Buy</h3>
-    <p>In-store pickup, Geek Squad support</p>
-    <a href="https://www.bestbuy.com/site/searchpage.jsp?st=earfun" target="_blank" rel="noopener" class="retailer-btn">Best Buy</a>
-  </div>
-</div>
+## 📬 Sign Up for Our Newsletter
 
-## Deal Alerts & Tips
+Get the best EarFun deals delivered to your inbox.
 
-<div class="deal-tips">
-  <h3>💡 How to Save More</h3>
-  <ul>
-    <li><strong>Prime Day & Black Friday:</strong> EarFun typically offers 30-40% discounts</li>
-    <li><strong>Stack Coupons:</strong> Look for on-page coupons + promo codes</li>
-    <li><strong>Bundle Deals:</strong> Buy multiple items for extra savings</li>
-    <li><strong>Newsletter:</strong> Subscribe below for exclusive deal alerts</li>
-  </ul>
-</div>
-
-## Subscribe for Deal Alerts
-
-<div class="newsletter-signup">
-  <h3>🔔 Never Miss a Deal</h3>
-  <p>Get notified when EarFun products go on sale</p>
-  <form action="#" method="post" class="deal-newsletter">
-    <input type="email" name="email" placeholder="Your email address" required>
-    <button type="submit" class="subscribe-btn">Get Deal Alerts</button>
+<div class="newsletter-section">
+  <form id="newsletter-form">
+    <input type="email" id="email" name="email" placeholder="Your email address" required>
+    <button type="submit">Subscribe</button>
   </form>
-  <small>No spam, only the best deals. Unsubscribe anytime.</small>
+  <div id="success-message" style="display:none;color:green;">✅ Successfully subscribed!</div>
+  <div id="error-message" style="display:none;color:red;">❌ Subscription failed. Try again.</div>
 </div>
 
----
+<style>
+.newsletter-section {
+  max-width: 400px;
+  margin: 1em 0;
+}
+.newsletter-section input[type="email"] {
+  padding: 0.5em;
+  width: 70%;
+}
+.newsletter-section button {
+  padding: 0.5em 1em;
+}
+</style>
 
-*Last updated: {{ site.time | date: "%B %d, %Y" }}*
-
-{% include affiliate-disclosure.html %}
+<script>
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('success-message').style.display = 'block';
+  document.getElementById('error-message').style.display = 'none';
+});
+</script>

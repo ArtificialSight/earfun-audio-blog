@@ -1,96 +1,79 @@
 ---
-layout: default
-title: EarFun Audio Guides - Expert Tips & Tutorials
-description: Comprehensive guides to help you choose, use, and maintain your EarFun audio devices. Expert tips, tutorials, and troubleshooting advice.
-keywords: EarFun guides, audio tutorials, earbud guides, headphone tips, EarFun help
+layout: page
+title: EarFun Audio Guides - Setup, Optimization & Troubleshooting
+description: Comprehensive guides for EarFun earbuds and headphones. Setup instructions, optimization tips, troubleshooting, and maintenance advice.
 permalink: /guides/
+seo:
+  type: WebPage
+  name: EarFun Audio Guides
+  description: Complete guides for EarFun audio products
 ---
 
-# EarFun Audio Guides - Expert Tips & Tutorials
+# EarFun Audio Guides
 
-Your complete resource for EarFun audio guidance. From choosing the perfect device to advanced usage tips, our guides help you get the most from your audio gear.
+Comprehensive guides to help you get the most from your EarFun audio equipment.
 
-## Popular Guides
+## Quick Start Guides
 
-### Choosing the Right Audio Device
+### Initial Setup
 
-#### [How to Choose the Right Earbuds]({{ '/guides/choosing-earbuds/' | relative_url }})
-Complete buying guide covering fit, features, battery life, and noise cancellation. Perfect for first-time buyers and upgraders alike.
+- **Unboxing**: Check all included accessories and documentation
+- **Charging**: Fully charge before first use (usually 2-3 hours)
+- **Pairing**: Enable Bluetooth on your device and select your EarFun model
+- **Fit Testing**: Try different ear tip sizes for optimal comfort and seal
+- **App Download**: Install EarFun Audio app for advanced features
 
-- Budget considerations
-- Fit and comfort factors
-- Feature comparison
-- Usage recommendations
+### First Time Configuration
 
-### Technical Guides
+- **Sound Profile**: Choose EQ preset or customize to your preference
+- **Touch Controls**: Learn gesture controls for your specific model
+- **ANC Settings**: Configure noise cancellation preferences
+- **Voice Assistant**: Set up Siri, Google Assistant, or Alexa integration
 
-#### [Understanding Bluetooth Codecs]({{ '/guides/bluetooth-codecs/' | relative_url }})
-Learn about audio codecs and how they affect sound quality on your EarFun devices.
+## Optimization Tips
 
-- SBC vs AAC vs aptX
-- Compatibility guide
-- Sound quality impact
-- Device optimization
+### Audio Quality
 
-#### [How Active Noise Cancellation Works]({{ '/guides/how-anc-works/' | relative_url }})
-Deep dive into ANC technology and how to maximize its effectiveness.
+- **Codec Selection**: Use LDAC or aptX for high-quality audio when available
+- **EQ Tuning**: Adjust equalizer settings for your music preferences
+- **Volume Limiting**: Set safe listening levels to protect hearing
+- **Source Quality**: Use high-bitrate audio files for best results
 
-- ANC principles
-- Usage optimization
-- Battery impact
-- Troubleshooting tips
+### Battery Life
 
-### Maintenance & Care
+- **Power Management**: Disable unused features to extend battery life
+- **Auto-Off**: Enable automatic power-off when idle
+- **Charging Habits**: Regular charging cycles help maintain battery health
+- **Case Usage**: Always store in charging case when not in use
 
-#### [Earbud Maintenance Tips]({{ '/guides/earbud-maintenance/' | relative_url }})
-Keep your EarFun earbuds in perfect condition with proper care and maintenance.
+### Connectivity
 
-- Daily cleaning routine
-- Long-term storage
-- Troubleshooting common issues
-- Warranty preservation
+- **Range Optimization**: Keep devices within optimal Bluetooth range
+- **Interference Reduction**: Avoid crowded 2.4GHz environments when possible
+- **Multi-Device**: Learn how to switch between paired devices efficiently
+- **Update Firmware**: Keep firmware updated for best performance
 
-#### [Understanding IP Ratings]({{ '/guides/ip-ratings/' | relative_url }})
-Decoding water resistance ratings and what they mean for your devices.
+## Troubleshooting
 
-- IP rating explained
-- Real-world protection
-- Usage guidelines
-- Care recommendations
+### Common Issues
 
-## Guide Categories
+- **Connection Problems**: Reset Bluetooth connection and re-pair devices
+- **Audio Dropouts**: Check for interference and ensure devices are charged
+- **Fit Issues**: Try different ear tip sizes or adjust positioning
+- **Touch Control**: Clean touch surfaces and check for software updates
 
-### Buying Guides
+### Audio Quality Issues
 
-- **[Choosing Earbuds]({{ '/guides/choosing-earbuds/' | relative_url }})** - Complete selection guide
-- **[Budget vs Premium]({{ '/guides/budget-vs-premium/' | relative_url }})** - Feature comparisons
-- **[Use Case Guides]({{ '/guides/use-cases/' | relative_url }})** - Best for specific needs
+- **Muffled Sound**: Check for ear wax buildup and clean gently
+- **Imbalanced Audio**: Verify stereo balance settings in device audio preferences
+- **Low Volume**: Check both device and earbuds volume levels
+- **Distortion**: Reduce volume and check audio source quality
 
-### Setup & Usage
+### Advanced Troubleshooting
 
-- **[Initial Setup]({{ '/guides/setup/' | relative_url }})** - Getting started
-- **[Pairing Guide]({{ '/guides/pairing/' | relative_url }})** - Connection troubleshooting
-- **[App Configuration]({{ '/guides/app-setup/' | relative_url }})** - EarFun app optimization
-
-### Technical Deep-Dives
-
-- **[Audio Codecs]({{ '/guides/bluetooth-codecs/' | relative_url }})** - Technical specifications
-- **[ANC Technology]({{ '/guides/how-anc-works/' | relative_url }})** - Noise cancellation explained
-- **[Battery Optimization]({{ '/guides/battery-tips/' | relative_url }})** - Extending battery life
-
-### Maintenance
-
-- **[Device Care]({{ '/guides/earbud-maintenance/' | relative_url }})** - Cleaning and storage
-- **[Troubleshooting]({{ '/guides/troubleshooting/' | relative_url }})** - Common issues
-- **[Warranty Guide]({{ '/guides/warranty/' | relative_url }})** - Protection and claims
-
-## Quick Tips
-
-### Daily Use
-
-- **Fit Check**: Ensure proper seal for best sound quality and ANC performance
-- **Codec Selection**: Use AAC for iOS, aptX for Android when available
-- **Battery Management**: Don't let earbuds fully drain regularly
+- **Factory Reset**: Last resort for persistent issues - follow model-specific steps
+- **Firmware Recovery**: Use EarFun app to recover from firmware issues
+- **Hardware Check**: Test individual earbuds to isolate hardware problems
 - **Environment Awareness**: Use transparency mode when safety is important
 
 ### Maintenance
@@ -99,6 +82,15 @@ Decoding water resistance ratings and what they mean for your devices.
 - **Ear Tip Replacement**: Change every 3-6 months for hygiene
 - **Case Care**: Keep charging case clean and dry
 - **Storage**: Use protective case when not in active use
+
+## All Available Guides
+
+{% assign guides = site.pages | where_exp:'p','p.url contains "/guides/"' %}
+{% for p in guides %}
+{% unless p.url == '/guides/' %}
+- [{{ p.title }}]({{ p.url | relative_url }}){% if p.excerpt %} - {{ p.excerpt | strip_html | truncatewords: 15 }}{% endif %}
+{% endunless %}
+{% endfor %}
 
 ## Need Specific Help?
 

@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   
-  <!-- SEO Meta Tags -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/og-default.jpg' | absolute_url }}{% endif %}">
+  <!-- Skip Link Target -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/og-default.jpg' | absolute_url }}{% endif %}">
+  <!-- Jekyll SEO Tag - handles all meta tags, Open Graph, Twitter Cards, etc. -->
+  {% seo %}
+  
+  <!-- Jekyll Feed Meta -->
+  {% feed_meta %}
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  <link href="{{ '/assets/images/favicon.ico' | relative_url }}" rel="icon" type="image/x-icon"/>
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet"/>
   {% if page.extra_css %}
     {% for css in page.extra_css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
+      <link href="{{ css | relative_url }}" rel="stylesheet"/>
     {% endfor %}
   {% endif %}
   
@@ -37,50 +34,81 @@
     "name": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
     "description": "{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}",
     "url": "{{ page.url | absolute_url }}",
+    "image": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.logo | absolute_url }}{% endif %}",
     "author": {
       "@type": "Organization",
-      "name": "{{ site.title }}"
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}"
     },
+    {% if page.layout == 'post' %}
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}",
     "publisher": {
       "@type": "Organization",
       "name": "{{ site.title }}",
       "logo": {
         "@type": "ImageObject",
-        "url": "{{ '/assets/images/logo.png' | absolute_url }}"
+        "url": "{{ site.logo | absolute_url }}"
       }
-    }{% if page.layout == 'post' %},
-    "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-    "image": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/og-default.jpg' | absolute_url }}{% endif %}"{% endif %}
+    },
+    {% endif %}
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    }
   }
   </script>
+  
+  <!-- Google Analytics -->
+  {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    </script>
+  {% endif %}
 </head>
 
 <body>
+  <!-- Skip to main content link -->
+  <a class="skip-link sr-only-focusable" href="#main-content">Skip to main content</a>
+  
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container">
-      <nav aria-label="Primary" class="main-nav" role="navigation">
-        <div class="nav-brand">
-          <a class="site-logo" href="{{ '/' | relative_url }}">
-            <img alt="{{ site.title }}" height="50" width="150" src="{{ '/logo.svg' | relative_url }}">
+      <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="navbar-brand">
+          <a href="{{ '/' | relative_url }}" class="brand-link">
+            <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo">
+            <span class="brand-text">{{ site.title }}</span>
           </a>
         </div>
         
-        <button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu" class="mobile-menu-btn">
+        <button class="mobile-menu-btn" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle navigation menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
         </button>
         
-        <div class="nav-links" id="nav-links">
-          <ul class="nav-menu">
-            <li><a {% if page.url == '/' %}class="active"{% endif %} href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a {% if page.url contains '/reviews/' %}class="active"{% endif %} href="{{ '/reviews/' | relative_url }}">Reviews</a></li>
-            <li><a {% if page.url contains '/guides/' %}class="active"{% endif %} href="{{ '/guides/' | relative_url }}">Guides</a></li>
-            <li><a {% if page.url contains '/best/' %}class="active"{% endif %} href="{{ '/best/' | relative_url }}">Best</a></li>
-            <li><a {% if page.url contains '/deals/' %}class="active"{% endif %} href="{{ '/deals/' | relative_url }}">Deals</a></li>
-            <li><a {% if page.url == '/contact/' %}class="active"{% endif %} href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        <div class="nav-links" id="main-menu">
+          <ul class="nav-list" role="menubar">
+            <li class="nav-item" role="none">
+              <a href="{{ '/best/' | relative_url }}" class="nav-link" role="menuitem">Best Products</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a href="{{ '/guides/' | relative_url }}" class="nav-link" role="menuitem">Guides</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a href="{{ '/reviews/' | relative_url }}" class="nav-link" role="menuitem">Reviews</a>
+            </li>
+            <li class="nav-item" role="none">
+              <a href="{{ '/contact/' | relative_url }}" class="nav-link" role="menuitem">Contact</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -88,81 +116,42 @@
   </header>
   
   <!-- Main Content -->
-  <main class="site-main" id="main-content" role="main">
-    <div class="container">
-      {% if page.layout == 'post' or page.layout == 'review' %}
-        <!-- Affiliate Disclosure and Social Proof Badges before Product Reviews -->
-        {% if page.layout == 'review' or page.product_review %}
-          {% include affiliate-disclosure.html %}
-          {% include social-proof-badges.html %}
-        {% endif %}
-        
-        <!-- Product Reviews Header -->
-        {% if page.layout == 'review' or page.product_review %}
-          <section class="product-reviews-header">
-            <h1>Product Reviews</h1>
-          </section>
-        {% endif %}
-      {% endif %}
-      
-      {{ content }}
-      
-      {% if page.layout == 'post' or page.layout == 'review' %}
-        <!-- Enhanced FAQ Section below product reviews if present -->
-        {% if page.layout == 'review' or page.product_review %}
-          {% if page.faq %}
-            {% include enhanced-faq-section.html %}
-          {% endif %}
-        {% endif %}
-      {% endif %}
-    </div>
+  <main id="main-content" class="main-content" role="main">
+    {{ content }}
   </main>
   
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
-        <nav aria-label="Footer" class="footer-nav" role="navigation">
-          <div class="footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="{{ '/reviews/' | relative_url }}">Latest Reviews</a></li>
-              <li><a href="{{ '/guides/' | relative_url }}">Buying Guides</a></li>
-              <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
-              <li><a href="{{ '/deals/' | relative_url }}">Deals</a></li>
-              <li><a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a></li>
-              <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-            </ul>
-          </div>
-        </nav>
-        
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p>Email: <a href="mailto:contact@earfun-audio.com">{{ site.contact.email }}</a></p>
-          <p>Partnerships: <a href="mailto:partnerships@earfun-audio.com">{{ site.contact.partnerships }}</a></p>
+        <div class="footer-section">
+          <h3>{{ site.title }}</h3>
+          <p>{{ site.description }}</p>
         </div>
         
-        <div class="footer-social">
-          <h4>Follow Us</h4>
-          <div class="social-links">
-            {% if site.social.links %}
-              {% for link in site.social.links %}
-                <a aria-label="Social link" href="{{ link }}" rel="noopener" target="_blank">🔗</a>
-              {% endfor %}
-            {% endif %}
-          </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
+            <li><a href="{{ '/guides/' | relative_url }}">Guides</a></li>
+            <li><a href="{{ '/reviews/' | relative_url }}">Reviews</a></li>
+            <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
+            <li><a href="{{ '/terms/' | relative_url }}">Terms of Service</a></li>
+            <li><a href="{{ '/disclosure/' | relative_url }}">Affiliate Disclosure</a></li>
+          </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Built with Jekyll.</p>
-        <nav aria-label="Legal" class="footer-legal" role="navigation">
-          <ul>
-            <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
-            <li><a href="{{ '/terms-of-use/' | relative_url }}">Terms of Use</a></li>
-            <li><a href="{{ '/for-brands/' | relative_url }}">For Brands</a></li>
-          </ul>
-        </nav>
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        <p class="disclaimer">As an Amazon Associate, we earn from qualifying purchases.</p>
       </div>
     </div>
   </footer>
@@ -203,5 +192,6 @@
       });
     });
   </script>
+  
 </body>
 </html>

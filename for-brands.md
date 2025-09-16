@@ -37,6 +37,8 @@ We produce high-quality, original editorial around audio gear—especially earbu
 
 Let's discuss how we can help showcase your audio products to engaged readers who trust our recommendations.
 
-[Contact Us]({{ '/contact/' | relative_url }}){: .cta-btn}
+<a href="{{ '/contact/' | relative_url }}" class="btn cta-btn">Contact Us</a>
+
+---
 
 Professional audio gear review and promotional content services for brands worldwide.

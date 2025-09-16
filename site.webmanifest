@@ -1,0 +1,25 @@
+{
+  "name": "EarFun Audio Blog",
+  "short_name": "EarFun Audio",
+  "description": "Professional reviews and guides for EarFun headphones, earbuds, and speakers. Find the perfect audio gear for your needs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#4285F4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["technology", "audio", "reviews", "shopping"]
+}

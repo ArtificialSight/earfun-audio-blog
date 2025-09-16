@@ -1,123 +1,65 @@
 ---
 layout: default
-title: EarFun Audio - Premium Earbuds & Audio Gear Reviews
-description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion.
-keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
+title: EarFun Audio Blog - Expert Reviews & Guides
+description: Comprehensive reviews, guides, and comparisons of EarFun audio products. Expert testing and honest recommendations for earbuds, headphones, and speakers.
+keywords: EarFun reviews, earbuds comparison, audio gear guides, headphone reviews
+canonical: https://earfunaudioblog.com/
+schema_type: WebSite
 ---
-
-<!-- Deal Alert Box -->
-{% include deal-alert.html 
-   title="🔥 Limited Time Deal Alert" 
-   product="EarFun Air Pro 4" 
-   original_price="$79.99" 
-   sale_price="$59.99" 
-   savings="$20 OFF" 
-   link="https://amzn.to/earfun-air-pro-4" 
-   urgency="Ends in 24 hours!" %}
 
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <div class="kicker">Premium Audio Reviews</div>
-    <h1>Discover the Best EarFun Audio Products</h1>
-    <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
-    <img src="{{ '/assets/hero-earfun-products.jpg' | relative_url }}" alt="Collection of premium EarFun audio products including earbuds and speakers" class="hero-image" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
-    <div class="cta-buttons">
-      <a class="cta-btn primary" href="{{ '/reviews/' | relative_url }}">View Reviews</a>
-      <a class="cta-btn secondary" href="{{ '/best/' | relative_url }}">Best Products</a>
-      <a class="cta-btn deals" href="{{ '/deals/' | relative_url }}">🔥 Hot Deals</a>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Product Review Cards -->
-<section class="products" id="products">
-  <h2>Top EarFun Product Reviews</h2>
-  <div class="product-grid">
-    
-    <!-- Air Pro 3 -->
-    <div class="review-card">
-      <img src="{{ '/assets/earfun-air-pro-3.jpg' | relative_url }}" alt="EarFun Air Pro 3 wireless earbuds with premium design and ANC" class="review-image" />
-      <h3>EarFun Air Pro 3</h3>
-      <div class="rating">⭐⭐⭐⭐⭐ 4.5/5</div>
-      <p>Premium ANC earbuds with 11mm drivers, LDAC codec, and up to 45-hour battery life. Perfect for audiophiles seeking quality without breaking the bank.</p>
-      <div class="price">$79.99</div>
-      <div class="card-actions">
-        <a class="btn-review" href="{{ '/reviews/earfun-air-pro-3/' | relative_url }}">Full Review</a>
-        <a class="btn-buy" href="https://amzn.to/earfun-air-pro-3" target="_blank" rel="noopener">Buy Now</a>
-      </div>
-    </div>
-
-    <!-- Free Pro 3 -->
-    <div class="review-card">
-      <img src="{{ '/assets/earfun-free-pro-3.jpg' | relative_url }}" alt="EarFun Free Pro 3 sports earbuds with secure fit" class="review-image" />
-      <h3>EarFun Free Pro 3</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.2/5</div>
-      <p>Sport-focused earbuds with ear hooks, IP54 rating, and multipoint connectivity. Great for workouts and active lifestyles.</p>
-      <div class="price">$59.99</div>
-      <div class="card-actions">
-        <a class="btn-review" href="{{ '/reviews/earfun-free-pro-3/' | relative_url }}">Full Review</a>
-        <a class="btn-buy" href="https://amzn.to/earfun-free-pro-3" target="_blank" rel="noopener">Buy Now</a>
-      </div>
-    </div>
-
-    <!-- Air S -->
-    <div class="review-card">
-      <img src="{{ '/assets/earfun-air-s.jpg' | relative_url }}" alt="EarFun Air S compact wireless earbuds" class="review-image" />
-      <h3>EarFun Air S</h3>
-      <div class="rating">⭐⭐⭐⭐☆ 4.0/5</div>
-      <p>Compact and affordable true wireless earbuds with reliable connection and decent sound quality. Great entry-level option.</p>
-      <div class="price">$39.99</div>
-      <div class="card-actions">
-        <a class="btn-review" href="{{ '/reviews/earfun-air-s/' | relative_url }}">Full Review</a>
-        <a class="btn-buy" href="https://amzn.to/earfun-air-s" target="_blank" rel="noopener">Buy Now</a>
-      </div>
-    </div>
-
+    <h1>EarFun Audio Expert Reviews</h1>
+    <p>Comprehensive testing and honest reviews of EarFun earbuds, headphones, and audio gear</p>
+    <a href="#products" class="cta-btn">View Latest Reviews</a>
   </div>
 </section>
 
 <!-- Product Comparison Table -->
-<section class="comparison" style="margin-top: 2em;">
-  <h2>EarFun Models Comparison</h2>
-  <table class="comparison-table">
-    <thead>
-      <tr>
-        <th scope="col">Model</th>
-        <th scope="col">Price</th>
-        <th scope="col">ANC</th>
-        <th scope="col">Battery Life</th>
-        <th scope="col">Best For</th>
-        <th scope="col">Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Air Pro 3</th>
-        <td>$79.99</td>
-        <td>✅ Yes</td>
-        <td>45 hours</td>
-        <td>Premium Audio</td>
-        <td>4.5/5</td>
-      </tr>
-      <tr>
-        <th scope="row">Free Pro 3</th>
-        <td>$59.99</td>
-        <td>❌ No</td>
-        <td>32 hours</td>
-        <td>Sports & Fitness</td>
-        <td>4.2/5</td>
-      </tr>
-      <tr>
-        <th scope="row">Air S</th>
-        <td>$39.99</td>
-        <td>❌ No</td>
-        <td>30 hours</td>
-        <td>Budget Friendly</td>
-        <td>4.0/5</td>
-      </tr>
-    </tbody>
-  </table>
+<section class="product-comparison">
+  <div class="container">
+    <h2>Compare EarFun Models</h2>
+    <table>
+      <caption>Compare EarFun models</caption>
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Price</th>
+          <th scope="col">ANC</th>
+          <th scope="col">Battery Life</th>
+          <th scope="col">Best For</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Air Pro 3</th>
+          <td>$79.99</td>
+          <td>✅ Yes</td>
+          <td>45 hours</td>
+          <td>Premium Audio</td>
+          <td>4.5/5</td>
+        </tr>
+        <tr>
+          <th scope="row">Free Pro 3</th>
+          <td>$59.99</td>
+          <td>❌ No</td>
+          <td>32 hours</td>
+          <td>Sports & Fitness</td>
+          <td>4.2/5</td>
+        </tr>
+        <tr>
+          <th scope="row">Air S</th>
+          <td>$39.99</td>
+          <td>❌ No</td>
+          <td>30 hours</td>
+          <td>Budget Friendly</td>
+          <td>4.0/5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -126,39 +68,157 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
   <dl>
     <dt>Which EarFun earbuds are best for working out?</dt>
     <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
-    
-    <dt>Does EarFun support multipoint Bluetooth?</dt>
-    <dd>Yes, select models like Air Pro 3 can connect to two devices at once.</dd>
-    
-    <dt>What is EarFun's warranty?</dt>
-    <dd>All official products include an 18-month warranty when purchased from authorized retailers.</dd>
+    <dt>Do EarFun earbuds work well for phone calls?</dt>
+    <dd>Yes, most EarFun models feature clear call quality with noise reduction microphones.</dd>
+    <dt>How long do EarFun earbuds typically last?</dt>
+    <dd>Battery life varies by model, ranging from 6-11 hours per charge, with up to 45 hours total with the case.</dd>
   </dl>
 </section>
 
-<!-- Buying Guides & Review Archive -->
-<section class="guides" style="margin-top:2em;">
-  <h2>More From EarFun Audio</h2>
-  <ul>
-    <li>• <a href="{{ '/guides/choosing-earbuds/' | relative_url }}">How to Choose Earbuds: Full Guide</a></li>
-    <li>• <a href="{{ '/reviews/' | relative_url }}">All Reviews Archive</a></li>
-    <li>• <a href="{{ '/best/' | relative_url }}">Best EarFun Products</a></li>
-  </ul>
+<!-- Featured Product Review Cards -->
+<section class="products" id="products">
+  <h2>Top EarFun Product Reviews</h2>
+  <div class="product-grid">
+    {% for product in site.data.products limit:6 %}
+    <article class="product-card">
+      <div class="product-image">
+        <!-- Task 4: Responsive Product Images -->
+        {% include responsive-product-image.html 
+           jpg_base="{{ product.image | relative_url }}"
+           alt="{{ product.name }}"
+           width="400"
+           height="300"
+           loading="lazy" %}
+        {% if product.badge %}
+          <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
+        {% endif %}
+      </div>
+      <div class="product-content">
+        <h3><a href="{{ product.url | relative_url }}">{{ product.name }}</a></h3>
+        <div class="rating">
+          {% assign rating = product.rating %}
+          {% for i in (1..5) %}
+            {% if i <= rating %}
+              <span class="star filled">★</span>
+            {% else %}
+              <span class="star">☆</span>
+            {% endif %}
+          {% endfor %}
+          <span class="rating-text">({{ product.rating }}/5)</span>
+        </div>
+        <p class="product-summary">{{ product.description | truncate: 120 }}</p>
+        <div class="product-meta">
+          <span class="price">${{ product.price }}</span>
+          <a class="read-more" href="{{ product.url | relative_url }}">Read Review</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Task 6: Product JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.name }}",
+      "image": "{{ site.url }}{{ product.image | relative_url }}",
+      "description": "{{ product.description }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "EarFun"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "{{ product.price }}",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ site.url }}{{ product.url | relative_url }}"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ product.rating }}",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "{{ product.review_count | default: 50 }}"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "{{ product.rating }}",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "EarFun Audio Review Team"
+        },
+        "reviewBody": "{{ product.description }}"
+      },
+      "category": "{{ product.category | default: 'Audio Equipment' }}",
+      "url": "{{ site.url }}{{ product.url | relative_url }}"
+    }
+    </script>
+    {% endfor %}
+  </div>
 </section>
 
-<!-- Newsletter & Process -->
-<section class="subscribe" style="margin-top:2em;">
-  <h2>Don't Miss Reviews & Deals!</h2>
-  <form action="#" method="post">
-    <input type="email" name="email" placeholder="Your email" required aria-label="Your email" />
-    <button type="submit" class="cta-btn primary">Subscribe</button>
-  </form>
-  <p>No spam, only quality content. Unsubscribe at any time.</p>
+<!-- Newsletter Signup -->
+<section class="newsletter">
+  <div class="newsletter-content">
+    <h2>Stay Updated with Latest Reviews</h2>
+    <p>Get notified about new EarFun product reviews, exclusive deals, and audio tech insights.</p>
+    <form class="newsletter-form" method="post" action="#">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
 </section>
 
-<section class="disclosure" style="margin-top:2em; font-size: 0.93em;">
-  <h2>How We Review</h2>
-  <p>Our team tests every product hands-on for weeks, evaluating sound, comfort, features, and value. We update our reviews as new software or competitors arrive to keep our readers informed with the latest and most honest recommendations.</p>
+<!-- Latest Blog Posts -->
+<section class="blog-posts">
+  <h2>Latest Audio Insights</h2>
+  <div class="posts-grid">
+    {% for post in site.posts limit:3 %}
+    <article class="post-card">
+      <div class="post-image">
+        {% if post.image %}
+        <!-- Task 4: Responsive Post Images -->
+        {% include responsive-product-image.html 
+           jpg_base="{{ post.image | relative_url }}"
+           alt="{{ post.title }}"
+           width="400"
+           height="225"
+           loading="lazy" %}
+        {% endif %}
+      </div>
+      <div class="post-content">
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <a class="read-more" href="{{ post.url | relative_url }}">Read More</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
 </section>
 
-<!-- Global Affiliate Disclosure -->
-{% include affiliate-disclosure.html %}
+<!-- Task 8: FAQPage JSON-LD for Homepage -->
+{% if site.data.homepage_faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in site.data.homepage_faq %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

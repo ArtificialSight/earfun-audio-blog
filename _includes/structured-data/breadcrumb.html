@@ -1,0 +1,45 @@
+<!-- BreadcrumbList JSON-LD structured data for navigation breadcrumbs -->
+{% if page.url != '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ '/' | absolute_url }}"
+    }
+    {% assign breadcrumb_parts = page.url | split: '/' %}
+    {% assign breadcrumb_url = '' %}
+    {% assign position = 2 %}
+    {% for part in breadcrumb_parts %}
+      {% unless part == '' %}
+        {% if forloop.last %}
+          {% unless part contains '.html' %}
+            {% assign breadcrumb_url = breadcrumb_url | append: '/' | append: part %}
+            ,{
+              "@type": "ListItem",
+              "position": {{ position }},
+              "name": "{{ part | replace: '-', ' ' | replace: '_', ' ' | capitalize }}",
+              "item": "{{ breadcrumb_url | absolute_url }}"
+            }
+            {% assign position = position | plus: 1 %}
+          {% endunless %}
+        {% else %}
+          {% assign breadcrumb_url = breadcrumb_url | append: '/' | append: part %}
+          ,{
+            "@type": "ListItem",
+            "position": {{ position }},
+            "name": "{{ part | replace: '-', ' ' | replace: '_', ' ' | capitalize }}",
+            "item": "{{ breadcrumb_url | absolute_url }}"
+          }
+          {% assign position = position | plus: 1 %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
