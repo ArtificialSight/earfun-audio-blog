@@ -21,7 +21,17 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
     <div class="kicker">Premium Audio Reviews</div>
     <h1>Discover the Best EarFun Audio Products</h1>
     <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
-    <img src="{{ '/assets/hero-earfun-products.jpg' | relative_url }}" alt="Collection of premium EarFun audio products including earbuds and speakers" class="hero-image" style="width: 100%; max-width: 600px; border-radius: 12px; margin: 20px 0;" />
+    
+    <!-- Task 4: Responsive Hero Image with picture element -->
+    {% include responsive-hero-image.html 
+       jpg_base="{{ '/assets/hero-earfun-products' | relative_url }}"
+       alt="Collection of premium EarFun audio products including earbuds and speakers"
+       width="1200"
+       height="675"
+       loading="eager"
+       priority=true
+       class="hero-16-9" %}
+    
     <div class="cta-buttons">
       <a class="cta-btn primary" href="{{ '/reviews/' | relative_url }}">View Reviews</a>
       <a class="cta-btn secondary" href="{{ '/best/' | relative_url }}">Best Products</a>
@@ -38,7 +48,13 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
     {% for product in site.data.products limit:6 %}
     <article class="product-card">
       <div class="product-image">
-        <img src="{{ product.image | relative_url }}" alt="{{ product.name }}" loading="lazy">
+        <!-- Task 4: Responsive Product Images -->
+        {% include responsive-product-image.html 
+           jpg_base="{{ product.image | relative_url }}"
+           alt="{{ product.name }}"
+           width="400"
+           height="300"
+           loading="lazy" %}
         {% if product.badge %}
         <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
         {% endif %}
@@ -59,12 +75,12 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
         <p class="product-summary">{{ product.description | truncate: 120 }}</p>
         <div class="product-meta">
           <span class="price">${{ product.price }}</span>
-          <a href="{{ product.url | relative_url }}" class="read-more">Read Review</a>
+          <a class="read-more" href="{{ product.url | relative_url }}">Read Review</a>
         </div>
       </div>
     </article>
     
-    <!-- Product JSON-LD Structured Data -->
+    <!-- Task 6: Product JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
@@ -117,7 +133,7 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
   <div class="newsletter-content">
     <h2>Stay Updated with Latest Reviews</h2>
     <p>Get notified about new EarFun product reviews, exclusive deals, and audio tech insights.</p>
-    <form class="newsletter-form" action="#" method="post">
+    <form action="#" class="newsletter-form" method="post">
       <input type="email" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
@@ -131,15 +147,45 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
     {% for post in site.posts limit:3 %}
     <article class="post-card">
       <div class="post-image">
-        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+        {% if post.image %}
+        <!-- Task 4: Responsive Post Images -->
+        {% include responsive-product-image.html 
+           jpg_base="{{ post.image | relative_url }}"
+           alt="{{ post.title }}"
+           width="400"
+           height="225"
+           loading="lazy" %}
+        {% endif %}
       </div>
       <div class="post-content">
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
         <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+        <a class="read-more" href="{{ post.url | relative_url }}">Read More</a>
       </div>
     </article>
     {% endfor %}
   </div>
 </section>
+
+<!-- Task 8: FAQPage JSON-LD for Homepage -->
+{% if site.data.homepage_faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in site.data.homepage_faq %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
