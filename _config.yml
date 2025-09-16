@@ -1,8 +1,8 @@
 # Site Settings
-title: "EarFun Audio Blog - Expert Reviews & Buying Guides"
-description: "Honest audio gear reviews, EarFun product guides, buying recommendations, and exclusive deals. Your trusted source for audio equipment insights."
-tagline: "Your Trusted Audio Guide"
-keywords: "EarFun reviews, audio gear, headphones, earbuds, wireless earphones, bluetooth speakers, audio equipment reviews"
+title: "EarFun Audio Blog - Expert Reviews & European Buying Guides"
+description: "Professional audio gear reviews, EarFun product guides, and European buying recommendations. Your trusted source for audio equipment insights with focus on myearfun.com/eu."
+tagline: "Your Trusted Audio Guide for Europe"
+keywords: "EarFun reviews Europe, audio gear EU, headphones Europe, earbuds EU, wireless earphones Europe, bluetooth speakers EU, audio equipment reviews European market"
 author: "EarFun Audio Blog"
 email: "hello@earfunaudioblog.com"
 
@@ -40,6 +40,7 @@ plugins:
 url: "https://artificialsight.github.io"
 baseurl: "/earfun-audio-blog"
 permalink: /:year/:month/:day/:title/
+canonical_url: "https://www.myearfun.com/eu"
 
 # SEO & Social
 social:
