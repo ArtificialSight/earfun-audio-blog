@@ -1,40 +1,31 @@
 ---
 layout: default
 title: EarFun Audio - Premium Earbuds & Audio Gear Reviews
-description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion.
-keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones
+description: Discover the best EarFun earbuds, headphones, and speakers with expert reviews, comparisons, and buying guides. Find your perfect audio companion for European customers.
+keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetooth headphones, Europe, EU
 ---
 <!-- Deal Alert Box -->
-{% include deal-alert.html 
-   title="🔥 Limited Time Deal Alert" 
-   product="EarFun Air Pro 4" 
-   original_price="$79.99" 
-   sale_price="$59.99" 
-   savings="$20 OFF" 
-   link="https://amzn.to/earfun-air-pro-4" 
-   urgency="Ends in 24 hours!" %}
+<div class="deal-alert">
+  <h3>🔥 Limited Time Deal Alert - EarFun Air Pro 4</h3>
+  <p><strong>Was:</strong> $79.99 | <strong>Now:</strong> $59.99 | <strong>Save:</strong> $20 OFF</p>
+  <a href="https://www.myearfun.com/eu" class="affiliate-button" target="_blank" rel="nofollow sponsored">
+    🛒 Shop EarFun Europe - Ends in 24 hours!
+  </a>
+</div>
 
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <div class="kicker">Premium Audio Reviews</div>
+    <div class="kicker">Premium Audio Reviews for Europe</div>
     <h1>Discover the Best EarFun Audio Products</h1>
-    <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations.</p>
+    <p>Expert reviews, comparisons, and buying guides for EarFun earbuds, headphones, and speakers. Find your perfect audio companion with our detailed analysis and professional recommendations. All products available at <strong>myearfun.com/eu</strong> with European warranty and support.</p>
     
-    <!-- Task 4: Responsive Hero Image with picture element -->
-    {% include responsive-hero-image.html 
-       jpg_base="{{ '/assets/hero-earfun-products' | relative_url }}"
-       alt="Collection of premium EarFun audio products including earbuds and speakers"
-       width="1200"
-       height="675"
-       loading="eager"
-       priority=true
-       class="hero-16-9" %}
+    <img src="{{ '/hero.png' | relative_url }}" alt="Collection of premium EarFun audio products including earbuds and speakers" class="hero-image" width="800" height="400" loading="eager">
     
     <div class="cta-buttons">
       <a class="cta-btn primary" href="{{ '/reviews/' | relative_url }}">View Reviews</a>
       <a class="cta-btn secondary" href="{{ '/best/' | relative_url }}">Best Products</a>
-      <a class="cta-btn deals" href="{{ '/deals/' | relative_url }}">🔥 Hot Deals</a>
+      <a class="cta-btn deals" href="https://www.myearfun.com/eu" target="_blank" rel="sponsored">🇪🇺 Shop EarFun Europe</a>
     </div>
   </div>
 </section>
@@ -42,183 +33,332 @@ keywords: EarFun, earbuds, headphones, audio reviews, wireless earbuds, bluetoot
 <!-- Product Comparison Table -->
 <section class="product-comparison">
   <div class="container">
-    <h2>Compare EarFun Models</h2>
+    <h2>Compare EarFun Models - Available at myearfun.com/eu</h2>
     <table>
-      <caption>Compare EarFun models</caption>
+      <caption>Compare EarFun models for European customers</caption>
       <thead>
         <tr>
           <th scope="col">Product</th>
-          <th scope="col">Product Type</th>
+          <th scope="col">Type</th>
           <th scope="col">ANC</th>
           <th scope="col">Battery Life</th>
           <th scope="col">Water Resistance</th>
-          <th scope="col">Price</th>
+          <th scope="col">EU Price</th>
           <th scope="col">Best For</th>
         </tr>
       </thead>
       <tbody>
-        {% for product in site.data.products.all %}
         <tr>
-          <td>{{ product.name }}</td>
-          <td>{{ product.type }}</td>
-          <td>{{ product.anc }}</td>
-          <td>{{ product.battery }}</td>
-          <td>{{ product.water_resistance }}</td>
-          <td>{{ product.price }}</td>
-          <td>{{ product.best_for }}</td>
+          <td><strong>Air Pro 4</strong> <span class="eu-badge">EU Available</span></td>
+          <td>True Wireless Earbuds</td>
+          <td>Yes (Advanced ANC)</td>
+          <td>10h + 40h case</td>
+          <td>IPX5</td>
+          <td class="price-eu">€89.99</td>
+          <td>Premium Experience</td>
         </tr>
-        {% endfor %}
+        <tr>
+          <td><strong>Free Pro 3</strong> <span class="eu-badge">EU Available</span></td>
+          <td>Sports Earbuds</td>
+          <td>No</td>
+          <td>7h + 28h case</td>
+          <td>IPX7</td>
+          <td class="price-eu">€59.99</td>
+          <td>Workouts, Running</td>
+        </tr>
+        <tr>
+          <td><strong>UB Pro</strong> <span class="eu-badge">EU Available</span></td>
+          <td>Bluetooth Speaker</td>
+          <td>N/A</td>
+          <td>16 hours</td>
+          <td>IPX7</td>
+          <td class="price-eu">€79.99</td>
+          <td>Outdoor Activities</td>
+        </tr>
+        <tr>
+          <td><strong>Air Pro 3</strong> <span class="eu-badge">EU Available</span></td>
+          <td>True Wireless Earbuds</td>
+          <td>Yes (Hybrid ANC)</td>
+          <td>9h + 36h case</td>
+          <td>IPX5</td>
+          <td class="price-eu">€69.99</td>
+          <td>Commuting, Travel</td>
+        </tr>
       </tbody>
     </table>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://www.myearfun.com/eu" class="affiliate-button" target="_blank" rel="sponsored">
+        🇪🇺 View All Products at EarFun Europe
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- Featured Product Review Cards -->
 <section class="products" id="products">
-  <h2>Top EarFun Product Reviews</h2>
-  <div class="product-grid">
-    
-    {% for product in site.data.products limit:6 %}
-    <article class="product-card">
-      <div class="product-image">
-        <!-- Task 4: Responsive Product Images -->
-        {% include responsive-product-image.html 
-           jpg_base="{{ product.image | relative_url }}"
-           alt="{{ product.name }}"
-           width="400"
-           height="300"
-           loading="lazy" %}
-        {% if product.badge %}
-        <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
-        {% endif %}
-      </div>
-      <div class="product-content">
-        <h3><a href="{{ product.url | relative_url }}">{{ product.name }}</a></h3>
-        <div class="rating">
-          {% assign rating = product.rating %}
-          {% for i in (1..5) %}
-            {% if i <= rating %}
-              <span class="star filled">★</span>
-            {% else %}
-              <span class="star">☆</span>
-            {% endif %}
-          {% endfor %}
-          <span class="rating-text">({{ product.rating }}/5)</span>
+  <div class="container">
+    <h2>Top EarFun Product Reviews - Available in Europe</h2>
+    <div class="product-grid">
+      
+      <article class="product-card">
+        <div class="product-image">
+          <img src="{{ '/assets/EarfunTunePro.jpg' | relative_url }}" alt="EarFun Air Pro 4" width="400" height="300" loading="lazy">
+          <span class="badge bestseller">BESTSELLER</span>
         </div>
-        <p class="product-summary">{{ product.description | truncate: 120 }}</p>
-        <div class="product-meta">
-          <span class="price">${{ product.price }}</span>
-          <a class="read-more" href="{{ product.url | relative_url }}">Read Review</a>
+        <div class="product-content">
+          <h3><a href="https://www.myearfun.com/eu">EarFun Air Pro 4</a></h3>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="rating-text">(4.8/5)</span>
+          </div>
+          <p class="product-summary">Premium true wireless earbuds with advanced hybrid ANC, 50-hour battery life, and Hi-Res audio certification. Perfect for European audiophiles.</p>
+          <div class="product-meta">
+            <span class="price price-eu">€89.99</span>
+            <a class="affiliate-button" href="https://www.myearfun.com/eu" target="_blank" rel="sponsored">Buy Now</a>
+          </div>
         </div>
-      </div>
-    </article>
-    
-    <!-- Task 6: Product JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "{{ product.name }}",
-      "image": "{{ site.url }}{{ product.image | relative_url }}",
-      "description": "{{ product.description }}",
-      "brand": {
-        "@type": "Brand",
-        "name": "EarFun"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "{{ product.price }}",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "{{ site.url }}{{ product.url | relative_url }}"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "{{ product.rating }}",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "{{ product.review_count | default: 50 }}"
-      },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "{{ product.rating }}",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "EarFun Audio Review Team"
-        },
-        "reviewBody": "{{ product.description }}"
-      },
-      "category": "{{ product.category | default: 'Audio Equipment' }}",
-      "url": "{{ site.url }}{{ product.url | relative_url }}"
-    }
-    </script>
-    {% endfor %}
-    
+      </article>
+
+      <article class="product-card">
+        <div class="product-image">
+          <img src="{{ '/assets/earfun-wave-pro.jpg' | relative_url }}" alt="EarFun Free Pro 3" width="400" height="300" loading="lazy">
+          <span class="badge new">SPORTS</span>
+        </div>
+        <div class="product-content">
+          <h3><a href="https://www.myearfun.com/eu">EarFun Free Pro 3</a></h3>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">☆</span>
+            <span class="rating-text">(4.3/5)</span>
+          </div>
+          <p class="product-summary">Sports earbuds with secure ear hooks, IPX7 waterproof rating, and enhanced bass for workouts. Ideal for active European lifestyles.</p>
+          <div class="product-meta">
+            <span class="price price-eu">€59.99</span>
+            <a class="affiliate-button" href="https://www.myearfun.com/eu" target="_blank" rel="sponsored">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image">
+          <img src="{{ '/assets/hero-earfun-products.jpg' | relative_url }}" alt="EarFun UB Pro" width="400" height="300" loading="lazy">
+          <span class="badge sale">SPEAKER</span>
+        </div>
+        <div class="product-content">
+          <h3><a href="https://www.myearfun.com/eu">EarFun UB Pro</a></h3>
+          <div class="rating">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">☆</span>
+            <span class="rating-text">(4.2/5)</span>
+          </div>
+          <p class="product-summary">Portable Bluetooth speaker with 360° surround sound, IPX7 waterproof design, and 16-hour battery for outdoor adventures across Europe.</p>
+          <div class="product-meta">
+            <span class="price price-eu">€79.99</span>
+            <a class="affiliate-button" href="https://www.myearfun.com/eu" target="_blank" rel="sponsored">Buy Now</a>
+          </div>
+        </div>
+      </article>
+      
+    </div>
   </div>
 </section>
 
 <!-- Newsletter Signup -->
 <section class="newsletter">
-  <div class="newsletter-content">
-    <h2>Stay Updated with Latest Reviews</h2>
-    <p>Get notified about new EarFun product reviews, exclusive deals, and audio tech insights.</p>
-    <form class="newsletter-form" method="post" action="#">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
+  <div class="container">
+    <div class="newsletter-content">
+      <h2>Stay Updated with Latest Reviews & European Deals</h2>
+      <p>Get notified about new EarFun product reviews, exclusive European deals, and audio tech insights. Priority access to myearfun.com/eu promotions.</p>
+      <form class="newsletter-form" method="post" action="#" onsubmit="alert('Thank you for subscribing! We\'ll keep you updated with the latest EarFun news and European deals.'); return false;">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe for EU Deals</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <!-- Latest Blog Posts -->
 <section class="blog-posts">
-  <h2>Latest Audio Insights</h2>
-  <div class="posts-grid">
-    {% for post in site.posts limit:3 %}
-    <article class="post-card">
-      <div class="post-image">
-        {% if post.image %}
-        <!-- Task 4: Responsive Post Images -->
-        {% include responsive-product-image.html 
-           jpg_base="{{ post.image | relative_url }}"
-           alt="{{ post.title }}"
-           width="400"
-           height="225"
-           loading="lazy" %}
-        {% endif %}
-      </div>
-      <div class="post-content">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
-        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <a class="read-more" href="{{ post.url | relative_url }}">Read More</a>
-      </div>
-    </article>
-    {% endfor %}
+  <div class="container">
+    <h2>Latest Audio Insights & European Market Updates</h2>
+    <div class="posts-grid">
+      <article class="post-card">
+        <div class="post-image">
+          <img src="{{ '/assets/hero-earfun-products.jpg' | relative_url }}" alt="EarFun European Launch" width="400" height="225" loading="lazy">
+        </div>
+        <div class="post-content">
+          <h3><a href="https://www.myearfun.com/eu">EarFun Expands to European Market</a></h3>
+          <p class="post-meta">December 15, 2024</p>
+          <p class="post-excerpt">EarFun officially launches in Europe with myearfun.com/eu, bringing premium audio products with local warranty and support to European customers.</p>
+          <a class="read-more" href="https://www.myearfun.com/eu" target="_blank" rel="sponsored">Learn More</a>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-image">
+          <img src="{{ '/assets/EarfunTunePro.jpg' | relative_url }}" alt="ANC Technology Guide" width="400" height="225" loading="lazy">
+        </div>
+        <div class="post-content">
+          <h3><a href="{{ '/how-anc-works.html' | relative_url }}">How Active Noise Cancellation Works</a></h3>
+          <p class="post-meta">December 10, 2024</p>
+          <p class="post-excerpt">Understanding the technology behind EarFun's advanced ANC systems and how they compare to competitors in the European market.</p>
+          <a class="read-more" href="{{ '/how-anc-works.html' | relative_url }}">Read More</a>
+        </div>
+      </article>
+      
+      <article class="post-card">
+        <div class="post-image">
+          <img src="{{ '/assets/earfun-wave-pro.jpg' | relative_url }}" alt="Choosing Earbuds Guide" width="400" height="225" loading="lazy">
+        </div>
+        <div class="post-content">
+          <h3><a href="{{ '/choosing-earbuds.html' | relative_url }}">Complete Guide to Choosing Earbuds</a></h3>
+          <p class="post-meta">December 5, 2024</p>
+          <p class="post-excerpt">Everything European customers need to know when selecting the perfect earbuds for their lifestyle and budget.</p>
+          <a class="read-more" href="{{ '/choosing-earbuds.html' | relative_url }}">Read More</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<!-- Task 8: FAQPage JSON-LD for Homepage -->
-{% if site.data.homepage_faq %}
+<!-- FAQ Section for European Customers -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions - European Customers</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What makes EarFun products ideal for European customers?</h3>
+        <p>EarFun products are designed with European standards in mind, featuring CE certification, GDPR-compliant privacy features, and compatibility with European audio codecs. All products ship with European warranties and support.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do EarFun earbuds compare to other premium brands?</h3>
+        <p>EarFun offers premium features like hybrid ANC, Hi-Res audio certification, and 40+ hour battery life at competitive prices. Independent reviews consistently rank EarFun products among the top performers in their price categories.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are EarFun products compatible with all devices?</h3>
+        <p>Yes, all EarFun Bluetooth products are universally compatible with smartphones, tablets, laptops, and smart TVs. They support advanced codecs like LDAC, aptX, and AAC for the best possible audio quality.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What warranty and support do I get with EarFun products?</h3>
+        <p>All EarFun products come with a 12-month manufacturer warranty covering defects and technical issues. European customers receive priority support with response times under 24 hours.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where can I buy authentic EarFun products in Europe?</h3>
+        <p>We recommend purchasing through our verified partners and official retailers to ensure authenticity and warranty coverage. Visit <a href="https://www.myearfun.com/eu" target="_blank" rel="sponsored">myearfun.com/eu</a> for authorized European distribution.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://www.myearfun.com/eu" class="affiliate-button" target="_blank" rel="sponsored">
+        🇪🇺 Shop Official EarFun Europe Store
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section {
+  padding: var(--space-xl) 0;
+  background-color: #f8f9fa;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  color: var(--text-color);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.faq-item {
+  background: white;
+  padding: var(--space-md);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-lg);
+}
+
+.faq-item p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.faq-item a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.faq-item a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<!-- Structured Data for FAQ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {% for faq in site.data.homepage_faq %}
     {
       "@type": "Question",
-      "name": "{{ faq.question }}",
+      "name": "What makes EarFun products ideal for European customers?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ faq.answer | escape }}"
+        "text": "EarFun products are designed with European standards in mind, featuring CE certification, GDPR-compliant privacy features, and compatibility with European audio codecs. All products ship with European warranties and support."
       }
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+    },
+    {
+      "@type": "Question",
+      "name": "How do EarFun earbuds compare to other premium brands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EarFun offers premium features like hybrid ANC, Hi-Res audio certification, and 40+ hour battery life at competitive prices. Independent reviews consistently rank EarFun products among the top performers in their price categories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are EarFun products compatible with all devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all EarFun Bluetooth products are universally compatible with smartphones, tablets, laptops, and smart TVs. They support advanced codecs like LDAC, aptX, and AAC for the best possible audio quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What warranty and support do I get with EarFun products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All EarFun products come with a 12-month manufacturer warranty covering defects and technical issues. European customers receive priority support with response times under 24 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I buy authentic EarFun products in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We recommend purchasing through our verified partners and official retailers to ensure authenticity and warranty coverage. Visit myearfun.com/eu for authorized European distribution."
+      }
+    }
   ]
 }
 </script>
-{% endif %}
