@@ -164,34 +164,5 @@
     {% endfor %}
   {% endif %}
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const btn = document.querySelector('.mobile-menu-btn');
-      const links = document.querySelector('.nav-links');
-      
-      if (btn && links) {
-        btn.addEventListener('click', function() {
-          const expanded = this.getAttribute('aria-expanded') === 'true';
-          this.setAttribute('aria-expanded', !expanded);
-          links.classList.toggle('active');
-        });
-      }
-      
-      // Standardized affiliate button handling
-      const affiliateButtons = document.querySelectorAll('.affiliate-button');
-      affiliateButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          // Track affiliate link clicks
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'affiliate_click', {
-              'event_category': 'affiliate',
-              'event_label': this.getAttribute('data-product') || 'unknown'
-            });
-          }
-        });
-      });
-    });
-  </script>
-  
 </body>
 </html>
