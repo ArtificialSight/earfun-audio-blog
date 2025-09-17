@@ -1,11 +1,9 @@
-# EarFun Products Data for Homepage Cards
-# This structure matches the card rendering loop in index.html
 - name: "EarFun Air Pro 4"
   type: "True Wireless Earbuds"
   description: "Premium earbuds with advanced ANC technology and exceptional 50-hour battery life. Perfect for commuting and travel."
   price: "79.99"
   rating: 4.5
-  image: "/assets/images/products/earfun-air-pro-4.jpg"
+  image: "/assets/images/products/air-pro-4.jpg"
   review_url: "/review/earfun-air-pro-4/"
   category: "earbuds"
   badge: "Best Overall"
@@ -59,7 +57,7 @@
   description: "Hi-Res certified over-ear headphones with incredible 80-hour battery and premium comfort for extended listening."
   price: "49.99"
   rating: 4.4
-  image: "/assets/images/products/wave-pro.jpg"
+  image: "/assets/images/products/wave-pro.svg"
   review_url: "/reviews/earfun-wave-pro.html"
   category: "headphones"
   badge: "Premium Pick"

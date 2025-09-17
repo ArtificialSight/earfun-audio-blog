@@ -112,7 +112,7 @@ Experience the pinnacle of audio technology with EarFun's premium earbuds collec
 
 <div class="product-showcase">
 <div class="product-header">
-<img alt="EarFun Air Pro 4 Premium Wireless Earbuds" class="product-image" src="/assets/images/earfun-air-pro-4.jpg" />
+<img alt="EarFun Air Pro 4 Premium Wireless Earbuds" class="product-image" src="{{ '/assets/images/products/air-pro-4.jpg' | relative_url }}" />
 <div class="product-info">
 <h4>EarFun Air Pro 4</h4>
 <div class="rating">⭐⭐⭐⭐⭐ 4.8/5</div>

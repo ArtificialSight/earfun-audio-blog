@@ -81,7 +81,7 @@ schema_type: WebSite
   <div class="product-grid">
     {% for product in site.data.products limit:6 %}
     <div class="card">
-      <img src="{{ product.image }}" alt="{{ product.name }} image" class="card-img">
+      <img src="{{ product.image | relative_url }}" alt="{{ product.name }} image" class="card-img">
       <h3>{{ product.name }}</h3>
       <div class="rating">
         {% for i in (1..5) %}
@@ -120,7 +120,7 @@ schema_type: WebSite
     <article class="post-card">
       <div class="post-image">
         {% if post.image %}
-          <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy" width="400" height="225">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" width="400" height="225">
         {% endif %}
       </div>
       <div class="post-content">
