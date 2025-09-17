@@ -82,7 +82,11 @@ schema_type: WebSite
     {% for product in site.data.products limit:6 %}
     <div class="card">
       <img src="{{ product.image | relative_url }}" alt="{{ product.name }} image" class="card-img">
+      {% if product.badge %}
+        <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
+      {% endif %}
       <h3>{{ product.name }}</h3>
+      <p class="product-description">{{ product.description }}</p>
       <div class="rating">
         {% for i in (1..5) %}
           {% if product.rating >= i %}
