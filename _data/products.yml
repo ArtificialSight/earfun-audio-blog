@@ -6,7 +6,7 @@
   price: "79.99"
   rating: 4.5
   image: "/assets/images/products/earfun-air-pro-4.jpg"
-  review_url: "/reviews/earfun-air-pro-4.html"
+  review_url: "/review/earfun-air-pro-4/"
   category: "earbuds"
   badge: "Best Overall"
   badge_type: "premium"
