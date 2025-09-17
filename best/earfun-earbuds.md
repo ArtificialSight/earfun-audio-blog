@@ -7,7 +7,7 @@ image: /assets/images/best-earfun-earbuds-2025.jpg
 schema_type: CollectionPage
 ---
 
-- **Best overall:** [Air Pro 4](/reviews/earfun-air-pro-4/) — adaptive ANC + LDAC/LE Audio, great value.
+- **Best overall:** [Air Pro 4](/review/earfun-air-pro-4/) — adaptive ANC + LDAC/LE Audio, great value.
 - **Best compact:** [Free Pro 3](/reviews/earfun-free-pro-3/) — tiny fit, friendly tuning, app EQ.
 - **Best open-ear (first look):** EarFun Clip/OpenJump — open design for awareness; full review soon.
 
