@@ -158,7 +158,8 @@ main {
     color: white;
     text-align: center;
     padding: 4rem 2rem;
-    margin-bottom: 3rem;
+    /* Remove white seam below hero */
+    margin-bottom: 0;
     position: relative;
     overflow: hidden;
 }
@@ -229,6 +230,11 @@ section {
     padding: 2rem 0;
 }
 
+/* Remove top margin for the first section after the hero to avoid visible gap */
+.hero + section {
+    margin-top: 0;
+}
+
 section h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -251,7 +257,8 @@ section h2 {
     padding: 3rem 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    margin: 3rem 0;
+    /* Tighten spacing after hero */
+    margin: 0 0 3rem 0;
 }
 
 /* Typography */
