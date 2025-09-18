@@ -495,26 +495,7 @@ a:hover {
     background-color: var(--primary-color);
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: 3rem;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
+/* (Removed duplicate .hero styles to avoid overriding earlier hero block) */
 
 /* Navigation Breadcrumbs */
 .breadcrumb {
