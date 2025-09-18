@@ -170,6 +170,16 @@
             });
         });
     </script>
+    <script>
+        // Progressive enhancement for images: enforce lazy/async where missing
+        (function(){
+            const imgs = document.querySelectorAll('img');
+            imgs.forEach(img => {
+                if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+                if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+            });
+        })();
+    </script>
     
     <!-- Analytics placeholder -->
     {% if site.google_analytics %}

@@ -47,7 +47,7 @@ layout: default
 <aside class="review-sidebar">
   {% if page.product_image %}
     <div class="product-image">
-      <img src="{{ page.product_image | relative_url }}" alt="{{ page.title }}" />
+      <img src="{{ page.product_image | relative_url }}" alt="{{ page.title }}" loading="lazy" decoding="async" width="600" height="400">
     </div>
   {% endif %}
   

@@ -81,7 +81,7 @@ schema_type: WebSite
   <div class="product-grid">
     {% for product in site.data.products limit:6 %}
     <div class="card">
-      <img src="{{ product.image | relative_url }}" alt="{{ product.name }} image" class="card-img">
+      <img src="{{ product.image | relative_url }}" alt="{{ product.name }} image" class="card-img" loading="lazy" decoding="async" width="400" height="250" sizes="(max-width: 600px) 100vw, 400px">
       {% if product.badge %}
         <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
       {% endif %}
@@ -98,7 +98,7 @@ schema_type: WebSite
         <span>({{ product.rating }}/5)</span>
       </div>
       <div class="price">${{ product.price }}</div>
-      <a href="{{ product.review_url }}" class="btn">Read Review</a>
+      <a href="{{ product.review_url | relative_url }}" class="btn">Read Review</a>
     </div>
     {% endfor %}
   </div>
@@ -124,14 +124,14 @@ schema_type: WebSite
     <article class="post-card">
       <div class="post-image">
         {% if post.image %}
-          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" width="400" height="225">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy" decoding="async" width="400" height="225" sizes="(max-width: 600px) 100vw, 400px">
         {% endif %}
       </div>
       <div class="post-content">
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
         <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <a href="{{ post.url }}" class="read-more">Read More</a>
+  <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
       </div>
     </article>
     {% endfor %}

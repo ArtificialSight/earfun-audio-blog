@@ -294,6 +294,7 @@ a:hover {
     object-position: center;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     transition: transform 0.3s ease;
+    aspect-ratio: 16 / 10;
 }
 
 .product-card:hover .product-image,
@@ -642,7 +643,7 @@ footer {
     }
     
     .product-image, .card-img {
-        height: 220px;
+        height: 200px;
     }
     
     section {
@@ -651,6 +652,7 @@ footer {
     
     section h2 {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
     
     .products {
@@ -839,6 +841,7 @@ footer {
 }
 
 .review-content img {
+    display: block;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
