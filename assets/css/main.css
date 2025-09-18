@@ -43,10 +43,11 @@ header {
 nav {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -108,7 +109,7 @@ nav {
 main {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1.5rem;
 }
 
 /* Hero Section */
@@ -141,14 +142,14 @@ main {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
     margin-bottom: 2rem;
     opacity: 0.9;
 }
@@ -200,12 +201,17 @@ section h2 {
     margin: 3rem 0;
 }
 
+.product-comparison table {
+    min-width: 640px;
+}
+
 .product-comparison {
     background: white;
     padding: 3rem 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     margin: 3rem 0;
+    overflow-x: auto;
 }
 
 /* Typography */
@@ -265,10 +271,10 @@ a:hover {
 /* Product Grids */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
     margin: 2rem 0;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .product-card, .card {
@@ -433,27 +439,6 @@ a:hover {
 
 .btn-secondary:hover {
     background-color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: 3rem;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
 }
 
 /* Navigation Breadcrumbs */
@@ -636,9 +621,9 @@ footer {
     }
     
     .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 1.5rem;
-        padding: 0 0.5rem;
+        padding: 0;
     }
     
     .product-image, .card-img {
@@ -703,9 +688,9 @@ footer {
     }
     
     .product-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
         gap: 1rem;
-        padding: 0 0.5rem;
+        padding: 0;
     }
     
     .card {
