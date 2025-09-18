@@ -62,18 +62,7 @@ schema_type: WebSite
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" style="margin-top:2em;">
-  <h2>Frequently Asked Questions</h2>
-  <dl>
-    <dt>Which EarFun earbuds are best for working out?</dt>
-    <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
-    <dt>Do EarFun earbuds work well for phone calls?</dt>
-    <dd>Yes, most EarFun models feature clear call quality with noise reduction microphones.</dd>
-    <dt>How long do EarFun earbuds typically last?</dt>
-    <dd>Battery life varies by model, ranging from 6-11 hours per charge, with up to 45 hours total with the case.</dd>
-  </dl>
-</section>
+<!-- FAQ moved near bottom -->
 
 <!-- Featured Product Review Cards -->
 <section class="products" id="products">
@@ -101,6 +90,27 @@ schema_type: WebSite
       <a href="{{ product.review_url | relative_url }}" class="btn">Read Review</a>
     </div>
     {% endfor %}
+  </div>
+</section>
+
+<!-- Frequently Asked Questions (Bottom) -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      <div class="faq-item">
+        <dt>Which EarFun earbuds are best for working out?</dt>
+        <dd>EarFun Free Pro 3 are sweatproof and secure, making them ideal for active users.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>Do EarFun earbuds work well for phone calls?</dt>
+        <dd>Yes, most EarFun models feature clear call quality with noise reduction microphones.</dd>
+      </div>
+      <div class="faq-item">
+        <dt>How long do EarFun earbuds typically last?</dt>
+        <dd>Battery life varies by model, ranging from 6–11 hours per charge, with up to 45 hours total with the case.</dd>
+      </div>
+    </dl>
   </div>
 </section>
 
