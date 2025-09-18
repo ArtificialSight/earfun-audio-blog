@@ -108,8 +108,10 @@ nav {
 /* Main Content */
 main {
     max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Hero Section */
@@ -137,8 +139,11 @@ main {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .hero h1 {
@@ -934,17 +939,20 @@ footer {
     border-bottom: none;
 }
 
-/* Two-column layout for review pages */
+/* Two-column layout for review pages (scoped) */
 @media (min-width: 1024px) {
-    main {
+    body.review main {
         display: grid;
         grid-template-columns: 1fr 350px;
         gap: 3rem;
         align-items: start;
     }
-    
-    .review-article {
+    body.review .review-article {
         margin-bottom: 0;
+        grid-column: 1;
+    }
+    body.review .review-sidebar {
+        grid-column: 2;
     }
 }
 

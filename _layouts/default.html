@@ -69,7 +69,7 @@
     }
     </script>
 </head>
-<body>
+<body class="{% if page.layout == 'review' or page.url contains '/reviews' %}review{% endif %}">
     <!-- Header -->
     <header>
         <nav>
