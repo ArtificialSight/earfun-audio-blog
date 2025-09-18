@@ -157,7 +157,8 @@ main {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    padding: 4rem 2rem;
+    /* Reduce top whitespace before the H1 */
+    padding: 2rem 2rem 3rem;
     /* Remove white seam below hero */
     margin-bottom: 0;
     position: relative;
@@ -186,6 +187,7 @@ main {
 }
 
 .hero h1 {
+    color: #fff;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -233,6 +235,16 @@ section {
 /* Remove top margin for the first section after the hero to avoid visible gap */
 .hero + section {
     margin-top: 0;
+}
+
+/* Remove top gap before hero at page start */
+main > section:first-of-type {
+    margin-top: 0;
+}
+
+/* Ensure hero itself has no top margin from generic section rule */
+.hero {
+    margin-top: 0 !important;
 }
 
 section h2 {
