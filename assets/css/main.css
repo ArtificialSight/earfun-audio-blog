@@ -29,6 +29,44 @@ body {
     background-color: var(--bg-color);
 }
 
+/* ---------------------------------------
+     Anchor navigation UX improvements
+     - Smooth scrolling (respects reduced motion)
+     - Anchor offset for in-page headings
+     - Subtle highlight on :target
+     - Visually hidden utility class
+----------------------------------------- */
+
+/* Smooth scrolling for in-page anchors */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+/* Ensure anchors don't sit under the top edge when navigated to */
+:where(h1, h2, h3, h4, h5, h6)[id],
+.faq :where(h2, h3, h4)[id],
+.faq .faq-item[id] {
+    scroll-margin-top: 80px; /* adjust if a fixed header is introduced */
+}
+
+/* Subtle focus/target highlight to help users orient after jumping */
+:where(h2, h3, h4)[id]:target,
+.faq .faq-item:target {
+    background: linear-gradient(180deg, rgba(255, 235, 59, 0.18), rgba(255, 235, 59, 0));
+    outline: 0;
+    transition: background 800ms ease;
+}
+
+/* Visually hidden utility for a11y (e.g., #top anchor, skip links) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+}
+
 /* Header Styles */
 header {
     background-color: var(--primary-color);
