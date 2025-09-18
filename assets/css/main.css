@@ -10,9 +10,21 @@
     --bg-color: #fff;
     --border-color: #e0e0e0;
     --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --header-height: 60px;
     --max-width: 1200px;
+    --transition: all 0.3s ease;
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    
+    /* Spacing system for consistency */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
 }
 
 /* Reset and Base Styles */
@@ -43,10 +55,11 @@ header {
 nav {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -108,7 +121,7 @@ nav {
 main {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1.5rem;
 }
 
 /* Hero Section */
@@ -141,37 +154,19 @@ main {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
     margin-bottom: 2rem;
     opacity: 0.9;
 }
 
-.cta-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-}
 
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
-    color: white;
-    text-decoration: none;
-}
 
 /* Section Styling */
 .container {
@@ -200,12 +195,17 @@ section h2 {
     margin: 3rem 0;
 }
 
+.product-comparison table {
+    min-width: 640px;
+}
+
 .product-comparison {
     background: white;
     padding: 3rem 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     margin: 3rem 0;
+    overflow-x: auto;
 }
 
 /* Typography */
@@ -246,46 +246,37 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Cards and Content Blocks */
-.card {
+/* Cards and Content Blocks - Consolidated */
+.card, .product-card {
     background: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-lg);
+    height: 100%; /* Equal height cards in grid */
 }
 
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+.card:hover, .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0, 122, 204, 0.3);
 }
 
 /* Product Grids */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
     margin: 2rem 0;
-    padding: 0 1rem;
+    padding: 0;
 }
 
-.product-card, .card {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    position: relative;
-}
 
-.product-card:hover, .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-    border-color: var(--accent-color);
-}
 
 .product-image, .card-img {
     width: 100%;
@@ -301,32 +292,51 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Card Content Styling */
-.card {
+/* Card Content Styling - Content specific styles */
+
+.card-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card-content {
+    padding: var(--space-md);
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    position: relative;
 }
 
 .card .badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: var(--space-sm);
+    right: var(--space-sm);
     z-index: 2;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow);
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .card h3 {
     font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-xs);
     color: var(--primary-color);
     line-height: 1.3;
 }
 
-.card .product-description {
+.card .product-description, .card p {
     font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: var(--space-sm);
+    flex-grow: 1;
+    line-height: 1.6;
+}
     color: var(--text-light);
     line-height: 1.5;
     margin-bottom: 1rem;
@@ -351,27 +361,7 @@ a:hover {
     margin: 0.5rem 0;
 }
 
-.card .btn {
-    margin-top: auto;
-    background: linear-gradient(135deg, var(--accent-color) 0%, #0056b3 100%);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
 
-.card .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
-    color: white;
-    text-decoration: none;
-}
 
 /* Card content padding */
 .card > *:not(.card-img):not(.badge) {
@@ -406,25 +396,52 @@ a:hover {
     color: var(--accent-color);
 }
 
-/* Buttons */
+/* Buttons - Consolidated and Improved */
+.btn, .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    font-family: inherit;
+    line-height: 1.4;
+    min-height: 44px; /* Better touch target */
+    text-align: center;
+}
+
 .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
     background-color: var(--accent-color);
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: all 0.3s ease;
 }
 
 .btn:hover {
     background-color: var(--primary-color);
     color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-hover);
+    text-decoration: none;
+}
+
+.cta-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    color: white;
+    text-decoration: none;
 }
 
 .btn-secondary {
@@ -435,25 +452,30 @@ a:hover {
     background-color: var(--primary-color);
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+/* Card buttons specific styling */
+.card .btn {
+    margin-top: auto;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #0056b3 100%);
     color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: 3rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    width: 100%;
 }
 
-.hero h1 {
+.card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
     color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    text-decoration: none;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+/* Focus states for accessibility */
+.btn:focus, .cta-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 /* Navigation Breadcrumbs */
@@ -581,7 +603,25 @@ footer {
     opacity: 0.8;
 }
 
-/* Responsive Design */
+/* Responsive Design - Enhanced with better breakpoints */
+
+/* Large tablets and small desktops (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: flex;
@@ -597,6 +637,7 @@ footer {
         flex-direction: column;
         padding: 1rem 2rem;
         box-shadow: var(--shadow);
+        z-index: 1000;
     }
     
     .nav-links.active {
@@ -625,20 +666,23 @@ footer {
     
     .hero {
         padding: 3rem 1rem;
+        text-align: center;
     }
     
     .hero h1 {
         font-size: 2.2rem;
+        line-height: 1.3;
     }
     
     .hero p {
         font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
     
     .product-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
-        padding: 0 0.5rem;
+        padding: 0;
     }
     
     .product-image, .card-img {
@@ -646,14 +690,17 @@ footer {
     }
     
     section {
-        padding: 1.5rem 0;
+        padding: 2rem 1rem;
+        margin: 1rem 0;
     }
     
     section h2 {
         font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
     }
     
-    .products {
+    .products, .product-comparison {
         padding: 2rem 1rem;
     }
     
@@ -665,51 +712,87 @@ footer {
         font-size: 1.5rem;
     }
     
+    /* Improved table responsiveness */
     table {
         font-size: 0.85rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 8px;
     }
     
     th, td {
         padding: 0.8rem 0.5rem;
+        min-width: 120px;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .review-article {
+        padding: 2rem 1.5rem;
+        margin: 1rem 0;
     }
 }
 
+/* Large mobile devices (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small mobile devices (480px and below) */
 @media (max-width: 480px) {
     nav {
         padding: 0 1rem;
     }
     
     .hero {
-        padding: 2.5rem 1rem;
+        padding: 2rem 1rem;
     }
     
     .hero h1 {
         font-size: 1.8rem;
         line-height: 1.2;
+        margin-bottom: 1rem;
     }
     
     .hero p {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
     
     .cta-btn {
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
     }
     
     .product-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 0 0.5rem;
+        padding: 0;
     }
     
     .card {
         margin: 0;
+        text-align: center;
     }
     
     .card h3 {
@@ -719,41 +802,105 @@ footer {
     .card .btn {
         padding: 0.7rem 1rem;
         font-size: 0.9rem;
+        width: 100%;
     }
     
     .product-image, .card-img {
         height: 200px;
+        width: 100%;
+        object-fit: cover;
     }
     
     section h2 {
         font-size: 1.8rem;
+        text-align: center;
     }
     
     .products, .product-comparison {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0.5rem;
         margin: 1rem 0;
     }
     
+    /* Better table handling for very small screens */
     table {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-width: 100%;
+        border: 1px solid var(--border-color);
     }
     
-    th, td {
-        padding: 0.6rem 0.4rem;
+    table thead {
+        display: block;
+        float: left;
+    }
+    
+    table tbody {
+        display: block;
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    table thead tr {
+        display: block;
+    }
+    
+    table tbody tr {
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    table th,
+    table td {
+        padding: 0.5rem 0.3rem;
+        display: block;
+        border: 1px solid var(--border-color);
+        min-width: 100px;
     }
     
     .footer-content {
         padding: 0 1rem;
         text-align: center;
+        grid-template-columns: 1fr;
     }
     
     .footer-section h3 {
         font-size: 1.1rem;
+        margin-bottom: 0.5rem;
     }
     
     .footer-bottom {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    
+    .review-article {
+        padding: 1.5rem 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    /* Improve spacing for small screens */
+    section {
+        padding: 1.5rem 0.5rem;
+        margin: 0.5rem 0;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.3;
     }
 }
 

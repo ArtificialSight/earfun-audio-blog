@@ -78,7 +78,7 @@
                     <img src="{{ '/assets/logo.svg' | relative_url }}" alt="{{ site.title }}" height="40">
                 </a>
             </div>
-            <ul class="nav-links">
+            <ul id="primary-navigation" class="nav-links" data-state="closed">
                 <li><a href="{{ '/' | relative_url }}">Home</a></li>
                 <li><a href="{{ '/best/' | relative_url }}">Best Products</a></li>
                 <li><a href="{{ '/reviews/' | relative_url }}">Reviews</a></li>
@@ -87,7 +87,7 @@
                 <li><a href="{{ '/press-kit/' | relative_url }}">Press Kit</a></li>
             </ul>
             <!-- Mobile menu button -->
-            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -150,18 +150,35 @@
     
     <!-- Scripts -->
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-        
+        const menuButton = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuButton && navLinks) {
+            menuButton.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('active');
+                menuButton.classList.toggle('active', isOpen);
+                menuButton.setAttribute('aria-expanded', String(isOpen));
+                navLinks.dataset.state = isOpen ? 'open' : 'closed';
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.matchMedia('(max-width: 768px)').matches) {
+                        navLinks.classList.remove('active');
+                        navLinks.dataset.state = 'closed';
+                        menuButton.classList.remove('active');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
+                    e.preventDefault();
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
