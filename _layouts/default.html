@@ -70,6 +70,9 @@
     </script>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
     <header>
         <nav>
@@ -96,7 +99,7 @@
     </header>
     
     <!-- Main Content -->
-    <main>
+    <main id="main-content">{%comment%} Added id for skip link {%endcomment%}
         {% if page.layout != 'home' %}
         <!-- Breadcrumb -->
         <div class="breadcrumb">
