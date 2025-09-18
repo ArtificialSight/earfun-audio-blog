@@ -59,6 +59,7 @@ nav {
     text-decoration: none;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .logo img {
@@ -188,6 +189,8 @@ section {
 section h2 {
     text-align: center;
     font-size: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2rem;
     color: var(--primary-color);
     font-weight: 700;
@@ -217,6 +220,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 2.5rem;
     color: var(--primary-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
@@ -794,6 +800,7 @@ footer {
     border-bottom: 2px solid #e9ecef;
     padding-bottom: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .review-header h1 {
@@ -801,6 +808,7 @@ footer {
     color: var(--primary-color);
     margin-bottom: 1rem;
     line-height: 1.2;
+    float: none;
 }
 
 .review-subtitle {
