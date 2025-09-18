@@ -1142,6 +1142,44 @@ footer {
     margin-bottom: 2rem;
 }
 
+.faq-toc {
+    text-align: center;
+    margin: 0 auto 1.5rem;
+}
+
+.faq-toc ul {
+    display: inline-flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-toc a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.faq-toc a:hover {
+    text-decoration: underline;
+}
+
+.back-to-top {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.back-to-top a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-to-top a:hover {
+    text-decoration: underline;
+}
+
 .faq-section dl {
     margin: 0 auto;
 }
