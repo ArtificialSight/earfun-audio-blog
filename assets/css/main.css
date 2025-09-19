@@ -78,6 +78,11 @@ header {
     box-shadow: var(--shadow);
 }
 
+/* Remove unintended top gap on pages starting with a hero */
+body.home main { padding-top: 0; }
+body.home main > .hero { margin-top: 0; }
+body.home main > .hero::before { top: 0; }
+
 nav {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -85,19 +90,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.logo a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 }
 
 .logo img {
@@ -157,9 +149,8 @@ main {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-align: center;
-    /* Reduce top whitespace before the H1 */
-    padding: 2rem 2rem 3rem;
-    /* Remove white seam below hero */
+    /* Final tightened hero spacing under sticky header */
+    padding: 1.25rem 2rem 3rem;
     margin-bottom: 0;
     position: relative;
     overflow: hidden;

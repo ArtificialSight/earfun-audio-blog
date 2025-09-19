@@ -98,7 +98,7 @@
     
     <!-- Main Content -->
     <main>
-        {% if page.layout != 'home' %}
+        {% if page.url != '/' and page.no_breadcrumb != true and page.layout != 'home' %}
         <!-- Breadcrumb -->
         <div class="breadcrumb">
             <a href="{{ '/' | relative_url }}">Home</a>

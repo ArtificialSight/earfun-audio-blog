@@ -2,6 +2,7 @@
 layout: post
 title: "EarFun Wave Pro Review — Long-battery ANC travel headphones under $100"
 permalink: /reviews/earfun-wave-pro/
+product_image: /assets/images/products/wave-pro.svg
 ---
 
 **Verdict:** If you want very long battery life and solid ANC on a tight budget, the EarFun Wave Pro is a standout. The SoundGuys review calls out its excellent value, great comfort, LDAC support, and companion app; trade-offs include no touch controls, no auto play/pause, and no water resistance【198163581435146†L39-L46】【198163581435146†L77-L95】. For commuting, studying, and flights, it punches above its price.
