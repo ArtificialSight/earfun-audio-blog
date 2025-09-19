@@ -359,6 +359,15 @@ a:hover {
     aspect-ratio: 16 / 10;
 }
 
+/* Improve visibility for SVG placeholders (e.g., Wave Pro) */
+.product-image img[src$='.svg'],
+.card-img[src$='.svg'],
+.review-sidebar .product-image img[src$='.svg'] {
+    background: #f3f4f6;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
 .product-card:hover .product-image,
 .card:hover .card-img {
     transform: scale(1.05);
