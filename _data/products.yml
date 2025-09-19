@@ -58,7 +58,7 @@
   price: "49.99"
   rating: 4.4
   image: "/assets/images/products/wave-pro.svg"
-  review_url: "/reviews/earfun-wave-pro.html"
+  review_url: "/reviews/earfun-wave-pro/"
   category: "headphones"
   badge: "Premium Pick"
   badge_type: "premium"
