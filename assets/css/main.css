@@ -359,6 +359,11 @@ a:hover {
     aspect-ratio: 16 / 10;
 }
 
+/* Subtle border to frame light product images */
+.product-image, .card-img {
+    border: 1px solid #dcdfe3;
+}
+
 /* Improve visibility for SVG placeholders (e.g., Wave Pro) */
 .product-image img[src$='.svg'],
 .card-img[src$='.svg'],

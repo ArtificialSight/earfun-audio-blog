@@ -2,7 +2,7 @@
 layout: review
 title: "EarFun Wave Pro Review — Long-battery ANC travel headphones under $100"
 permalink: /reviews/earfun-wave-pro/
-product_image: /assets/images/products/wave-pro.svg
+product_image: /assets/images/products/earfun-wave-pro.jpg
 rating: 4.3
 ---
 
