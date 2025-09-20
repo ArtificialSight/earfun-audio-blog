@@ -40,7 +40,7 @@
   price: "59.99"
   rating: 4.4
   image: "/assets/images/products/air-pro-3.jpg"
-  review_url: "/reviews/earfun-air-pro-3.html"
+  review_url: "/reviews/earfun-air-pro-3/"
   category: "earbuds"
   badge: "Great Value"
   badge_type: "value"
