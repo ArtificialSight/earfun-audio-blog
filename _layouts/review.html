@@ -47,7 +47,12 @@ layout: default
 <aside class="review-sidebar">
   {% if page.product_image %}
     <div class="product-image">
-      <img src="{{ page.product_image | relative_url }}" alt="{{ page.title }}" loading="lazy" decoding="async" width="600" height="400">
+      {% assign jpg_path = page.product_image %}
+      {% assign webp_path = jpg_path | replace: '.jpg', '.webp' %}
+      <picture>
+        <source srcset="{{ webp_path | relative_url }}?v={{ site.github.build_revision | default: site.time | date: '%s' }}" type="image/webp">
+        <img src="{{ jpg_path | relative_url }}?v={{ site.github.build_revision | default: site.time | date: '%s' }}" alt="{{ page.title }}" loading="lazy" decoding="async" width="600" height="400">
+      </picture>
     </div>
   {% endif %}
   

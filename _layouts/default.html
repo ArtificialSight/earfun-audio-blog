@@ -38,6 +38,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicons/favicon-16x16.png' | relative_url }}">
     <link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | relative_url }}">
     
+    <!-- Preload Hero Image -->
+    <link rel="preload" as="image" href="{{ '/assets/hero-earfun-products.jpg' | relative_url }}?v={{ site.github.build_revision | default: site.time | date: '%s' }}" imagesrcset="{{ '/assets/hero-earfun-products.webp' | relative_url }}?v={{ site.github.build_revision | default: site.time | date: '%s' }} 1x" imagesizes="100vw" fetchpriority="high">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/affiliate.css' | relative_url }}">

@@ -71,7 +71,12 @@ no_breadcrumb: true
   <div class="product-grid">
     {% for product in site.data.products limit:6 %}
     <div class="card">
-      <img src="{{ product.image | relative_url }}" alt="{{ product.name }} image" class="card-img" loading="lazy" decoding="async" width="400" height="250" sizes="(max-width: 600px) 100vw, 400px">
+      {% assign jpg_path = product.image %}
+      {% assign webp_path = jpg_path | replace: '.jpg', '.webp' %}
+      <picture>
+        <source srcset="{{ webp_path | relative_url }}?v={{ site.github.build_revision | default: site.time | date: '%s' }}" type="image/webp">
+        <img src="{{ jpg_path | relative_url }}?v={{ site.github.build_revision | default: site.time | date: '%s' }}" alt="{{ product.name }} image" class="card-img" loading="lazy" decoding="async" width="400" height="250" sizes="(max-width: 600px) 100vw, 400px">
+      </picture>
       {% if product.badge %}
         <span class="badge {{ product.badge_type }}">{{ product.badge }}</span>
       {% endif %}
